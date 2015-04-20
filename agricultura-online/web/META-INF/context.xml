@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/agricultura-online"/>
+<Context antiJARLocking="true" path="/agricultura-online">
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" global="jdbc/Agricultura" maxActive="100" maxIdle="20" maxWait="10000" minIdle="5" name="jdbc/Agricultura" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/agricultura" username="root"/>
+</Context>
