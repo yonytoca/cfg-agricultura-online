@@ -12,13 +12,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.cfg.uapa.java.agricultura.entidades.Socio;
 
 /**
  *
- * @author VíctorAndrés
+ * @author EDUARDO
  */
-@WebServlet(name = "NewServlet", urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+@WebServlet(name = "SocioControl", urlPatterns = {"/SocioControl"})
+public class SocioControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +32,41 @@ public class NewServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+  
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String telefono = request.getParameter("telefono");
+        String direccion = request.getParameter("direccion");
+        String usuarios = request.getParameter("usuario");
+        String clave = request.getParameter("clave");       
+        String imagen = request.getParameter("imagen");       
+        String productos = request.getParameter("producto");   
+    
+
+        Usuario usuario =  ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));
+        Producto producto = ServicioProdcuto.getInstancia().getProductoPorId(Integer.valueOf(productos));
+        Socio socio = new Socio();
+        socio.setNombre(nombre);
+        socio.setApellido(apellido);
+        socio.setTelefono(telefono);
+        socio.setDireccion(direccion);
+        socio.setIdusuario(usuario);
+        socio.setClave(clave);
+        socio.setImg(imagen);
+        socio.setId_producto(producto);
+        
+        boolean isCreado = ServicioSocio.getInstancia().crearSocio(socio);
+
+        if (isCreado) {
+
+            response.sendRedirect("index.jsp");
+
+        } else {
+
+            response.sendRedirect("crearSocio.jsp");
+
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
