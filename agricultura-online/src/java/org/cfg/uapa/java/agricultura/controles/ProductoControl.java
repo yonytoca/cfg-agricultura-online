@@ -12,13 +12,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.cfg.uapa.java.agricultura.entidades.Producto;
+import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
 
 /**
  *
- * @author VíctorAndrés
+ * @author Yanelkys
  */
-@WebServlet(name = "NewServlet", urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+@WebServlet(name = "ProductoControl", urlPatterns = {"/ProductoControl"})
+public class ProductoControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,18 +33,27 @@ public class NewServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+  
+        String nombre = request.getParameter("nombre");
+        String img = request.getParameter("img");
+        int cans = Integer.parseInt(request.getParameter("csiembra"));
+
+        Producto producto = new Producto();
+        producto.setNombre(nombre); 
+        producto.setImg(img);
+        producto.setCantidad_siembra(cans);
+       
+       
+        boolean isCreado = ServicioProducto.getInstancia().crearProducto(producto);
+
+        if (isCreado) {
+
+            response.sendRedirect("index.html");
+
+        } else {
+
+            response.sendRedirect("producto/crearproducto.jsp");
+
         }
     }
 
