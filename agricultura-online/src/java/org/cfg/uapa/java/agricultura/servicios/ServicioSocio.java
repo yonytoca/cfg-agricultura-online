@@ -77,11 +77,10 @@ public class ServicioSocio {
            socios.setNombre(rs.getString("nombre"));
            socios.setApellido(rs.getString("apellido"));
            socios.setTelefono(rs.getString("telefono"));
-           socios.setDireccion(rs.getString("direccion"));
-          socios.setId_usuario(rs.getInt("id_usuario"));
-          socios.setClave(rs.getString("clave"));
-          socios.setImg(rs.getString("img"));
-          socios.setId_producto(rs.getInt("id_producto"));         
+           socios.setDireccion(rs.getString("direccion"));                      
+           socios.setClave(rs.getString("clave"));
+           socios.setImg(rs.getString("img"));
+          
            
             
         } catch (SQLException e) {
@@ -120,7 +119,7 @@ public class ServicioSocio {
              stmt.setString(2,socio.getApellido());
              stmt.setString(3,socio.getTelefono());
              stmt.setString(4, socio.getDireccion());   
-             stmt.setInt(5,socio.getId_usuario().getId_usurio());                        
+             stmt.setInt(5,socio.getId_usuario().getId_usuario());                        
              stmt.setString(6, socio.getClave());
              stmt.setString(7,socio.getImg());
             stmt.setInt(8, socio.getId_producto().getId_producto());
