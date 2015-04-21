@@ -12,7 +12,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.cfg.uapa.java.agricultura.entidades.Producto;
 import org.cfg.uapa.java.agricultura.entidades.Socio;
+import org.cfg.uapa.java.agricultura.entidades.Usuario;
+import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
+import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
+import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
 
 /**
  *
@@ -42,15 +47,15 @@ public class SocioControl extends HttpServlet {
         String imagen = request.getParameter("imagen");       
         String productos = request.getParameter("producto");   
     
-
-        Usuario usuario =  ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));
-        Producto producto = ServicioProdcuto.getInstancia().getProductoPorId(Integer.valueOf(productos));
+        Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
+        Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(productos));
+        
         Socio socio = new Socio();
         socio.setNombre(nombre);
         socio.setApellido(apellido);
         socio.setTelefono(telefono);
         socio.setDireccion(direccion);
-        socio.setIdusuario(usuario);
+        socio.setId_usuario(usuario);                
         socio.setClave(clave);
         socio.setImg(imagen);
         socio.setId_producto(producto);
