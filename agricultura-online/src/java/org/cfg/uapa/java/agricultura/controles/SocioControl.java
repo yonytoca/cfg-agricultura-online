@@ -68,7 +68,7 @@ public class SocioControl extends HttpServlet {
 
         } else {
 
-            response.sendRedirect("crearSocio.jsp");
+            response.sendRedirect("socio/crearSocio.jsp");
 
         }
 

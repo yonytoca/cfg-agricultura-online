@@ -122,8 +122,7 @@ public class ServicioSocio {
              stmt.setInt(5,socio.getId_usuario().getId());                        
              stmt.setString(6, socio.getClave());
              stmt.setString(7,socio.getImg());
-            stmt.setInt(8, socio.getId_producto().getId_producto());
-        
+             stmt.setInt(8, socio.getId_producto().getId_producto());        
 
             stmt.executeUpdate();
             
