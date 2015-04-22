@@ -56,7 +56,7 @@ public class ServicioProducto {
 
     public Producto getProductoPorId(int id) {
 
-        String sql = "select * from producto where id_producto=?";
+        String sql = "select * from producto where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
         PreparedStatement stmt = null;
@@ -72,7 +72,7 @@ public class ServicioProducto {
 
             rs.next();
             producto = new Producto();
-            producto.setId_producto(rs.getInt("id_producto"));
+            producto.setId_producto(rs.getInt("id"));
             producto.setNombre(rs.getString("nombre"));
             producto.setImg(rs.getString("img"));
             producto.setCantidad_siembra(rs.getInt("cantidad_siembra"));

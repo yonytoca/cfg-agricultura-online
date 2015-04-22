@@ -85,7 +85,7 @@ public class ServicioUsuario {
     }
     }
       
-      public Usuario getUsuarioPorId(int id_usuario) {
+      public Usuario getUsuarioPorId(int id) {
 
         
               String sql = "select * from usuario where id=?";
@@ -98,7 +98,7 @@ public class ServicioUsuario {
         try {
 
             stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id_usuario);
+            stmt.setInt(1, id);
 
             rs = stmt.executeQuery();
         
