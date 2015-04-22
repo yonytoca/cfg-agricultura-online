@@ -119,7 +119,7 @@ public class ServicioSocio {
              stmt.setString(2,socio.getApellido());
              stmt.setString(3,socio.getTelefono());
              stmt.setString(4, socio.getDireccion());   
-             stmt.setInt(5,socio.getId_usuario().getId_usuario());                        
+             stmt.setInt(5,socio.getId_usuario().getId());                        
              stmt.setString(6, socio.getClave());
              stmt.setString(7,socio.getImg());
             stmt.setInt(8, socio.getId_producto().getId_producto());
