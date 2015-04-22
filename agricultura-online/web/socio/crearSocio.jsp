@@ -14,7 +14,7 @@
     <body>
         <h1>Hello World!</h1>
 
-        <form role="form" action="/agricultura-online/SocioControl">
+        <form role="form" action="/agricultura-online/SocioControl" method="post">
             <div class="form-group input-group">
                 <label>Nombre </label>
                 <input name="nombre" type="text" class="form-control" placeholder="Nombre">
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group input-group">
                 <label>Teléfono</label>
-                <input type="text" class="form-control" placeholder="Teléfono">
+                <input name="telefono" type="text" class="form-control" placeholder="Teléfono">
             </div>
             <div class="form-group input-group">
                 <label> Dirección</label>
@@ -37,7 +37,7 @@
 
             <div class="form-group input-group">
                 <label> Clave</label>
-                <input name="cleve" type="text" class="form-control" placeholder="Clave">
+                <input name="clave" type="text" class="form-control" placeholder="Clave">
 
             </div>
             </div>

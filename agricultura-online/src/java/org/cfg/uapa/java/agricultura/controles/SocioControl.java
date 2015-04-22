@@ -63,15 +63,10 @@ public class SocioControl extends HttpServlet {
         boolean isCreado = ServicioSocio.getInstancia().crearSocio(socio);
 
         if (isCreado) {
-
             response.sendRedirect("index.jsp");
-
         } else {
-
-            response.sendRedirect("crearSocio.jsp");
-
+            response.sendRedirect("socio/crearSocio.jsp");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
