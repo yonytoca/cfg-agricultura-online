@@ -17,7 +17,7 @@
 %>
 
 <div class="col-lg-6">
-    <form action="/agricultura-online/CrearUsuarioControl1"  method="post">        
+    <form action="/agricultura-online/CrearUsuarioControl"  method="post">        
         <div class="form-group">
             <label>Usuario</label>
             <input name="usuario" class="form-control">               
@@ -31,12 +31,12 @@
             <label>Tipo Usuario</label>
             <select class="form-control" name="tusuario">
                 <c:forEach items="<%=usuario%>" var="usuario">
-                    <option value="${usuario.getId_tipo_usuario()}">${usuario.getNombre()}</option>
+                    <option value="${usuario.getId()}">${usuario.getNombre()}</option>
                 </c:forEach>                
             </select>
         </div>
         <button type="submit" class="btn btn-default">Crear</button>  
-</div>
+       </div>
 
 
 </form>

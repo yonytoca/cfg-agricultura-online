@@ -41,7 +41,7 @@ public class ServicioTipoUsuario {
 
                 while (rs.next()) {
                     TipoUsuario tuser = new TipoUsuario();
-                    tuser.setId_tipo_usuario(rs.getInt("id_tipo_usuario"));
+                    tuser.setId(rs.getInt("id"));
                     tuser.setNombre(rs.getString("nombre"));                   
                     Listatipousuario.add(tuser);
                     
@@ -58,7 +58,7 @@ public class ServicioTipoUsuario {
     
     
    
-      public TipoUsuario getTipoUsuarioPorId(int id_tipo_usuario) {
+      public TipoUsuario getTipoUsuarioPorId(int id) {
 
         String sql = "select * from tipo_usuario where id=?";
 
@@ -70,14 +70,14 @@ public class ServicioTipoUsuario {
         try {
 
             stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id_tipo_usuario);
+            stmt.setInt(1, id);
 
             rs = stmt.executeQuery();
 
-            rs.next();
+      
             rs.next();
             tusuario = new TipoUsuario();
-            tusuario.setId_tipo_usuario(rs.getInt("id_tipo_usuario"));
+            tusuario.setId(rs.getInt("id"));
             tusuario.setNombre(rs.getString("nombre"));
             
         } catch (SQLException e) {

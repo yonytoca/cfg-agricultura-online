@@ -10,21 +10,21 @@ package org.cfg.uapa.java.agricultura.entidades;
  * @author Yanelkys
  */
 public class TipoProducto {
-     private int id_tipo_producto;
+     private int id;
     private String nombre;
 
     /**
-     * @return the id_tipo_producto
+     * @return the id
      */
-    public int getId_tipo_producto() {
-        return id_tipo_producto;
+    public int getId() {
+        return id;
     }
 
     /**
-     * @param id_tipo_producto the id_tipo_producto to set
+     * @param id the id to set
      */
-    public void setId_tipo_producto(int id_tipo_producto) {
-        this.id_tipo_producto = id_tipo_producto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -40,5 +40,7 @@ public class TipoProducto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+ 
    
 }
