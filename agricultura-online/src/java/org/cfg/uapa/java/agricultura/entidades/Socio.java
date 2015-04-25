@@ -10,7 +10,7 @@ package org.cfg.uapa.java.agricultura.entidades;
  * @author EDUARDO
  */
 public class Socio {
-    private int id_socio;
+    private int id;
     private String nombre;
     private String apellido;
     private String telefono;
@@ -18,20 +18,20 @@ public class Socio {
     private Usuario id_usuario; //de tipo usuario
     private String clave;
     private String img;
-    private Producto id_producto; // de tipo producto
+   
 
     /**
      * @return the id_socio
      */
-    public int getId_socio() {
-        return id_socio;
+    public int getId() {
+        return id;
     }
 
     /**
      * @param id_socio the id_socio to set
      */
-    public void setId_socio(int id_socio) {
-        this.id_socio = id_socio;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -132,19 +132,6 @@ public class Socio {
         this.img = img;
     }
 
-    /**
-     * @return the id_producto
-     */
-    public Producto getId_producto() {
-        return id_producto;
-    }
-
-    /**
-     * @param id_producto the id_producto to set
-     */
-    public void setId_producto(Producto id_producto) {
-        this.id_producto = id_producto;
-    }
 
     
 }

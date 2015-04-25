@@ -6,7 +6,6 @@
 package org.cfg.uapa.java.agricultura.controles;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +46,7 @@ public class TipoProductoControl extends HttpServlet {
 
         if (isCreado) {
 
-            response.sendRedirect("index.html");
+            response.sendRedirect("index.jsp");
 
         } else {
 

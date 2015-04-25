@@ -12,19 +12,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.cfg.uapa.java.agricultura.entidades.Producto;
-import org.cfg.uapa.java.agricultura.entidades.Socio;
-import org.cfg.uapa.java.agricultura.entidades.Usuario;
-import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
-import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
-import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
+import org.cfg.uapa.java.agricultura.entidades.SubZona;
+import org.cfg.uapa.java.agricultura.entidades.Zona;
+import org.cfg.uapa.java.agricultura.servicios.ServicioSubZona;
+import org.cfg.uapa.java.agricultura.servicios.ServicioZona;
 
 /**
  *
- * @author EDUARDO
+ * @author VíctorAndrés
  */
-@WebServlet(name = "SocioControl", urlPatterns = {"/SocioControl"})
-public class SocioControl extends HttpServlet {
+@WebServlet(name = "ZonaControl", urlPatterns = {"/ZonaControl"})
+public class ZonaControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,30 +35,22 @@ public class SocioControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
         String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String telefono = request.getParameter("telefono");
-        String direccion = request.getParameter("direccion");
-        String usuarios = request.getParameter("usuario");
-        String clave = request.getParameter("clave");       
-        String imagen = request.getParameter("imagen");       
+        String subzona = request.getParameter("subzona");
         
-    
-        Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
+              
+        
+        SubZona szona = ServicioSubZona.getInstancia().getSubZonaPorId(Integer.valueOf(subzona));
+               
         
         
-        Socio socio = new Socio();
-        socio.setNombre(nombre);
-        socio.setApellido(apellido);
-        socio.setTelefono(telefono);
-        socio.setDireccion(direccion);
-        socio.setId_usuario(usuario);                
-        socio.setClave(clave);
-        socio.setImg(imagen);
+        Zona zona = new Zona();
+        zona.setNombre(nombre);
+        zona.setSubzona_id(szona);
+       
     
         
-        boolean isCreado = ServicioSocio.getInstancia().crearSocio(socio);
+        boolean isCreado = ServicioZona.getInstancia().crearZona(zona);
 
         if (isCreado) {
 
@@ -68,7 +58,7 @@ public class SocioControl extends HttpServlet {
 
         } else {
 
-            response.sendRedirect("socio/crearSocio.jsp");
+            response.sendRedirect("zona/crearzona.jsp");
 
         }
 

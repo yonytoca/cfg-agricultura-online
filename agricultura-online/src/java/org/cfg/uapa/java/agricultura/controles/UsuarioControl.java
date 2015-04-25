@@ -53,7 +53,7 @@ public class UsuarioControl extends HttpServlet {
         
          
          session.setAttribute("currentSessionUser",usu); 
-         response.sendRedirect("index.html");
+         response.sendRedirect("index.jsp");
          
      }else{
       

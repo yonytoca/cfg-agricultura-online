@@ -20,13 +20,14 @@ import org.cfg.uapa.java.agricultura.entidades.TipoProducto;
  * @author Yanelkys
  */
 public class ServicioTipoProducto {
-     private static ServicioTipoProducto INSTANCIA = null;
+     private static ServicioTipoProducto INSTANCIA = new ServicioTipoProducto();
 
-    public static ServicioTipoProducto getInstancia() {
-        if (INSTANCIA == null) {
-            INSTANCIA = new ServicioTipoProducto();
-        }
+    
+     private ServicioTipoProducto(){
+     }
+     public static ServicioTipoProducto getInstancia(){
         return INSTANCIA;
+        
     }
 
     public List<TipoProducto> getListadoTipoProducto() throws SQLException {
@@ -37,10 +38,10 @@ public class ServicioTipoProducto {
             try (ResultSet rs = stmt.executeQuery()) {
 
                 while (rs.next()) {
-                   TipoProducto tipoproducto = new TipoProducto();
-                   
-                    tipoproducto.setNombre(rs.getString("nombre"));
-                   
+                   TipoProducto tproducto = new TipoProducto();
+                   tproducto.setId(rs.getInt("id"));
+                   tproducto.setNombre(rs.getString("nombre"));
+                    ListaTipoProducto.add(tproducto);
                 }
             }
 
@@ -53,7 +54,7 @@ public class ServicioTipoProducto {
 
     public TipoProducto getTipoProductoPorId(int id) {
 
-        String sql = "select * from tipo_producto where id_tipo_producto=?";
+        String sql = "select * from tipo_producto where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
         PreparedStatement stmt = null;
@@ -68,8 +69,8 @@ public class ServicioTipoProducto {
             rs = stmt.executeQuery();
 
             rs.next();
-            tipoproducto = new TipoProducto();
-            
+            tipoproducto = new TipoProducto();   
+            tipoproducto.setId(rs.getInt("id"));
             tipoproducto.setNombre(rs.getString("nombre"));
        
 

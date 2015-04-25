@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.cfg.uapa.java.agricultura.entidades.Producto;
+import org.cfg.uapa.java.agricultura.entidades.TipoProducto;
+import org.cfg.uapa.java.agricultura.entidades.Variedad;
 import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
+import org.cfg.uapa.java.agricultura.servicios.ServicioTipoProducto;
+import org.cfg.uapa.java.agricultura.servicios.ServicioVariedad;
 
 /**
  *
@@ -36,19 +40,27 @@ public class ProductoControl extends HttpServlet {
   
         String nombre = request.getParameter("nombre");
         String img = request.getParameter("img");
-        int cans = Integer.parseInt(request.getParameter("csiembra"));
+        String periodo = request.getParameter("periodo");
+        String tproducto = request.getParameter("tproducto");
+        String variedad = request.getParameter("variedad");
 
+         TipoProducto tipoproduc = ServicioTipoProducto.getInstancia().getTipoProductoPorId(Integer.valueOf(tproducto));
+         Variedad varied = ServicioVariedad.getInstancia().getVariedadPorId(Integer.valueOf(variedad));
+         
         Producto producto = new Producto();
         producto.setNombre(nombre); 
         producto.setImg(img);
-        producto.setCantidad_siembra(cans);
+        producto.setPeriodo(periodo);
+        producto.setTipo_producto_id(tipoproduc);
+        producto.setId_variedad(varied);
+       
        
        
         boolean isCreado = ServicioProducto.getInstancia().crearProducto(producto);
 
         if (isCreado) {
 
-            response.sendRedirect("index.html");
+            response.sendRedirect("index.jsp");
 
         } else {
 

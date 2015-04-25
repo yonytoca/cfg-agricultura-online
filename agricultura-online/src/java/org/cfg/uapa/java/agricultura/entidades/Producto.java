@@ -11,23 +11,25 @@ package org.cfg.uapa.java.agricultura.entidades;
  */
 public class Producto {
     
-    private int id_producto;
+    private int id;
     private String nombre;
-    private int cantidad_siembra;
     private String img;
+    private String periodo;
+    private TipoProducto tipo_producto_id;
+    private Variedad id_variedad;
 
     /**
-     * @return the id_producto
+     * @return the id
      */
-    public int getId_producto() {
-        return id_producto;
+    public int getId() {
+        return id;
     }
 
     /**
-     * @param id_producto the id_producto to set
+     * @param id the id to set
      */
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -45,20 +47,6 @@ public class Producto {
     }
 
     /**
-     * @return the cantidad_siembra
-     */
-    public int getCantidad_siembra() {
-        return cantidad_siembra;
-    }
-
-    /**
-     * @param cantidad_siembra the cantidad_siembra to set
-     */
-    public void setCantidad_siembra(int cantidad_siembra) {
-        this.cantidad_siembra = cantidad_siembra;
-    }
-
-    /**
      * @return the img
      */
     public String getImg() {
@@ -72,5 +60,48 @@ public class Producto {
         this.img = img;
     }
 
+    /**
+     * @return the periodo
+     */
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    /**
+     * @param periodo the periodo to set
+     */
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
+
+    /**
+     * @return the tipo_producto_id
+     */
+    public TipoProducto getTipo_producto_id() {
+        return tipo_producto_id;
+    }
+
+    /**
+     * @param tipo_producto_id the tipo_producto_id to set
+     */
+    public void setTipo_producto_id(TipoProducto tipo_producto_id) {
+        this.tipo_producto_id = tipo_producto_id;
+    }
+
+    /**
+     * @return the id_variedad
+     */
+    public Variedad getId_variedad() {
+        return id_variedad;
+    }
+
+    /**
+     * @param id_variedad the id_variedad to set
+     */
+    public void setId_variedad(Variedad id_variedad) {
+        this.id_variedad = id_variedad;
+    }
+
+   
   
 }

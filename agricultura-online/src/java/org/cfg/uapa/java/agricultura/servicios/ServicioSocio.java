@@ -28,8 +28,8 @@ public class ServicioSocio {
         return INSTANCIA;
     }    
     
-    // lista de los socios 
-    public List<Socio> getListadoSocio() {
+    // lista de los socios  falta 
+public List<Socio> getListadoSocio()  {
 
         List<Socio> listasocio = new ArrayList<>();       
 
@@ -37,30 +37,29 @@ public class ServicioSocio {
             try (ResultSet rs = stmt.executeQuery()) {      
 
             while (rs.next()) {               
-                Socio socio = new Socio();
-                socio.setId_socio(rs.getShort("id_socio"));                
-                socio.setNombre(rs.getString("nombre"));
-                socio.setApellido(rs.getString("apellido"));
-                socio.setTelefono(rs.getString("telefono"));
-                socio.setDireccion(rs.getString("direccion"));
-                socio.setId_usuario(ServicioUsuario.getInstancia().getUsuarioPorId(rs.getInt("id_usuario")));               
-                socio.setClave(rs.getString("clave"));
-                socio.setImg(rs.getString("img"));
-                socio.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));                
+                Socio socios = new Socio();
+                socios.setId(rs.getInt("id"));               
+                socios.setNombre(rs.getString("nombre"));
+                socios.setApellido(rs.getString("apellido"));
+                socios.setTelefono(rs.getString("telefono"));
+                socios.setDireccion(rs.getString("direccion"));
+                socios.setId_usuario(ServicioUsuario.getInstancia().getUsuarioPorId(rs.getInt("id_usuario")));               
+                socios.setClave(rs.getString("clave"));
+                socios.setImg(rs.getString("img"));
+                listasocio.add(socios);                           
+            
+              }       
             }
-         }       
-            } catch (SQLException e) {
+            
+         }catch (SQLException e) {
                 Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
             }
         return listasocio;
     }
-    
-
-//   traer socio por id
-         public Socio getSocioPorId(int id) throws SQLException {
+     public Socio getSocioPorId(int id){
 
          
-        String sql = "select * from socio where id_socio=?";
+        String sql = "select * from socio where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
         PreparedStatement stmt = null;
@@ -70,17 +69,13 @@ public class ServicioSocio {
         try {
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, id);
-           rs.next();
-          
-           socios = new Socio();          
-           socios.setId_socio(rs.getInt("id_socio"));
-           socios.setNombre(rs.getString("nombre"));
-           socios.setApellido(rs.getString("apellido"));
-           socios.setTelefono(rs.getString("telefono"));
-           socios.setDireccion(rs.getString("direccion"));                      
-           socios.setClave(rs.getString("clave"));
-           socios.setImg(rs.getString("img"));
-          
+            
+           rs = stmt.executeQuery();
+           
+           rs.next();          
+           socios = new Socio();  
+           socios.setId(rs.getInt("id"));           
+           socios.setNombre(rs.getString("nombre"));         
            
             
         } catch (SQLException e) {
@@ -103,12 +98,11 @@ public class ServicioSocio {
 
         return socios;
     }
-         
          public boolean crearSocio(Socio  socio) {
 
         boolean estado = false;
         PreparedStatement stmt = null ;
-        String sql = "insert into socio(nombre,apellido,telefono,direccion,id_usuario,clave,img,id_producto) values(?,?,?,?,?,?,?,?)";
+        String sql = "insert into socio(nombre,apellido,telefono,direccion,id_usuario,clave,img) values(?,?,?,?,?,?,?)";
         
          Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -121,9 +115,7 @@ public class ServicioSocio {
              stmt.setString(4, socio.getDireccion());   
              stmt.setInt(5,socio.getId_usuario().getId());                        
              stmt.setString(6, socio.getClave());
-             stmt.setString(7,socio.getImg());
-             stmt.setInt(8, socio.getId_producto().getId_producto());        
-
+             stmt.setString(7,socio.getImg());                 
             stmt.executeUpdate();
             
             estado = true;
@@ -144,9 +136,6 @@ public class ServicioSocio {
         
         return estado;
 
-    }   
-               
-             
-             
+    }     
          
 }

@@ -22,36 +22,38 @@ import org.cfg.uapa.java.agricultura.entidades.Producto;
  */
 public class ServicioProducto {
 
-    private static ServicioProducto INSTANCIA = null;
+    private static final ServicioProducto INSTANCIA = new ServicioProducto();
+
+    private ServicioProducto() {
+    }
 
     public static ServicioProducto getInstancia() {
-        if (INSTANCIA == null) {
-            INSTANCIA = new ServicioProducto();
-        }
         return INSTANCIA;
     }
 
-    public List<Producto> getListadoProducto() throws SQLException {
+    // lista de los socios 
+    public List<Producto> getListadoProducto()throws SQLException {
 
-        List<Producto> Listaproducto = new ArrayList<>();
+        List<Producto> listaproducto = new ArrayList<>();
 
         try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("select * from producto")) {
             try (ResultSet rs = stmt.executeQuery()) {
 
                 while (rs.next()) {
                     Producto producto = new Producto();
-                    producto.setId_producto(rs.getInt("id_producto"));
+                    producto.setId(rs.getInt("id"));
                     producto.setNombre(rs.getString("nombre"));
                     producto.setImg(rs.getString("img"));
-                    producto.setCantidad_siembra(rs.getInt("cantidad_siembra"));
+                    producto.setPeriodo(rs.getString("periodo"));
+                    producto.setTipo_producto_id(ServicioTipoProducto.getInstancia().getTipoProductoPorId(rs.getInt("tipo_producto_id")));
+                    producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
+                    listaproducto.add(producto);
                 }
             }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException e) {
+            Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, e);
         }
-
-        return Listaproducto;
+        return listaproducto;
     }
 
     public Producto getProductoPorId(int id) {
@@ -72,10 +74,9 @@ public class ServicioProducto {
 
             rs.next();
             producto = new Producto();
-            producto.setId_producto(rs.getInt("id"));
+            producto.setId(rs.getInt("id"));
             producto.setNombre(rs.getString("nombre"));
             producto.setImg(rs.getString("img"));
-            producto.setCantidad_siembra(rs.getInt("cantidad_siembra"));
 
         } catch (SQLException e) {
             Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, e);
@@ -102,7 +103,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "insert into producto(nombre,img,cantidad_siembra) values(?,?,?)";
+        String sql = "insert into producto(nombre,img,periodo,tipo_producto_id,id_variedad) values(?,?,?,?,?)";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -111,7 +112,9 @@ public class ServicioProducto {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, producto.getNombre());
             stmt.setString(2, producto.getImg());
-            stmt.setInt(3, producto.getCantidad_siembra());
+            stmt.setString(3, producto.getPeriodo());
+            stmt.setInt(4, producto.getTipo_producto_id().getId());
+            stmt.setInt(5, producto.getId_variedad().getId());
 
             stmt.executeUpdate();
 
@@ -148,7 +151,6 @@ public class ServicioProducto {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, producto.getNombre());
             stmt.setString(2, producto.getImg());
-            stmt.setInt(3, producto.getCantidad_siembra());
 
             stmt.executeUpdate();
 
