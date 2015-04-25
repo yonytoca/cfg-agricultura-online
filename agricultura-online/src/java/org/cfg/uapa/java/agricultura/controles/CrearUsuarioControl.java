@@ -52,11 +52,11 @@ public class CrearUsuarioControl extends HttpServlet {
 
         if (isCreado) {
 
-            response.sendRedirect("cita.jsp");
+            response.sendRedirect("index.jsp");
 
         } else {
 
-            response.sendRedirect("crearcita.jsp");
+            response.sendRedirect("usuario/crearusuario.jsp");
 
         
         }
