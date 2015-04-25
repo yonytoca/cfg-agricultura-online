@@ -10,23 +10,23 @@ package org.cfg.uapa.java.agricultura.entidades;
  * @author VíctorAndrés
  */
 public class Usuario {
-private int id_usuario;
+private int id;
 private String usuario;
 private String clave;
 private TipoUsuario tipo_usuario_id;
 
     /**
-     * @return the id_usuario
+     * @return the id
      */
-    public int getId_usuario() {
-        return id_usuario;
+    public int getId() {
+        return id;
     }
 
     /**
-     * @param id_usuario the id_usuario to set
+     * @param id the id to set
      */
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -70,5 +70,10 @@ private TipoUsuario tipo_usuario_id;
     public void setTipo_usuario_id(TipoUsuario tipo_usuario_id) {
         this.tipo_usuario_id = tipo_usuario_id;
     }
+
+    /**
+     * @return the id_usuario
+     */
+   
 
 }

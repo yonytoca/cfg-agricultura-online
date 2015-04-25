@@ -15,10 +15,10 @@ public class Socio {
     private String apellido;
     private String telefono;
     private String direccion;
-    private int id_usuario; //de tipo usuario
+    private Usuario id_usuario; //de tipo usuario
     private String clave;
     private String img;
-    private int id_producto; // de tipo producto
+    private Producto id_producto; // de tipo producto
 
     /**
      * @return the id_socio
@@ -93,14 +93,14 @@ public class Socio {
     /**
      * @return the id_usuario
      */
-    public int getId_usuario() {
+    public Usuario getId_usuario() {
         return id_usuario;
     }
 
     /**
      * @param id_usuario the id_usuario to set
      */
-    public void setId_usuario(int id_usuario) {
+    public void setId_usuario(Usuario id_usuario) {
         this.id_usuario = id_usuario;
     }
 
@@ -135,16 +135,16 @@ public class Socio {
     /**
      * @return the id_producto
      */
-    public int getId_producto() {
+    public Producto getId_producto() {
         return id_producto;
     }
 
     /**
      * @param id_producto the id_producto to set
      */
-    public void setId_producto(int id_producto) {
+    public void setId_producto(Producto id_producto) {
         this.id_producto = id_producto;
     }
 
-
+    
 }

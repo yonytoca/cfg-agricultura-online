@@ -40,7 +40,7 @@ public class ServicioUsuario {
 
                 while (rs.next()) {
                     Usuario user = new Usuario();
-                    user.setId_usuario(rs.getInt("id_usuario"));
+                    user.setId(rs.getInt("id"));
                     user.setUsuario(rs.getString("usuario"));
                     user.setTipo_usuario_id(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
                                        
@@ -85,21 +85,27 @@ public class ServicioUsuario {
     }
     }
       
-      public Usuario getUsuarioPorId(int id_usuario) {
+      public Usuario getUsuarioPorId(int id) {
 
         
-      
+              String sql = "select * from usuario where id=?";
+
+        Connection con = Coneccion.getInstancia().getConeccion();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
         Usuario usuario = null;
 
         try {
-          PreparedStatement stmt = (PreparedStatement) Coneccion.getInstancia().getConeccion();
-        ResultSet rs = stmt.executeQuery("select * from usuario where id=?");
-           
+
+            stmt = con.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            rs = stmt.executeQuery();
         
-            stmt.setInt(1, id_usuario);
+        
             rs.next();
             usuario = new Usuario();
-            usuario.setId_usuario(rs.getInt("id_usuario"));
+            usuario.setId(rs.getInt("id"));
             usuario.setUsuario(rs.getString("usuario"));
             usuario.setClave(rs.getString("clave"));            
            
@@ -124,7 +130,9 @@ public class ServicioUsuario {
              stmt = con.prepareStatement(sql);
              stmt.setString(1,usuario.getUsuario());
              stmt.setString(2, usuario.getClave());
-             stmt.setInt(3, usuario.getTipo_usuario_id().getId_tipo_usuario());        
+             stmt.setInt(3,usuario.getTipo_usuario_id().getId());
+      
+             
 
             stmt.executeUpdate();
             
