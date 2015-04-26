@@ -28,9 +28,9 @@ public class ServicioSocio {
         return INSTANCIA;
     }    
     
-    // lista de los socios  falta 
+    
 public List<Socio> getListadoSocio()  {
-
+    
         List<Socio> listasocio = new ArrayList<>();       
 
          try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("select * from socio")) {
@@ -76,7 +76,10 @@ public List<Socio> getListadoSocio()  {
            socios = new Socio();  
            socios.setId(rs.getInt("id"));           
            socios.setNombre(rs.getString("nombre"));         
-           
+           socios.setApellido(rs.getString("apellido"));
+           socios.setTelefono(rs.getString("telefono"));
+           socios.setDireccion(rs.getString("direccion"));
+           socios.setImg(rs.getString("img"));         
             
         } catch (SQLException e) {
             Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
@@ -137,5 +140,33 @@ public List<Socio> getListadoSocio()  {
         return estado;
 
     }     
+         
+// actulizar socio
+    public boolean UpdateSocio(Socio socio) {
+       
+        boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion = ? where id = ?";
+
+        Connection con = Coneccion.getInstancia().getConeccion();
+
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            //stmt = con.prepareStatement(sql);
+            stmt.setString(1, socio.getNombre());
+            stmt.setString(2, socio.getApellido());
+            stmt.setString(3, socio.getTelefono());
+            stmt.setString(4, socio.getDireccion());
+            stmt.setInt(5, socio.getId());
+
+            stmt.executeUpdate();
+
+          estado = true;
+        } catch (SQLException e) {
+            estado = false;
+            Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;
+    }
          
 }
