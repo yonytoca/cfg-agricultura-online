@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label>Clave</label>
-            <input name="clave" class="form-control">               
+            <input name="clave" type="password" class="form-control">               
         </div> 
 
         <div class="form-group">
