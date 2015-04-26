@@ -12,19 +12,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.cfg.uapa.java.agricultura.entidades.Producto;
 import org.cfg.uapa.java.agricultura.entidades.Socio;
-import org.cfg.uapa.java.agricultura.entidades.Usuario;
-import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
 import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
-import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
 
 /**
  *
  * @author EDUARDO
  */
-@WebServlet(name = "SocioControl", urlPatterns = {"/SocioControl"})
-public class SocioControl extends HttpServlet {
+@WebServlet(name = "SocioUpdateControl", urlPatterns = {"/SocioUpdateControl"})
+public class SocioUpdateControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,41 +33,33 @@ public class SocioControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
+        
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
-        String usuarios = request.getParameter("usuario");
-        String clave = request.getParameter("clave");       
-        String imagen = request.getParameter("imagen");       
-        
-    
-        Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
+        String img = request.getParameter("imgen");
+        int id = Integer.valueOf(request.getParameter("id"));
         
         
-        Socio socio = new Socio();
+        Socio socio = new Socio();        
         socio.setNombre(nombre);
         socio.setApellido(apellido);
         socio.setTelefono(telefono);
         socio.setDireccion(direccion);
-        socio.setId_usuario(usuario);                
-        socio.setClave(clave);
-        socio.setImg(imagen);
-    
+        socio.setImg(img);
         
-        boolean isCreado = ServicioSocio.getInstancia().crearSocio(socio);
-
+        boolean isCreado = ServicioSocio.getInstancia().UpdateSocio(socio);
+        
         if (isCreado) {
 
             response.sendRedirect("socio/socio.jsp");
 
         } else {
 
-            response.sendRedirect("socio/crearSocio.jsp");
+            response.sendRedirect("socio/updatesocio.jsp");
 
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

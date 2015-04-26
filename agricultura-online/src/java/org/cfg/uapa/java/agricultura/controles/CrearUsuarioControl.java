@@ -52,7 +52,7 @@ public class CrearUsuarioControl extends HttpServlet {
 
         if (isCreado) {
 
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("socio/crearSocio.jsp");
 
         } else {
 

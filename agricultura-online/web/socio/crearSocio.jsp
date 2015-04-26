@@ -4,19 +4,23 @@
     Author     : EDUARDO
 --%>
 
+
+
+<%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioTipoUsuario"%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.TipoUsuario"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioUsuario"%>
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Usuario"%>
 <%@page import="java.util.List"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <%
-    List<Usuario> usuario = ServicioUsuario.getInstancia().getListadoUsuario();
-
+    List<Usuario> usuario = ServicioUsuario.getInstancia().getListadoUsuario();    
 %>
-
+<div>
+    <a href="../usuario/crearusuario.jsp">Crear Usuario</a>
+</div>
 
 <form role="form" action="/agricultura-online/SocioControl">
     <div class="form-group input-group">
@@ -44,11 +48,6 @@
         </select>
     </div>
     <div class="form-group input-group">
-        <label> Clave</label>
-        <input name="clave" type="text" class="form-control" placeholder="Clave">
-
-    </div>   
-    <div class="form-group input-group">
         <label> Imagen</label>
         <input name="imagen" type="text" class="form-control" placeholder="Imagen">
 
@@ -59,5 +58,4 @@
         </span>
     </div>
 </form>
-
 <jsp:include page="../teplate/footer.jsp"/>
