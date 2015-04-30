@@ -8,11 +8,10 @@
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Socio"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../teplate/header.jsp"/>
+
 <!DOCTYPE html>
 <%
-    List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();
-    
+    List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();    
 %>
 <center>
     <h2 class="sub-header">Socios</h2>
@@ -41,10 +40,10 @@
                         <td>${socio.getDireccion()}</td>
                         <td>${socio.getId_usuario().getUsuario()}</td>
                         <td>${socio.getImg()}</td>
-                        <td><a href="updatesocio.jsp?id=${socio.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
+                        <td><a href="updatesocio.jsp?id=${socio.getId()}"><i class="glyphicon glyphicon-edit"></i>editar</a></td>
                     </tr>
                 </c:forEach>                         
             </tbody>
         </table>
     </div>
-<jsp:include page="../teplate/footer.jsp"/>
+

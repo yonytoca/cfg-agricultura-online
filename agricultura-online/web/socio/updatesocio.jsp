@@ -11,13 +11,15 @@
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Socio"%>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioSocio"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
+<jsp:include page="../teplate/header.jsp"/>
 <%
     int id = Integer.parseInt(request.getParameter("id"));    
     Socio socio = ServicioSocio.getInstancia().getSocioPorId(id);
     List<Usuario> usuario = ServicioUsuario.getInstancia().getListadoUsuario();    
 %>
+
 <form role="form" action="/agricultura-online/SocioUpdateControl">
     <div class="form-group input-group">
         <label>Nombre </label>
@@ -42,8 +44,8 @@
     </div>
     <div class="form-group input-group">
         <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary">Guardar</button>                   
+            <button type="submit?id=<%=socio.getId()%>" class="btn btn-primary">Actualizar</button>                   
         </span>
     </div>
 </form>
-
+<jsp:include page="../teplate/footer.jsp"/>

@@ -18,17 +18,16 @@ public class Socio {
     private Usuario id_usuario; //de tipo usuario
     private String clave;
     private String img;
-   
 
     /**
-     * @return the id_socio
+     * @return the id
      */
     public int getId() {
         return id;
     }
 
     /**
-     * @param id_socio the id_socio to set
+     * @param id the id to set
      */
     public void setId(int id) {
         this.id = id;
@@ -132,6 +131,11 @@ public class Socio {
         this.img = img;
     }
 
+    public void getId(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 
     
 }

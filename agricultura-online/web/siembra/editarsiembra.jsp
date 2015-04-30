@@ -18,49 +18,55 @@
 <jsp:include page="../teplate/header.jsp"/>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
+    Siembra siembra = ServicioSiembra.getInstancia().getSiembraPorId(id);
+
     List<Producto> producto = ServicioProducto.getInstancia().getListadoProducto();
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
-    Siembra siembra =ServicioSiembra.getInstancia().getSiembraPorId(id);   
 %>
 <div class="col-lg-6">
     <form action="/agricultura-online/EditarSiembraControl"  method="post">        
-         <div class="form-group">
+        <div 
+            
+        </div>
+        <div class="form-group">
             <label>Producto</label>
+            <input type="hidden" name="id" value="<%=siembra.getId()%>" required="" />
             <select class="form-control" name="producto">
-                 <option value="<%=siembra.getId_producto().getId()%>"><%=siembra.getId_producto().getNombre()%></option>
+                <option value="<%=siembra.getId_producto().getId()%>"><%=siembra.getId_producto().getNombre()%></option>
                 <c:forEach items="<%=producto%>" var="producto">
                     <option value="${producto.getId()}">${producto.getNombre()}</option>
                 </c:forEach>                
             </select>
         </div>
-        
-       <div class="fecha">
-                    <label>Fecha Siembra</label>
-                    <div id="datetimepicker2" class="input-append" value="<%=siembra.getFecha_siembra()%>"
-                        <input data-format="yyyy/MM/dd" type="text" name="fsiembra"style="width:30%;"></input>
-                        <span class="add-on">
-                            <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                            </i>
-                        </span>
-                    </div>
+
+        <div class="fecha">
+            <label>Fecha Siembra</label>
+            <input name="fsiembra" type="text" class="form-control" value="<%=siembra.getFecha_siembra()%>" required="" >               
+            <div id="datetimepicker2" class="input-append" value="<%=siembra.getFecha_siembra()%>"
+                 <input data-format="yyyy/MM/dd" type="text" name="fsiembr"style="width:30%;"></input>
+                <span class="add-on">
+                    <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                    </i>
+                </span>
             </div>
+        </div>
         <div class="form-group">
             <label>Cantida Producto</label>
             <input name="cproducto" class="form-control" value="<%=siembra.getCantidad_producto()%>" required="" >               
         </div> 
-        
-          <div class="form-group">
+
+        <div class="form-group">
             <label>Socio</label>
             <select class="form-control" name="socio">
-                 <option value="<%=siembra.getId_socio().getId()%>"><%=siembra.getId_socio().getNombre()%></option>
+                <option value="<%=siembra.getId_socio().getId()%>"><%=siembra.getId_socio().getNombre()%></option>
                 <c:forEach items="<%=socio%>" var="socio">
                     <option value="${socio.getId()}">${socio.getNombre()}</option>
                 </c:forEach>                
             </select>
         </div>
-		
-        
+
+
         <div class="form-group">
             <label>Variedad</label>
             <select class="form-control" name="zona">
@@ -71,7 +77,7 @@
             </select>
         </div>
         <button type="submit" class="btn btn-default">Crear</button>
-     
-</form>
+
+    </form>
 </div>
 <jsp:include page="../teplate/footer.jsp"/>

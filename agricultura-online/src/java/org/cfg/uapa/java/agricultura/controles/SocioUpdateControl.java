@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.cfg.uapa.java.agricultura.entidades.Socio;
+import org.cfg.uapa.java.agricultura.entidades.Usuario;
 import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
+import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
 
 /**
  *
@@ -34,31 +36,32 @@ public class SocioUpdateControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+          
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
-        String direccion = request.getParameter("direccion");
-        String img = request.getParameter("imgen");
+        String direccion = request.getParameter("direccion");       
+        String imagen = request.getParameter("imagen");       
         int id = Integer.valueOf(request.getParameter("id"));
         
+        //int id = Integer.valueOf(request.getParameter("id"));    
+        //Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));                
+       
+        Socio socio = new Socio();
         
-        Socio socio = new Socio();        
         socio.setNombre(nombre);
         socio.setApellido(apellido);
         socio.setTelefono(telefono);
         socio.setDireccion(direccion);
-        socio.setImg(img);
+        socio.setImg(imagen);
+        socio.setId(id);
         
         boolean isCreado = ServicioSocio.getInstancia().UpdateSocio(socio);
-        
+
         if (isCreado) {
-
             response.sendRedirect("socio/socio.jsp");
-
         } else {
-
-            response.sendRedirect("socio/updatesocio.jsp");
-
+            response.sendRedirect("socio/crearSocio.jsp");
         }
     }
 

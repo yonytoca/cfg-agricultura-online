@@ -115,7 +115,7 @@ public class ServicioSiembra {
             stmt.setInt(1,siembra.getId_producto().getId());
             stmt.setString(2, siembra.getFecha_siembra());
             stmt.setInt(3, siembra.getCantidad_producto());
-            stmt.setInt(4, siembra.getId_socio().getId());
+//            stmt.setInt(4, siembra.getId_socio().getId());
             stmt.setInt(5, siembra.getId_zona().getId());
             stmt.executeUpdate();
 
@@ -137,43 +137,34 @@ public class ServicioSiembra {
 
         return estado;
     }
-     public boolean editarsiembra(Siembra siembra) {
-
-        boolean estado = false;
-        PreparedStatement stmt = null;
-        String sql = "update siembra set id_producto = ?, fecha_siembra=?, cantidad_producto=?,id_socio =?, id_zona =?";
-
+    
+     
+    public boolean editarsiembra(Siembra siembra) {
+            
+         boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update siembra set id_producto=?,fecha_siembra=?,cantidad_producto=?,id_socio=? where id=?"; 
+                
         Connection con = Coneccion.getInstancia().getConeccion();
 
-        try {
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
 
-            stmt = con.prepareStatement(sql);
+            //stmt = con.prepareStatement(sql);
             stmt.setInt(1, siembra.getId_producto().getId());
-            stmt.setString(2,siembra.getFecha_siembra());
+            stmt.setString(2, siembra.getFecha_siembra());
             stmt.setInt(3, siembra.getCantidad_producto());
-            stmt.setInt(4,siembra.getId_socio().getId());
-            stmt.setInt(5, siembra.getId_zona().getId());
-        
-
+            stmt.setInt(4, siembra.getId_socio().getId());
+            //stmt.setInt(5, siembra.getId_zona().getId());
+            stmt.setInt(5, siembra.getId());
+            
             stmt.executeUpdate();
-
             estado = true;
 
         } catch (SQLException e) {
             estado = false;
             Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
         }
-
-        return estado;
-
+        return estado;    
     }
+         
 }

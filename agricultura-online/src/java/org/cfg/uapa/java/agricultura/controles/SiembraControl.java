@@ -41,7 +41,7 @@ public class SiembraControl extends HttpServlet {
             throws ServletException, IOException {
         String  produc = request.getParameter("producto");
         String fecha_siembra = request.getParameter("fsiembra");
-         int cantproducto = Integer.parseInt(request.getParameter("cproducto"));  
+        int cantproducto = Integer.parseInt(request.getParameter("cproducto"));  
         String soci = request.getParameter("socio");
         String zon= request.getParameter("zona");
  

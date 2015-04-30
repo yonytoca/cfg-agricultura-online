@@ -38,33 +38,34 @@ public class EditarSiembraControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String  produc = request.getParameter("producto");
-        String fecha_siembra = request.getParameter("fsiembra");
-         int cantproducto = Integer.parseInt(request.getParameter("cproducto"));  
-        String soci = request.getParameter("socio");
-        String zon= request.getParameter("zona");
- 
-
-        Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(produc));
-        Socio socio = ServicioSocio.getInstancia().getSocioPorId(Integer.valueOf(soci));
-        Zona zona = ServicioZona.getInstancia().getZonaPorId(Integer.valueOf(zon));
-               
         
+        String  produc = request.getParameter("producto");
+        String fecha_siembra = request.getParameter("fsiembra");
+        int cantproducto = Integer.parseInt(request.getParameter("cproducto")); 
+        String soci = request.getParameter("socio");
+        //String zon = request.getParameter("zona");
+        
+        int id = Integer.valueOf(request.getParameter("id"));
+        
+        Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(produc));
+        Socio socio = ServicioSocio.getInstancia().getSocioPorId(Integer.valueOf(soci));       
+        //Zona zona = ServicioZona.getInstancia().getZonaPorId(Integer.valueOf(zon));
         
         Siembra siembra = new Siembra();
+        
         siembra.setId_producto(producto);
         siembra.setFecha_siembra(fecha_siembra);
         siembra.setCantidad_producto(cantproducto);
         siembra.setId_socio(socio);
-        siembra.setId_zona(zona);
-       
+        //siembra.setId_zona(zona);        
+        siembra.setId(id);       
     
         
-        boolean isCreado = ServicioSiembra.getInstancia().crearSiembra(siembra);
+        boolean isCreado = ServicioSiembra.getInstancia().editarsiembra(siembra);
 
         if (isCreado) {
 
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("siembra/siembra.jsp");
 
         } else {
 
@@ -112,5 +113,4 @@ public class EditarSiembraControl extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

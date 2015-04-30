@@ -101,4 +101,8 @@ private Zona id_zona;
         this.id_zona = id_zona;
     }
 
+    public void setId_socio(int soci) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

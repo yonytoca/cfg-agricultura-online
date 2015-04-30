@@ -26,7 +26,7 @@ public class ServicioSocio {
     }
     public static ServicioSocio getInstancia() {
         return INSTANCIA;
-    }    
+    } 
     
     
 public List<Socio> getListadoSocio()  {
@@ -139,14 +139,15 @@ public List<Socio> getListadoSocio()  {
         
         return estado;
 
-    }     
+    }
          
-// actulizar socio
+    // actulizar socio
     public boolean UpdateSocio(Socio socio) {
-       
-        boolean estado;
+        
+     boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion = ? where id = ?";
+        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion = ?,img = ? where id = ?"; 
+                
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -157,16 +158,19 @@ public List<Socio> getListadoSocio()  {
             stmt.setString(2, socio.getApellido());
             stmt.setString(3, socio.getTelefono());
             stmt.setString(4, socio.getDireccion());
-            stmt.setInt(5, socio.getId());
+            stmt.setString(5, socio.getImg());
+            stmt.setInt(6, socio.getId());
 
             stmt.executeUpdate();
 
-          estado = true;
+            estado = true;
+
         } catch (SQLException e) {
             estado = false;
             Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
         }
-        return estado;
-    }
-         
-}
+        return estado;    
+    }            
+}         
+
+
