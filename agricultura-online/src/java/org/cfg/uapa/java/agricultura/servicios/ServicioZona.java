@@ -41,7 +41,6 @@ public class ServicioZona {
                 Zona zona = new Zona();
                 zona.setId(rs.getInt("id"));
                 zona.setNombre(rs.getString("nombre"));
-                zona.setSubzona_id(ServicioSubZona.getInstancia().getSubZonaPorId(rs.getInt("subzona_id")));
                 listazonas.add(zona);
             }
          }       
@@ -73,7 +72,6 @@ public class ServicioZona {
            zonas = new Zona();  
            zonas.setId(rs.getInt("id"));
            zonas.setNombre(rs.getString("nombre"));         
-           zonas.setSubzona_id(ServicioSubZona.getInstancia().getSubZonaPorId(rs.getInt("subzona_id")));
             
         } catch (SQLException e) {
             Logger.getLogger(ServicioZona.class.getName()).log(Level.SEVERE, null, e);

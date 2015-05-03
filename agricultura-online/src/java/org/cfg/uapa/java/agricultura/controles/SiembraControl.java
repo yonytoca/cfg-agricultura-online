@@ -39,42 +39,55 @@ public class SiembraControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String  produc = request.getParameter("producto");
+        String idsiembra = request.getParameter("idsiembra");
+        String produc = request.getParameter("producto");
         String fecha_siembra = request.getParameter("fsiembra");
-        int cantproducto = Integer.parseInt(request.getParameter("cproducto"));  
+        int cantproducto = Integer.parseInt(request.getParameter("cproducto"));
         String soci = request.getParameter("socio");
-        String zon= request.getParameter("zona");
- 
+        String zon = request.getParameter("zona");
 
         Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(produc));
         Socio socio = ServicioSocio.getInstancia().getSocioPorId(Integer.valueOf(soci));
         Zona zona = ServicioZona.getInstancia().getZonaPorId(Integer.valueOf(zon));
-               
-        
-        
+
+        if (null != idsiembra) {
+            Siembra siembra = new Siembra();
+            siembra.setId(Integer.parseInt(idsiembra));
+            siembra.setId_producto(producto);
+            siembra.setFecha_siembra(fecha_siembra);
+            siembra.setCantidad_producto(cantproducto);
+            siembra.setId_socio(socio);
+            siembra.setId_zona(zona);
+            
+            boolean isActualizado = ServicioSiembra.getInstancia().editarsiembra(siembra);
+            
+            if (isActualizado) {
+                response.sendRedirect("siembra/siembra.jsp");
+            } else {
+                response.sendRedirect("siembra/editarsiembra.jsp");
+            }
+            }else{
+            
         Siembra siembra = new Siembra();
         siembra.setId_producto(producto);
         siembra.setFecha_siembra(fecha_siembra);
         siembra.setCantidad_producto(cantproducto);
         siembra.setId_socio(socio);
-        siembra.setId_zona(zona);
-       
-    
-        
-        boolean isCreado = ServicioSiembra.getInstancia().crearSiembra(siembra);
+        siembra.setId_zona(zona);             
 
-        if (isCreado) {
+            boolean isCreado = ServicioSiembra.getInstancia().crearSiembra(siembra);
 
-            response.sendRedirect("index.jsp");
-
-        } else {
-
-            response.sendRedirect("siembra/crearsiembra.jsp");
-
+            if (isCreado) {
+                response.sendRedirect("siembra/siembra.jsp");
+            } else {
+                response.sendRedirect("siembra/crearsiembra.jsp");
+            }
+           
         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
     /**
      * Handles the HTTP <code>GET</code> method.
      *

@@ -37,7 +37,7 @@
            
             <div class="col-md-5">
                 <div class="input-group">
-                    <input type="text" id="dp-3" name="fsiembra" class="form-control datepicker"  value="06-06-2014" data-date="06-06-2014" data-date-format="dd-mm-yyyy" data-date-viewmode="years"/>
+                    <input type="text" id="dp-3" name="fsiembra" class="form-control datepicker"  value="2015-06-06-" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>            
@@ -59,7 +59,7 @@
 
 
         <div class="form-group">
-            <label>Variedad</label>
+            <label>Zona</label>
             <select class="form-control" name="zona">
                 <c:forEach items="<%=zona%>" var="zona">
                     <option value="${zona.getId()}">${zona.getNombre()}</option>

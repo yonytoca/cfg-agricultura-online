@@ -136,7 +136,7 @@ public class ServicioTipoProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "update tipo_producto set nombre = ?";
+        String sql = "update tipo_producto set nombre =? where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -144,6 +144,7 @@ public class ServicioTipoProducto {
 
             stmt = con.prepareStatement(sql);
             stmt.setString(1, tipoproducto.getNombre());
+            stmt.setInt(2,tipoproducto.getId());
             
             stmt.executeUpdate();
 

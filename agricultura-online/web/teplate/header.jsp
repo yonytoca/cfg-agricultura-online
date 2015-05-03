@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="icon" href="/agricultura-online/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/agricultura-online/img/favicon.ico" type="image/x-icon" />
         <!-- END META SECTION -->
 
         <!-- CSS INCLUDE -->        
@@ -62,7 +62,7 @@
                         <a href="#"><span class="fa fa-bars"></span> <span class="xn-text">Cultivos</span></a>
 
                         <ul>
-                            <li><a href="/agricultura-online/productocrearproducto.jsp"><span class="fa fa-cog"></span>Productos</a></li>
+                            <li><a href="/agricultura-online/producto/crearproducto.jsp"><span class="fa fa-cog"></span>Productos</a></li>
                             <li><a href="/agricultura-online/producto/creartipoproducto.jsp"><span class="fa fa-cog"></span>Tipo Producto</a></li>
                             <li><a href="/agricultura-online/siembra/crearsiembra.jsp"><span class="fa fa-cog"></span>Siembra</a></li>
                             <li><a href="/agricultura-online/variedad/crearvariedad.jsp"><span class="fa fa-cog"></span>Variedad</a></li>

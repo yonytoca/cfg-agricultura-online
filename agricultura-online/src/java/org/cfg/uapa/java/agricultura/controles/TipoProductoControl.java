@@ -34,25 +34,37 @@ public class TipoProductoControl extends HttpServlet {
             throws ServletException, IOException {
         
          String nombre = request.getParameter("nombre");
-    
+        String idTipoProducto = request.getParameter("idTipoProducto");
+        
 
-        TipoProducto tproducto = new TipoProducto();
-        tproducto.setNombre(nombre);
-       
-     
-       
-       
-        boolean isCreado = ServicioTipoProducto.getInstancia().CrearTipoProducto(tproducto);
+        if (null != idTipoProducto) {
 
-        if (isCreado) {
+            TipoProducto tproducto = new TipoProducto();
+            tproducto.setId(Integer.parseInt(idTipoProducto));
+            tproducto.setNombre(nombre);
+            boolean isActualizado = ServicioTipoProducto.getInstancia().editarTipoProducto(tproducto);
 
-            response.sendRedirect("index.jsp");
+            if (isActualizado) {
 
-        } else {
+                response.sendRedirect("producto/tipoproducto.jsp");
 
-            response.sendRedirect("producto/creartipoproducto.jsp");
+            } else {
 
+                response.sendRedirect("producto/editartipoproducto.jsp");
+
+            }
+        }else {
+             TipoProducto tproducto = new TipoProducto();
+            tproducto.setNombre(nombre);
+            boolean isCreado = ServicioTipoProducto.getInstancia().CrearTipoProducto(tproducto);
+            if(isCreado){
+                response.sendRedirect("producto/tipoproducto.jsp");
+            }else {
+                response.sendRedirect("producto/creartipoproducto.jsp");
+            }
         }
+        
+
     }
 
     

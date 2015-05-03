@@ -25,13 +25,11 @@
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
 %>
 <div class="col-lg-6">
-    <form action="/agricultura-online/EditarSiembraControl"  method="post">        
-        <div 
-            
-        </div>
+    <form action="/agricultura-online/SiembraControl"  method="post">        
+        
         <div class="form-group">
             <label>Producto</label>
-            <input type="hidden" name="id" value="<%=siembra.getId()%>" required="" />
+            <input type="hidden" name="idsiembra" value="<%=siembra.getId()%>" required="" />
             <select class="form-control" name="producto">
                 <option value="<%=siembra.getId_producto().getId()%>"><%=siembra.getId_producto().getNombre()%></option>
                 <c:forEach items="<%=producto%>" var="producto">

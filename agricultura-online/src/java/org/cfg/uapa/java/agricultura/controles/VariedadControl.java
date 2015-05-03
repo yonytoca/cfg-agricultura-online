@@ -6,7 +6,6 @@
 package org.cfg.uapa.java.agricultura.controles;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,28 +32,34 @@ public class VariedadControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-              String nombre = request.getParameter("nombre");
-                    
-                    
-  
-      
-       Variedad variedad = new Variedad();
-        variedad.setNombre(nombre);
-        
-       
-       
-        boolean isCreado = ServicioVariedad.getInstancia().crearVariedad(variedad);
 
-        if (isCreado) {
+        String nombre = request.getParameter("nombre");
+        String idvariedad = request.getParameter("idvariedad");
 
-            response.sendRedirect("index.jsp");
+        if (null != idvariedad) {
 
+            Variedad varied = new Variedad();
+            varied.setId(Integer.parseInt(idvariedad));
+            varied.setNombre(nombre);
+            boolean isActualizado = ServicioVariedad.getInstancia().editarVriedad(varied);
+
+            if (isActualizado) {
+
+                response.sendRedirect("variedad/variedad.jsp");
+
+            } else {
+                response.sendRedirect("variedad/editarvariedad.jsp");
+            }
         } else {
-
-            response.sendRedirect("variedad/crearvariedad.jsp");
-
-        
-    }
+            Variedad varied = new Variedad();
+            varied.setNombre(nombre);
+            boolean isCreado = ServicioVariedad.getInstancia().crearVariedad(varied);
+            if (isCreado) {
+                response.sendRedirect("variedad/variedad.jsp");
+            } else {
+                response.sendRedirect("variedad/crearvariedad.jsp");
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

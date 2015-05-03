@@ -47,6 +47,7 @@ public class ServicioProducto {
                     producto.setPeriodo(rs.getString("periodo"));
                     producto.setTipo_producto_id(ServicioTipoProducto.getInstancia().getTipoProductoPorId(rs.getInt("tipo_producto_id")));
                     producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
+                    producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
                     listaproducto.add(producto);
                 }
             }
@@ -103,7 +104,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "insert into producto(nombre,img,periodo,tipo_producto_id,id_variedad) values(?,?,?,?,?)";
+        String sql = "insert into producto(nombre,img,periodo,tipo_producto_id,id_variedad,tiempo_produccion) values(?,?,?,?,?,?)";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -115,6 +116,7 @@ public class ServicioProducto {
             stmt.setString(3, producto.getPeriodo());
             stmt.setInt(4, producto.getTipo_producto_id().getId());
             stmt.setInt(5, producto.getId_variedad().getId());
+            stmt.setInt(6,producto.getTiempoProduccion());
 
             stmt.executeUpdate();
 
@@ -142,7 +144,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "update producto set nombre = ?, img=?, cantidad_siembra=?";
+        String sql = "update producto set nombre = ?, img=?, cantidad_siembra=? tipo_producto_id=?, id_variedad=?,tiempo_produccion=? where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -151,6 +153,10 @@ public class ServicioProducto {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, producto.getNombre());
             stmt.setString(2, producto.getImg());
+            stmt.setString(3, producto.getPeriodo());
+            stmt.setInt(4, producto.getTipo_producto_id().getId());
+            stmt.setInt(5, producto.getId_variedad().getId());
+            stmt.setInt(6,producto.getTiempoProduccion());
 
             stmt.executeUpdate();
 

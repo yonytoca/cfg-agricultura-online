@@ -22,10 +22,16 @@
     <h2 class="sub-header">Siembras</h2>
 </center>
 
-
-<div class="dataTable_wrapper">
-    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-        <thead>
+<div class="panel panel-default">
+    <div class="panel-heading">                                
+        <h3 class="panel-title">Lista</h3>
+        <ul class="panel-controls">            
+            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+        </ul>                                
+    </div>
+    <div class="panel-body">
+        <table class="table datatable">
+      <thead>
             <tr>
                 <th>Codigo</th>
                 <th>Producto</th>
@@ -34,7 +40,7 @@
                 <th>Socio</th>
                 <th>Zona</th>
                 <th>modificar</th>
-                <th>Eliminar</th>
+                <th>Desabilitar</th>
             </tr>
         </thead>
         <tbody
@@ -52,7 +58,8 @@
     </c:forEach>      
         </tbody> 
     </table>
+    </div>
 </div>
-
+<!-- FIN DATATABLE -->
 <a href="crearsiembra.jsp"> registrar Siembra</a>
 <jsp:include page="../teplate/footer.jsp"/>

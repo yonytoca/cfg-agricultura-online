@@ -127,5 +127,28 @@ public class ServicioVariedad {
         return estado;
 
     }   
+          public boolean editarVriedad(Variedad variedad) {
+            
+         boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update variedad set nombre =? where id=?"; 
+                
+        Connection con = Coneccion.getInstancia().getConeccion();
+
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            //stmt = con.prepareStatement(sql);
+            stmt.setString(1, variedad.getNombre());
+            stmt.setInt(2,variedad.getId());
+            
+            stmt.executeUpdate();
+            estado = true;
+
+        } catch (SQLException e) {
+            estado = false;
+            Logger.getLogger(ServicioVariedad.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;    
+    }
                
 }

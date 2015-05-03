@@ -54,25 +54,21 @@ public class ServicioSiembra {
         }
         return listasiembra;
     }
+    
+    public Siembra getSiembraPorId(int id){
+        
+         String sql = "select * from siembra where id=?";
+          Siembra siembr = null;
+        
+        try (Connection con = Coneccion.getInstancia().getConeccion()) {
 
-//   traer socio por id
-    public Siembra getSiembraPorId(int id) {
+            try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+                pstmt.setInt(1, id);
 
-        String sql = "select * from siembra where id=?";
+                try (ResultSet rs = pstmt.executeQuery()) {
 
-        Connection con = Coneccion.getInstancia().getConeccion();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        Siembra siembr = null;
-
-        try {
-            stmt = con.prepareStatement(sql);
-            stmt.setInt(1, id);
-
-            rs = stmt.executeQuery();
-
-            rs.next();
-            siembr = new Siembra();
+                    rs.next();
+                  siembr = new Siembra();
             siembr.setId(rs.getInt("id"));
             siembr.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));
             siembr.setFecha_siembra(rs.getString("fecha_siembra"));
@@ -80,22 +76,10 @@ public class ServicioSiembra {
             siembr.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
             siembr.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
 
+                }
+            }
         } catch (SQLException e) {
             Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
-            }
         }
 
         return siembr;
@@ -115,7 +99,7 @@ public class ServicioSiembra {
             stmt.setInt(1,siembra.getId_producto().getId());
             stmt.setString(2, siembra.getFecha_siembra());
             stmt.setInt(3, siembra.getCantidad_producto());
-//            stmt.setInt(4, siembra.getId_socio().getId());
+            stmt.setInt(4, siembra.getId_socio().getId());
             stmt.setInt(5, siembra.getId_zona().getId());
             stmt.executeUpdate();
 
@@ -143,19 +127,19 @@ public class ServicioSiembra {
             
          boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update siembra set id_producto=?,fecha_siembra=?,cantidad_producto=?,id_socio=? where id=?"; 
+        String sql = "update siembra set id_producto=?,fecha_siembra=?,cantidad_producto=?,id_socio=?,id_zona=? where id=?"; 
                 
         Connection con = Coneccion.getInstancia().getConeccion();
 
         try (PreparedStatement stmt = con.prepareStatement(sql)) {
 
-            //stmt = con.prepareStatement(sql);
+          
             stmt.setInt(1, siembra.getId_producto().getId());
             stmt.setString(2, siembra.getFecha_siembra());
             stmt.setInt(3, siembra.getCantidad_producto());
             stmt.setInt(4, siembra.getId_socio().getId());
-            //stmt.setInt(5, siembra.getId_zona().getId());
-            stmt.setInt(5, siembra.getId());
+            stmt.setInt(5, siembra.getId_zona().getId());
+            stmt.setInt(6, siembra.getId());
             
             stmt.executeUpdate();
             estado = true;

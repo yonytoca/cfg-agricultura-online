@@ -43,6 +43,7 @@ public class ProductoControl extends HttpServlet {
         String periodo = request.getParameter("periodo");
         String tproducto = request.getParameter("tproducto");
         String variedad = request.getParameter("variedad");
+        String tproduccion = request.getParameter("tproduccion");
 
          TipoProducto tipoproduc = ServicioTipoProducto.getInstancia().getTipoProductoPorId(Integer.valueOf(tproducto));
          Variedad varied = ServicioVariedad.getInstancia().getVariedadPorId(Integer.valueOf(variedad));
