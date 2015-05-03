@@ -11,7 +11,7 @@
         <div class="col-lg-6">
             <form action="/agricultura-online/SubZonaControl" method="post">           
             <div class="form-group">
-                <label>Nmobre</label>
+                <label>Nombre</label>
                 <input name="nombre" class="form-control">               
             </div>
             <button type="submit" class="btn btn-default">Crear</button>

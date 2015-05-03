@@ -19,19 +19,11 @@
 <div class="col-lg-6">
     <form action="/agricultura-online/ZonaControl"  method="post">        
         <div class="form-group">
-            <label>Nombre</label>
+            <label>Nombre de la zona</label>
             <input name="nombre" class="form-control">               
         </div>
-        
-          <div class="form-group">
-            <label>Sub Zona</label>
-            <select class="form-control" name="subzona">
-                <c:forEach items="<%=subzona%>" var="subzona">
-                    <option value="${subzona.getId()}">${subzona.getNombre()}</option>
-                </c:forEach>                
-            </select>
-        </div>
-		
+     
+       
         <button type="submit" class="btn btn-default">Crear</button>
      
 </form>
