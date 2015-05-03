@@ -1,18 +1,20 @@
 <%-- 
-    Document   : usuario
-    Created on : 30/04/2015, 10:27:42 PM
+    Document   : tipousuario
+    Created on : 03/05/2015, 06:36:34 PM
     Author     : EDUARDO
 --%>
-<%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioUsuario"%>
-<%@page import="java.util.List"%>
-<%@page import="org.cfg.uapa.java.agricultura.entidades.Usuario"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioTipoUsuario"%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.TipoUsuario"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <%
-    List<Usuario> usuario = ServicioUsuario.getInstancia().getListadoUsuario();    
+    List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
 %>
+
 <center>
     <h2 class="sub-header">Lista de Usuario</h2>
 </center>
@@ -22,19 +24,15 @@
            <thead>
                 <tr><th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Tipo Usuario</th>
                     <th>Editar</th>
-                    
-                                        
                 </tr>    
             </thead>
             <tbody>
-                <c:forEach items="<%=usuario%>" var="usuario">
+                <c:forEach items="<%=tusuario%>" var="tusuario">
                     <tr>
-                        <td>${usuario.getId()}</td>
-                        <td>${usuario.getUsuario()}</td>
-                        <td>${usuario.getTipo_usuario_id().getNombre()}</td>
-                        <td><a href="editarusuario.jsp?id=${usuario.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
+                        <td>${tusuario.getId()}</td>
+                        <td>${tusuario.getNombre()}</td>                        
+                        <td><a href="editartipousuario.jsp?id=${tusuario.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
                     </tr>
                 </c:forEach>                         
             </tbody>

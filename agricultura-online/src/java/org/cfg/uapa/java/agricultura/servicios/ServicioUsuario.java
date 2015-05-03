@@ -154,7 +154,33 @@ public class ServicioUsuario {
         
         return estado;
 
-    }   
+    }
+     
+    public boolean EditarUsuario(Usuario usuario) {
+        
+     boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update usuario set usuario = ?,clave = ?,tipo_usuario_id=? where id = ?";                 
+
+        Connection con = Coneccion.getInstancia().getConeccion();
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            //stmt = con.prepareStatement(sql);
+            stmt.setString(1, usuario.getUsuario());
+            stmt.setString(2, usuario.getClave());
+            stmt.setInt(3, usuario.getTipo_usuario_id().getId());
+            stmt.setInt(4, usuario.getId());
+            
+            stmt.executeUpdate();
+
+            estado = true;
+
+        } catch (SQLException e) {
+            estado = false;
+            Logger.getLogger(ServicioUsuario.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;    
+    } 
           
      
 }

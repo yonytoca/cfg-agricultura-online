@@ -32,35 +32,50 @@ public class CrearUsuarioControl extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {            
+            throws ServletException, IOException {
+
+        String id = request.getParameter("id");       
         String user = request.getParameter("usuario");
-        String clave = request.getParameter("clave");       
+        String clave = request.getParameter("clave");
         String tuser = request.getParameter("tusuario");
         
-
+                
         TipoUsuario tipou = ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(Integer.valueOf(tuser));
-        
-        Usuario usuario = new Usuario();
-        usuario.setUsuario(user);
-        usuario.setClave(clave);
-        usuario.setTipo_usuario_id(tipou);
-        
-        
-          boolean isCreado = ServicioUsuario.getInstancia().crearUsuario(usuario);
 
-        if (isCreado) {
+        if (null != id) { // crear usuario              
+            
+            Usuario usuario = new Usuario();
+            usuario.setId(Integer.parseInt(id));
+            usuario.setUsuario(user);
+            usuario.setClave(clave);
+            usuario.setTipo_usuario_id(tipou);
 
-            response.sendRedirect("socio/crearSocio.jsp");
+            boolean isActualizado = ServicioUsuario.getInstancia().EditarUsuario(usuario);
 
-        } else {
+            if (isActualizado) {
+                response.sendRedirect("usuario/usuario.jsp");
+            } else {
+                response.sendRedirect("usuario/editarusuario.jsp");
+            }
+            
+        } else { //Crear usuario  
 
-            response.sendRedirect("usuario/usuario.jsp");
+            Usuario usuario = new Usuario();
+            usuario.setUsuario(user);
+            usuario.setClave(clave);
+            usuario.setTipo_usuario_id(tipou);
 
-        
+            boolean isCreado = ServicioUsuario.getInstancia().crearUsuario(usuario);
+            if (isCreado) {
+                response.sendRedirect("usuario/usuario.jsp");
+            } else {
+                response.sendRedirect("usuario/crearusuario.jsp");
+            }
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

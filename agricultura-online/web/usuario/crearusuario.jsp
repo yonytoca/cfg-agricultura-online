@@ -19,7 +19,7 @@
     <form action="/agricultura-online/CrearUsuarioControl"  method="post">        
         <div class="form-group">
             <label>Usuario</label>
-            <input name="nombre" class="form-control">               
+            <input name="usuario" class="form-control">               
         </div>
         <div class="form-group">
             <label>Clave</label>

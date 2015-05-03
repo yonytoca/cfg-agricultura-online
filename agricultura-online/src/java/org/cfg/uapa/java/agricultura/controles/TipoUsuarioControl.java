@@ -32,28 +32,36 @@ public class TipoUsuarioControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                      String nombre = request.getParameter("nombre");
-                    
-                    
-  
-      
-        TipoUsuario tusuario = new TipoUsuario();
-        tusuario.setNombre(nombre);
-        
-       
-       
-        boolean isCreado = ServicioTipoUsuario.getInstancia().crearTipoUsuario(tusuario);
 
-        if (isCreado) {
+        String id = request.getParameter("id");
+        String nombre = request.getParameter("nombre");
 
-            response.sendRedirect("index.html");
+        if (null != id) {
 
+            TipoUsuario tusuario = new TipoUsuario();
+            
+            tusuario.setId(Integer.parseInt(id));
+            tusuario.setNombre(nombre);
+
+            boolean isActualizar = ServicioTipoUsuario.getInstancia().EditarUsuario(tusuario);
+            if (isActualizar) {
+                response.sendRedirect("usuario/tipousuario.jsp");
+            } else {
+                response.sendRedirect("usuario/creartipousuario.jsp");
+            }
+            
         } else {
+            // Crear tipo usuario
+            TipoUsuario tusuario = new TipoUsuario();
+            tusuario.setNombre(nombre);
 
-            response.sendRedirect("login.jsp");
-
-        
-    }
+            boolean isCreado = ServicioTipoUsuario.getInstancia().crearTipoUsuario(tusuario);
+            if (isCreado) {
+                response.sendRedirect("usuario/tipousuario.jsp");
+            } else {
+                response.sendRedirect("usuario/tipousuario.jsp");
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

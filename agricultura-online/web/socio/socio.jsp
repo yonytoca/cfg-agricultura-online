@@ -10,6 +10,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+<jsp:include page="../teplate/header.jsp"/>
 <%
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();    
 %>
@@ -46,4 +47,4 @@
             </tbody>
         </table>
     </div>
-
+<jsp:include page="../teplate/footer.jsp"/>
