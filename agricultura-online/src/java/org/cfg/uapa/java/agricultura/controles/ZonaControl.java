@@ -6,7 +6,6 @@
 package org.cfg.uapa.java.agricultura.controles;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,33 +34,41 @@ public class ZonaControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String idzona = request.getParameter("idzona");
         String nombre = request.getParameter("nombre");
-        String subzona = request.getParameter("subzona");
         
-              
+        if (null != idzona) {            
+            Zona zona = new Zona();
+            zona.setId(Integer.parseInt(idzona));
+            zona.setNombre(nombre);
+             boolean isActualizado = ServicioZona.getInstancia().EditarZona(zona);
         
-        SubZona szona = ServicioSubZona.getInstancia().getSubZonaPorId(Integer.valueOf(subzona));
-               
-        
+        if (isActualizado) {
+            
+            response.sendRedirect("zona/zona.jsp");
+            
+        } else {
+            
+            response.sendRedirect("zona/EditarZona.jsp");
+            
+        }
+        }else{        
         
         Zona zona = new Zona();
         zona.setNombre(nombre);
-        zona.setSubzona_id(szona);
-       
-    
         
         boolean isCreado = ServicioZona.getInstancia().crearZona(zona);
-
+        
         if (isCreado) {
-
+            
             response.sendRedirect("index.jsp");
-
+            
         } else {
-
+            
             response.sendRedirect("zona/crearzona.jsp");
-
+            
         }
-
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

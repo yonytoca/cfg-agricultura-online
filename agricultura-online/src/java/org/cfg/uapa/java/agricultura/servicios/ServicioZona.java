@@ -29,7 +29,7 @@ public class ServicioZona {
         return INSTANCIA;
     }    
     
-    // lista de los socios 
+    // lista de los zonas 
     public List<Zona> getListadoZona() {
 
         List<Zona> listazonas = new ArrayList<>();       
@@ -41,6 +41,10 @@ public class ServicioZona {
                 Zona zona = new Zona();
                 zona.setId(rs.getInt("id"));
                 zona.setNombre(rs.getString("nombre"));
+<<<<<<< Upstream, based on origin/master
+=======
+
+>>>>>>> 3713508 Yanelkys Prueba
                 listazonas.add(zona);
             }
          }       
@@ -72,6 +76,10 @@ public class ServicioZona {
            zonas = new Zona();  
            zonas.setId(rs.getInt("id"));
            zonas.setNombre(rs.getString("nombre"));         
+<<<<<<< Upstream, based on origin/master
+=======
+
+>>>>>>> 3713508 Yanelkys Prueba
             
         } catch (SQLException e) {
             Logger.getLogger(ServicioZona.class.getName()).log(Level.SEVERE, null, e);
@@ -98,7 +106,7 @@ public class ServicioZona {
 
         boolean estado = false;
         PreparedStatement stmt = null ;
-        String sql = "insert into zona(nombre,subzona_id) values(?,?)";
+        String sql = "insert into zona(nombre) values(?)";
         
          Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -106,7 +114,7 @@ public class ServicioZona {
 
              stmt = con.prepareStatement(sql);
              stmt.setString(1,zona.getNombre()); 
-             stmt.setInt(2, zona.getSubzona_id().getId());
+             
             stmt.executeUpdate();
             
             estado = true;
@@ -128,4 +136,30 @@ public class ServicioZona {
         return estado;
 
     }   
-}
+
+  public boolean EditarZona(Zona zona) {
+        
+     boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update zona set nombre = ? where id = ?"; 
+                
+
+        Connection con = Coneccion.getInstancia().getConeccion();
+
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            //stmt = con.prepareStatement(sql);
+            stmt.setString(1, zona.getNombre());       
+            stmt.setInt(2, zona.getId());
+
+            stmt.executeUpdate();
+
+            estado = true;
+
+        } catch (SQLException e) {
+            estado = false;
+            Logger.getLogger(ServicioZona.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;    
+    }            
+}         
