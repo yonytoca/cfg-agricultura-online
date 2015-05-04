@@ -73,29 +73,14 @@ public class ServicioTipoUsuario {
             stmt.setInt(1, id);
 
             rs = stmt.executeQuery();
-
       
             rs.next();
             tusuario = new TipoUsuario();
             tusuario.setId(rs.getInt("id"));
             tusuario.setNombre(rs.getString("nombre"));
             
-        } catch (SQLException e) {
-            Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, e);
-            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, ex);          
         }
 
         return tusuario;
@@ -119,27 +104,17 @@ public class ServicioTipoUsuario {
             
             estado = true;
 
-        } catch (SQLException e) {
-            estado = false;
-             Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, e);
-        }finally{
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                }
-               }
-        
+        } catch (SQLException ex) {
+            Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, ex);          
+        }
+      
         return estado;
 
     }   
         
          public boolean EditarUsuario(TipoUsuario tipousuario) {
         
-     boolean estado;
+     boolean estado = false;
         //PreparedStatement stmt = null ;
         String sql = "update tipo_usuario set nombre = ? where id = ?"; 
                 
@@ -156,11 +131,9 @@ public class ServicioTipoUsuario {
 
             estado = true;
             
-        } catch (SQLException e) {
-            estado = false;
-            Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
+      } catch (SQLException ex) {
+            Logger.getLogger(ServicioTipoUsuario.class.getName()).log(Level.SEVERE, null, ex);          
         }
         return estado;    
-    } 
-     
+    }     
 }

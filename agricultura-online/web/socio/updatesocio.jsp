@@ -44,7 +44,7 @@
     </div>
     <div class="form-group input-group">
         <span class="input-group-btn">
-            <button type="submit?id=<%=socio.getId()%>" class="btn btn-primary">Actualizar</button>                   
+            <button type="submit" class="btn btn-primary">Actualizar</button>                   
         </span>
     </div>
 </form>

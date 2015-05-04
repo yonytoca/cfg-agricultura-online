@@ -14,12 +14,23 @@
 <%
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();    
 %>
+
 <center>
     <h2 class="sub-header">Socios</h2>
 </center>
-   
-    <div class="dataTable_wrapper">
-        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+<!-- INICIO DATATABLE -->
+<div class="panel panel-default">
+    <div class="panel-heading">                                
+        <h3 class="panel-title">Lista</h3>
+        <ul class="panel-controls">
+            
+            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+            
+        </ul>                                
+    </div>
+    <div class="panel-body">
+        <table class="table datatable">
            <thead>
                 <tr><th>Codigo</th>
                     <th>Nombre</th>
@@ -28,7 +39,7 @@
                     <th>Dirección</th>
                     <th>Usuario</th>
                     <th>Imagen</th>
-                    
+                    <th>Editar</th>
                 </tr>    
             </thead>
             <tbody>
@@ -41,10 +52,13 @@
                         <td>${socio.getDireccion()}</td>
                         <td>${socio.getId_usuario().getUsuario()}</td>
                         <td>${socio.getImg()}</td>
-                        <td><a href="updatesocio.jsp?id=${socio.getId()}"><i class="glyphicon glyphicon-edit"></i>editar</a></td>
+                        <td><a href="updatesocio.jsp?id=${socio.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
                     </tr>
                 </c:forEach>                         
             </tbody>
+
         </table>
     </div>
+</div>
+<!-- FIN DATATABLE -->   
 <jsp:include page="../teplate/footer.jsp"/>

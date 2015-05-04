@@ -61,7 +61,7 @@ public class ServicioUsuario {
         Connection con = Coneccion.getInstancia().getConeccion();
         Usuario usuario1 = null;
 
-        try (PreparedStatement pstmt = con.prepareStatement("select * from usuario where usuario = ? and clave= ?")) {
+        try (PreparedStatement pstmt = con.prepareStatement("select * from usuario where usuario = ? and clave= MD5(?)")) {
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, clave);
@@ -108,11 +108,11 @@ public class ServicioUsuario {
             usuario.setId(rs.getInt("id"));
             usuario.setUsuario(rs.getString("usuario"));
             usuario.setClave(rs.getString("clave"));            
+            usuario.setTipo_usuario_id(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
            
         }  catch (SQLException e) {
                 Logger.getLogger(ServicioUsuario.class.getName()).log(Level.SEVERE, null, e);
-            }
-        
+            }        
 
         return usuario;
     }
@@ -121,7 +121,7 @@ public class ServicioUsuario {
 
         boolean estado = false;
         PreparedStatement stmt = null ;
-        String sql = "insert into usuario(usuario,clave,tipo_usuario_id) values(?,?,?)";
+        String sql = "insert into usuario(usuario,clave,tipo_usuario_id) values(?, MD5(?),?)";
         
          Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -140,21 +140,11 @@ public class ServicioUsuario {
 
         } catch (SQLException e) {
             estado = false;
-             Logger.getLogger(ServicioUsuario.class.getName()).log(Level.SEVERE, null, e);
-        }finally{
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(ServicioUsuario.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                }
-               }
+            Logger.getLogger(ServicioUsuario.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;               
+     }
         
-        return estado;
-
-    }
      
     public boolean EditarUsuario(Usuario usuario) {
         

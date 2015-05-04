@@ -10,22 +10,26 @@
 <!DOCTYPE html>
 <jsp:include page="../teplate/header.jsp"/>
 <%
-    int id = Integer.parseInt(request.getParameter("id"));    
-    TipoUsuario tusuarios = ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(id);    
+    int id = Integer.parseInt(request.getParameter("id"));
+    TipoUsuario tusuarios = ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(id);
 
 %>
 
-        <div class="col-lg-6">
-            <form action="/agricultura-online/TipoUsuarioControl"  method="post">        
-            <div class="form-group">
-                <label>Nombre</label>
-                <input name="id" class="form-control" value="<%=tusuarios.getId()%>">
-                <input name="nombre" class="form-control" value="<%=tusuarios.getNombre()%>">               
-            </div>
-            <button type="submit" class="btn btn-default">Crear</button>
-            </div>
-            
-         
-        </form>
-    </div>
+<div class="col-lg-6">
+    <form action="/agricultura-online/TipoUsuarioControl"  method="post">        
+        <div class="form-group">
+            <label>Nombre</label>
+            <input name="id" type="hidden" class="form-control" value="<%=tusuarios.getId()%>">
+            <input name="nombre" class="form-control" value="<%=tusuarios.getNombre()%>">               
+        </div>
+        <div class="form-group input-group">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Actualizar</button>                   
+            </span>
+        </div>
+</div>
+
+
+</form>
+</div>
 <jsp:include page="../teplate/footer.jsp"/>

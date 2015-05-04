@@ -54,7 +54,7 @@
     </div>
     <div class="form-group input-group">
         <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary">Guardar</button>                   
+            <button type="submit" class="btn btn-primary">Crear</button>                   
         </span>
     </div>
 </form>

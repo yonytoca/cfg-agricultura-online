@@ -14,33 +14,34 @@
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <script type="text/javascript">
-function validarForm(formulario) {
-  if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
-    formulario.usuario.focus();   
-    alert('No has escrito tu nombre'); 
-    return false; //devolvemos el foco
-  }
-  if(formulario.email1.value.length==0) { //comprueba que no esté vacío
-    formulario.email1.focus();
-    alert('No has escrito tu e-Mail');
-    return false;
-  }
-  if(formulario.email1.value!=formulario.email2.value) {
-    formulario.email1.focus();            //comprueba que sean iguales
-	alert('Los e-Mails no coinciden');
-    return false;
-  }
-  if(formulario.consulta.value.length==0) {  //comprueba que no esté vacío
-    formulario.consulta.focus();
-    alert('No has escrito ninguna consulta');
-    return false;
-  }
-  return true;
-}
+    function validarForm(formulario) {
+        if (formulario.usuario.value.length == 0) { //comprueba que no esté vacío
+            formulario.usuario.focus();
+            alert('No has escrito tu nombre');
+            return false; //devolvemos el foco
+        }
+        if (formulario.email1.value.length == 0) { //comprueba que no esté vacío
+            formulario.email1.focus();
+            alert('No has escrito tu e-Mail');
+            return false;
+        }
+        if (formulario.email1.value != formulario.email2.value) {
+            formulario.email1.focus();            //comprueba que sean iguales
+            alert('Los e-Mails no coinciden');
+            return false;
+        }
+        if (formulario.consulta.value.length == 0) {  //comprueba que no esté vacío
+            formulario.consulta.focus();
+            alert('No has escrito ninguna consulta');
+            return false;
+        }
+        return true;
+    }
 </script>
 <%
-    int id = Integer.parseInt(request.getParameter("id"));    
-    Usuario usuarios = ServicioUsuario.getInstancia().getUsuarioPorId(id);    
+    int id = Integer.parseInt(request.getParameter("id"));
+    Usuario usuarios = ServicioUsuario.getInstancia().getUsuarioPorId(id);
+
     List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();
 //    List<Usuario> usuariolis = ServicioUsuario.getInstancia().getListadoUsuario();
 %>
@@ -59,13 +60,18 @@ function validarForm(formulario) {
         <div class="form-group">
             <label>Tipo Usuario </label>
             <select class="form-control" name="tusuario">                
-                                
-                <c:forEach items="<%=tusuario%>" var="usuario">                    
+
+                <option value="<%=usuarios.getTipo_usuario_id().getId()%>"><%=usuarios.getTipo_usuario_id().getNombre()%></option>                                
+                <c:forEach items="<%=tusuario%>" var="tusuario">                    
                     <option value="${tusuario.getId()}">${tusuario.getNombre()}</option>
                 </c:forEach>                
             </select>
         </div>        
-        <button type="submit" class="btn btn-default">Crear</button>     
-</form>
+        <div class="form-group input-group">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Actualizar</button>                   
+            </span>
+        </div> 
+    </form>
 </div>
 <jsp:include page="../teplate/footer.jsp"/>        

@@ -56,7 +56,8 @@ public List<Socio> getListadoSocio()  {
             }
         return listasocio;
     }
-     public Socio getSocioPorId(int id){
+
+public Socio getSocioPorId(int id){
 
          
         String sql = "select * from socio where id=?";
@@ -81,23 +82,9 @@ public List<Socio> getListadoSocio()  {
            socios.setDireccion(rs.getString("direccion"));
            socios.setImg(rs.getString("img"));         
             
-        } catch (SQLException e) {
-            Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (stmt != null) {
-                    stmt.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
+         }catch (SQLException e) {
                 Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
             }
-        }
 
         return socios;
     }
@@ -123,19 +110,9 @@ public List<Socio> getListadoSocio()  {
             
             estado = true;
 
-        } catch (SQLException e) {
-            estado = false;
-             Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
-        }finally{
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                
-                }
-               }
+         }catch (SQLException e) {
+                Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
+            }
         
         return estado;
 

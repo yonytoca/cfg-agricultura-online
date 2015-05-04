@@ -16,11 +16,21 @@
 %>
 
 <center>
-    <h2 class="sub-header">Lista de Usuario</h2>
+    <h2 class="sub-header">Tipo de Usuario</h2>
 </center>
-   
-    <div class="dataTable_wrapper">
-        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+
+<!-- INICIO DATATABLE -->
+<div class="panel panel-default">
+    <div class="panel-heading">                                
+        <h3 class="panel-title">Lista</h3>
+        <ul class="panel-controls">
+            
+            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+            
+        </ul>                                
+    </div>
+    <div class="panel-body">
+        <table class="table datatable">
            <thead>
                 <tr><th>Codigo</th>
                     <th>Nombre</th>
@@ -36,6 +46,9 @@
                     </tr>
                 </c:forEach>                         
             </tbody>
+
         </table>
     </div>
+</div>
+<!-- FIN DATATABLE -->   
 <jsp:include page="../teplate/footer.jsp"/>
