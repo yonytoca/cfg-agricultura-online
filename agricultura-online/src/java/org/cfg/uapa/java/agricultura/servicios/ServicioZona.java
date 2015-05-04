@@ -41,10 +41,7 @@ public class ServicioZona {
                 Zona zona = new Zona();
                 zona.setId(rs.getInt("id"));
                 zona.setNombre(rs.getString("nombre"));
-<<<<<<< Upstream, based on origin/master
-=======
 
->>>>>>> 3713508 Yanelkys Prueba
                 listazonas.add(zona);
             }
          }       
@@ -75,11 +72,8 @@ public class ServicioZona {
            rs.next();          
            zonas = new Zona();  
            zonas.setId(rs.getInt("id"));
-           zonas.setNombre(rs.getString("nombre"));         
-<<<<<<< Upstream, based on origin/master
-=======
+           zonas.setNombre(rs.getString("nombre"));       
 
->>>>>>> 3713508 Yanelkys Prueba
             
         } catch (SQLException e) {
             Logger.getLogger(ServicioZona.class.getName()).log(Level.SEVERE, null, e);
