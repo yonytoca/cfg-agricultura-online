@@ -24,8 +24,10 @@
         <input type="text" name="nombre" style="width:50%;" id="inputNombre" class="form-control" placeholder="Nombre" value="<%=tproducto.getNombre()%>">
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-default" tabindex="3">Confirmar</button>
+  <div class="form-group input-group">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Actualizar</button>                   
+        </span>
     </div>
 
 </form>

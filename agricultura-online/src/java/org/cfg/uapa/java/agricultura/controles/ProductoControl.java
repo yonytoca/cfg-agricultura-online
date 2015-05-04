@@ -37,36 +37,58 @@ public class ProductoControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
+
+        String idproducto = request.getParameter("idproducto");
         String nombre = request.getParameter("nombre");
         String img = request.getParameter("img");
         String periodo = request.getParameter("periodo");
         String tproducto = request.getParameter("tproducto");
-        String variedad = request.getParameter("variedad");
-        String tproduccion = request.getParameter("tproduccion");
+        String variedad = request.getParameter("variedad");        
+        int tproduccion = Integer.parseInt(request.getParameter("tproduccion"));
 
-         TipoProducto tipoproduc = ServicioTipoProducto.getInstancia().getTipoProductoPorId(Integer.valueOf(tproducto));
-         Variedad varied = ServicioVariedad.getInstancia().getVariedadPorId(Integer.valueOf(variedad));
-         
-        Producto producto = new Producto();
-        producto.setNombre(nombre); 
-        producto.setImg(img);
-        producto.setPeriodo(periodo);
-        producto.setTipo_producto_id(tipoproduc);
-        producto.setId_variedad(varied);
-       
-       
-       
-        boolean isCreado = ServicioProducto.getInstancia().crearProducto(producto);
+        TipoProducto tipoproduc = ServicioTipoProducto.getInstancia().getTipoProductoPorId(Integer.valueOf(tproducto));
+        Variedad varied = ServicioVariedad.getInstancia().getVariedadPorId(Integer.valueOf(variedad));
 
-        if (isCreado) {
+        if (null != idproducto) {
+            Producto producto = new Producto();
+            producto.setId(Integer.parseInt(idproducto));
+            producto.setNombre(nombre);
+            producto.setImg(img);
+            producto.setPeriodo(periodo);
+            producto.setTipo_producto_id(tipoproduc);
+            producto.setId_variedad(varied);
+            producto.setTiempoProduccion(tproduccion);
+            
 
-            response.sendRedirect("index.jsp");
+            boolean isActualizado = ServicioProducto.getInstancia().editarProducto(producto);
 
+            if (isActualizado) {
+
+                response.sendRedirect("producto/producto.jsp");
+
+            } else {
+
+                response.sendRedirect("producto/editarproducto.jsp");
+            }
         } else {
+           Producto producto = new Producto();
+            producto.setNombre(nombre);
+            producto.setImg(img);
+            producto.setPeriodo(periodo);
+            producto.setTipo_producto_id(tipoproduc);
+            producto.setId_variedad(varied);
+            producto.setTiempoProduccion(tproduccion);
+            
+            boolean isCreado = ServicioProducto.getInstancia().crearProducto(producto);
 
-            response.sendRedirect("producto/crearproducto.jsp");
+            if (isCreado) {
 
+                response.sendRedirect("producto/producto.jsp");
+
+            } else {
+
+                response.sendRedirect("producto/crearproducto.jsp");
+            }
         }
     }
 

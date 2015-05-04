@@ -53,7 +53,7 @@
             <td>${siembras.getId_socio().getNombre()}</td>
             <td>${siembras.getId_zona().getNombre()}</td>
             <td><a href="editarsiembra.jsp?id=${siembras.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
-            <td><a href="eliminar.jsp?id=${citas.getId()}"><i class="glyphicon glyphicon-remove-circle"></i></a></td>
+            <td><a href="eliminar.jsp?id=${siembra.getId()}"><i class="glyphicon glyphicon-remove-circle"></i></a></td>
         </tr>
     </c:forEach>      
         </tbody> 
@@ -61,5 +61,5 @@
     </div>
 </div>
 <!-- FIN DATATABLE -->
-<a href="crearsiembra.jsp"> registrar Siembra</a>
+<a href="crearsiembra.jsp"> Crear Siembra</a>
 <jsp:include page="../teplate/footer.jsp"/>

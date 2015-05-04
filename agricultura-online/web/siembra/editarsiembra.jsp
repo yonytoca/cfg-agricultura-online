@@ -74,7 +74,11 @@
                 </c:forEach>                
             </select>
         </div>
-        <button type="submit" class="btn btn-default">Crear</button>
+        <div class="form-group input-group">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Actualizar</button>                   
+        </span>
+    </div>
 
     </form>
 </div>

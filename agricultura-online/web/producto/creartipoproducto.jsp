@@ -11,9 +11,11 @@
                 <label>Nmobre</label>
                 <input name="nombre" class="form-control">               
             </div>
-            <button type="submit" class="btn btn-default">Crear</button>
-            </div>
-            
+           <div class="form-group input-group">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Crear</button>                   
+        </span>
+    </div>           
          
         </form>
     </div>

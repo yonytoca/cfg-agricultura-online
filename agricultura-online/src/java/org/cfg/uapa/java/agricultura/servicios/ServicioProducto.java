@@ -78,6 +78,11 @@ public class ServicioProducto {
             producto.setId(rs.getInt("id"));
             producto.setNombre(rs.getString("nombre"));
             producto.setImg(rs.getString("img"));
+            producto.setPeriodo(rs.getString("periodo"));
+            producto.setTipo_producto_id(ServicioTipoProducto.getInstancia().getTipoProductoPorId(rs.getInt("tipo_producto_id")));
+            producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
+            producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
+            
 
         } catch (SQLException e) {
             Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, e);
@@ -117,6 +122,7 @@ public class ServicioProducto {
             stmt.setInt(4, producto.getTipo_producto_id().getId());
             stmt.setInt(5, producto.getId_variedad().getId());
             stmt.setInt(6,producto.getTiempoProduccion());
+            stmt.setInt(7,producto.getId());
 
             stmt.executeUpdate();
 
@@ -144,7 +150,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "update producto set nombre = ?, img=?, cantidad_siembra=? tipo_producto_id=?, id_variedad=?,tiempo_produccion=? where id=?";
+        String sql = "update producto set nombre = ?, img=?,periodo=?, tipo_producto_id=?, id_variedad=?,tiempo_produccion=? where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -157,6 +163,7 @@ public class ServicioProducto {
             stmt.setInt(4, producto.getTipo_producto_id().getId());
             stmt.setInt(5, producto.getId_variedad().getId());
             stmt.setInt(6,producto.getTiempoProduccion());
+            stmt.setInt(7,producto.getId());
 
             stmt.executeUpdate();
 
