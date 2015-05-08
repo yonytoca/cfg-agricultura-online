@@ -7,33 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-< %@ page session="true" %>
-
-< %
-
-String nombre = "";
-
-HttpSession sesionOk = request.getSession();
-
-if (sesionOk.getAttribute("nombre") == null) {
-
-%>
-
-<jsp:forward page="miInicio.jsp">
-
-<jsp:param name="error" value="Coloca tus datos"/>
-
-</jsp:forward>
-
-< %
-
-} else {
-
-nombre = (String)sesionOk.getAttribute("nombre");
-
+<script>
+function validar(e) {
+    tecla=(document.all) ? e.keyCode : e.which;
+    if((tecla<48 || tecla>57) && (tecla>31) && (tecla!=127))
+       return false;
 }
-%>
-        
+</script>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,5 +22,46 @@ nombre = (String)sesionOk.getAttribute("nombre");
     </head>
     <body>
         <h1>Hello World!</h1>
+         <input name="nombre" type="text" class="form-control" onkeypress="return validar(event)" placeholder="Nombre" >
+
+                    
+        <table>
+	<caption>2009 Individual Sales by Category</caption>
+	<thead>
+		<tr>
+			<td></td>
+			<th>food</th>
+			<th>auto</th>
+			<th>household</th>
+			<th>furniture</th>
+			<th>kitchen</th>
+			<th>bath</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Mary</th>
+			<td>150</td>
+			<td>160</td>
+			<td>40</td>
+			<td>120</td>
+			<td>30</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<th>Tom</th>
+			<td>3</td>
+			<td>40</td>
+			<td>30</td>
+			<td>45</td>
+			<td>35</td>
+			<td>49</td>
+		</tr>
+		...Las columnas repetidas las saco por brevedad
+	</tbody>
+</table>
+        
+        $('table').visualize({options});
+        
     </body>
 </html>

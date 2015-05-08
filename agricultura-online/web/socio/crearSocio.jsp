@@ -16,7 +16,7 @@
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <%
-    List<Usuario> usuario = ServicioUsuario.getInstancia().getListadoUsuario();    
+    List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
 %>
 <div>
     <a href="../usuario/crearusuario.jsp">Crear Usuario</a>
@@ -42,8 +42,8 @@
     <div class="form-group">
         <label>Tipo Usuario</label>
         <select class="form-control" name="usuario">
-            <c:forEach items="<%=usuario%>" var="usuario">
-                <option value="${usuario.getId()}">${usuario.getUsuario()}</option>
+            <c:forEach items="<%=tusuario%>" var="tusuario">
+                <option value="${tusuario.getId()}">${tusuario.getNombre()}</option>
             </c:forEach>                
         </select>
     </div>
