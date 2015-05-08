@@ -54,7 +54,7 @@
                         <li>
                             <a href="#">SIGECOPA</a>
                             <ul>
-                                <li><a href="index.html">Pantalla Principal</a></li>
+                                <li><a href="index.jsp">Pantalla Principal</a></li>
                                 <li><a href="index-default.html">Default</a></li>
                             </ul>
                         </li>
@@ -92,7 +92,7 @@
                                 <input type="text" class="form-control" name="usuario" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="clave" placeholder="Password">
+                                <input type="Password" class="form-control" name="clave" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-default">Entrar</button>
                         </form>
@@ -180,7 +180,7 @@
 
                             <li data-transition="fade" data-slotamount="1" data-masterspeed="700" >
                                 <img src="front-end/assets/video/video_typing_cover.png"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">                                
-
+<img src="front-end/assets/video/video_typing_cover.png"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                                 <div class="tp-caption tp-fade fadeout fullscreenvideo"
                                      data-x="0"
                                      data-y="0"
@@ -336,12 +336,11 @@
                         <div class="col-md-8 this-animate" data-animate="fadeInLeft">
 
                             <div class="block-heading block-heading-centralized">
-                                <h2 class="heading-underline">aqui el sistema</h2>
+
+                                <h2 class="heading-underline">Sistema de Gestión y Control de los Productos Agrícolas </h2>
+                                <h2 class="heading-underline">(SIGECOPA)</h2>
                                 <div class="block-heading-text">
-                                    Proin luctus nulla fringilla massa euismod commodo. Donec sit amet elementum libero.
-                                    Curabitur ut lorem id tellus malesuada tincidunt et eget purus. Cras molestie, velit quis viverra ultrices,
-                                    tortor erat suscipit arcu, a ullamcorper neque lorem et massa. Praesent facilisis tellus nec rutrum luctus.
-                                    Curabitur non venenatis metus, vitae rhoncus risus. Donec quis mattis est. Proin ut augue vel odio condimentum ornare.
+                                    Este sistema facilitará además de la organización, llevar el control de las producciones existente, sirviendo como apoyo para que los productos tengan mejores venta y no este saturando el mercado con los mismos productos, es decir evitar pérdidas cuantiosas para los agricultores.
                                 </div>
                             </div>
                             <div class="block this-animate" data-animate="fadeInLeft">
@@ -375,9 +374,11 @@
                                 <div class="text-column-icon">
                                     <span class="fa fa-support"></span>
                                 </div>
-                                <h4>Free Updates & Support</h4>
+                                <h4>Fresa</h4>
                                 <div class="text-column-info">
-                                    We provide <strong>free</strong> support for each customer who purchase template. We will do our best to help you.
+
+                                    Es una fuente de vitamina C, vitamina P, hidratos de carbono, potasio, magnesio, calcio y agua. Se estima que 100 gramos de fresa incluyen 34,5 calorías.
+
                                 </div>
                             </div>                                
                         </div>
@@ -387,9 +388,9 @@
                                 <div class="text-column-icon">
                                     <span class="fa fa-expand"></span>
                                 </div>
-                                <h4>Responsive & Retina Ready</h4>
+                                <h4>Ajo</h4>
                                 <div class="text-column-info">
-                                    Template builded using newest technologies, that gives you possibilities use it wherever you want.
+                                    Es una planta perenne con hojas planas y delgadas, de hasta 30 cm de longitud. Las raíces alcanzan fácilmente profundidades de 50 cm o más. El bulbo, de piel blanca, forma una cabeza dividida en gajos que comúnmente son llamados dientes.
                                 </div>
                             </div>                                
                         </div>
@@ -399,9 +400,11 @@
                                 <div class="text-column-icon">
                                     <span class="fa fa-clock-o"></span>
                                 </div>
-                                <h4>Time Saver</h4>
+                                <h4>Zanahoria</h4>
                                 <div class="text-column-info">
-                                    With this template you will save really many time. And it's <strong>only $23</strong>.
+                                    Planta bienal que forma una roseta de hojas en primavera y verano, mientras desarrolla la gruesa raíz napiforme, la cual almacenará grandes cantidades de azúcar para la floración del año siguiente. El tallo floral crece alrededor de 10 cm con unaumbela de flores blancas en el ápice.
+
+
                                 </div>
                             </div>                                
                         </div>
@@ -424,7 +427,7 @@
                     <div class="quote this-animate" data-animate="fadeInDown">
                         <div class="row">
                             <div class="col-md-9">
-                                <h3><strong>ATLANT</strong> &mdash; Sistema de Gestión y Control de los Productos Agrícolas </h3>
+                                <h3><strong>SIGECOPA</strong> &mdash; Sistema de Gestión y Control de los Productos Agrícolas </h3>
                             </div>
                             <div class="col-md-3">
                                 <button class="btn btn-primary btn-block btn-lg">Preview Admin</button>
@@ -465,27 +468,18 @@
 
                         <!-- about -->
                         <div class="col-md-3">
-                            <h3>About Template</h3>
-                            <p>Lorem ipsum dolor natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-                        </div>
+                             <h3>Creado por</h3>
+                             <h3>Víctor Marine</h3>
+                             <h3>Yanelkys Reyes</h3>
+                             <h3>Eduardo Viva</h3>
+                                                    </div>
                         <!-- ./about -->
 
-                        <!-- quick links -->
-                        <div class="col-md-3">
-                            <h3>Quick links</h3>
-
-                            <div class="list-links">
-                                <a href="#">Home</a>                                    
-                                <a href="#">Pages</a>
-                                <a href="#">Portfolio</a>
-                                <a href="#">Shortcodes</a>
-                            </div>                                
-                        </div>
-                        <!-- ./quick links -->
+                      
 
                         <!-- recent tweets -->
                         <div class="col-md-3">
-                            <h3>Recent Tweets</h3>
+                            <h3>VISITANOS</h3>
 
                             <div class="list-with-icon small">
                                 <div class="item">
@@ -493,23 +487,23 @@
                                         <span class="fa fa-twitter"></span>
                                     </div>
                                     <div class="text">
-                                        <a href="#">@JohnDoe</a> Hello, here is my new front-end template. Check it out
+                                        <a href="#">@SIGECOPA</a>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <span class="fa fa-twitter"></span>
+                                        <span class="fa fa-facebook"></span>
                                     </div>
                                     <div class="text">
-                                        <a href="#">@Aqvatarius</a> Release of new update for Atlant is done and ready to use
+                                        <a href="#">@SIGECOPA</a> 
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <span class="fa fa-twitter"></span>
+                                        <span class="fa fa-instagram"></span>
                                     </div>
                                     <div class="text">
-                                        <a href="#">@Aqvatarius</a> Check out my new admin template Atlant, it's realy awesome template
+                                        <a href="#">@sigecopa</a>
                                     </div>
                                 </div>
                             </div>
@@ -519,22 +513,22 @@
 
                         <!-- contacts -->
                         <div class="col-md-3">
-                            <h3>Contacts</h3>
+                            <h3>CONTACTO</h3>
 
                             <div class="footer-contacts">
                                 <div class="fc-row">
                                     <span class="fa fa-home"></span>
-                                    000 StreetName, Suite 111,<br/> 
-                                    City Name, ST 01234
+                                    Constanza, Rep. Dom.,<br/> 
+                               
                                 </div>
                                 <div class="fc-row">
                                     <span class="fa fa-phone"></span>
-                                    (123) 456-7890
+                                    (809) 000-0000
                                 </div>
                                 <div class="fc-row">
                                     <span class="fa fa-envelope"></span>
-                                    <strong>John Doe</strong><br>
-                                    <a href="mailto:#">johndoe@domain.com</a>
+                                    <strong>SIGECOPA</strong><br>
+                                    <a href="mailto:#">sigecopa@gmail.com</a>
                                 </div>                                    
                             </div>
 
@@ -563,7 +557,7 @@
 
                     <!-- copyright -->
                     <div class="copyright">
-                        &copy; 2014 Atlant Theme by <a href="#">Aqvatarius</a> - All Rights Reserved                            
+                        &copy; 2015 Los Constanceros <a href="#"></a> - Derecho reservado                            
                     </div>
                     <!-- ./copyright -->
 
