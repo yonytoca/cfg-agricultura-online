@@ -21,7 +21,6 @@
   
     List<TipoProducto> tproducto = ServicioTipoProducto.getInstancia().getListadoTipoProducto();
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
-
 %>
 <div class="col-lg-6">
     <form action="/agricultura-online/ProductoControl"  method="post">        
