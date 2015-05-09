@@ -119,7 +119,7 @@
                 <!-- END BREADCRUMB -->                
 
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span>Sistema De Gestion Y control De Los Productos Acricola</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span>Sistema de Gestion y Control de los Productos Agrícolas</h2>
                 </div>                   
 
                 <!-- PAGE CONTENT WRAPPER -->
@@ -130,6 +130,6 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Sistema De Gestion Y control De Los Productos Acricola</h3>
+                                    <h3 class="panel-title">Sistema de Gestion y Control de los Productos Agrícolas</h3>
                                 </div>
                                 <div class="panel-body">
