@@ -18,6 +18,7 @@ public class Producto {
     private TipoProducto tipo_producto_id;
     private Variedad id_variedad;
     private int tiempoProduccion;
+    private int producciontarea;
 
     /**
      * @return the id
@@ -115,6 +116,20 @@ public class Producto {
      */
     public void setTiempoProduccion(int tiempoProduccion) {
         this.tiempoProduccion = tiempoProduccion;
+    }
+
+    /**
+     * @return the producciontarea
+     */
+    public int getProducciontarea() {
+        return producciontarea;
+    }
+
+    /**
+     * @param producciontarea the producciontarea to set
+     */
+    public void setProducciontarea(int producciontarea) {
+        this.producciontarea = producciontarea;
     }
 
    

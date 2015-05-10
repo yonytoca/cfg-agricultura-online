@@ -44,10 +44,10 @@ public class ServicioProducto {
                     producto.setId(rs.getInt("id"));
                     producto.setNombre(rs.getString("nombre"));
                     producto.setImg(rs.getString("img"));
-                    producto.setPeriodo(rs.getString("periodo"));
                     producto.setTipo_producto_id(ServicioTipoProducto.getInstancia().getTipoProductoPorId(rs.getInt("tipo_producto_id")));
                     producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
                     producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
+                    producto.setProducciontarea(rs.getInt("produccion_tarea"));
                     listaproducto.add(producto);
                 }
             }
@@ -78,11 +78,10 @@ public class ServicioProducto {
             producto.setId(rs.getInt("id"));
             producto.setNombre(rs.getString("nombre"));
             producto.setImg(rs.getString("img"));
-            producto.setPeriodo(rs.getString("periodo"));
             producto.setTipo_producto_id(ServicioTipoProducto.getInstancia().getTipoProductoPorId(rs.getInt("tipo_producto_id")));
             producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
             producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
-            
+            producto.setProducciontarea(rs.getInt("produccion_tarea"));
 
         } catch (SQLException e) {
             Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, e);
@@ -109,7 +108,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "insert into producto(nombre,img,periodo,tipo_producto_id,id_variedad,tiempo_produccion) values(?,?,?,?,?,?)";
+        String sql = "insert into producto(nombre,img,tipo_producto_id,id_variedad,tiempo_produccion,produccion_tarea) values(?,?,?,?,?,?)";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -118,11 +117,11 @@ public class ServicioProducto {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, producto.getNombre());
             stmt.setString(2, producto.getImg());
-            stmt.setString(3, producto.getPeriodo());
-            stmt.setInt(4, producto.getTipo_producto_id().getId());
-            stmt.setInt(5, producto.getId_variedad().getId());
-            stmt.setInt(6,producto.getTiempoProduccion());
-            stmt.setInt(7,producto.getId());
+            stmt.setInt(3, producto.getTipo_producto_id().getId());
+            stmt.setInt(4, producto.getId_variedad().getId());
+            stmt.setInt(5,producto.getTiempoProduccion());
+            stmt.setInt(6,producto.getProducciontarea());
+            
 
             stmt.executeUpdate();
 
@@ -150,7 +149,7 @@ public class ServicioProducto {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "update producto set nombre = ?, img=?,periodo=?, tipo_producto_id=?, id_variedad=?,tiempo_produccion=? where id=?";
+        String sql = "update producto set nombre = ?, img=?, tipo_producto_id=?, id_variedad=?,tiempo_produccion=?,produccion_tarea=? where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -159,10 +158,10 @@ public class ServicioProducto {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, producto.getNombre());
             stmt.setString(2, producto.getImg());
-            stmt.setString(3, producto.getPeriodo());
-            stmt.setInt(4, producto.getTipo_producto_id().getId());
-            stmt.setInt(5, producto.getId_variedad().getId());
-            stmt.setInt(6,producto.getTiempoProduccion());
+            stmt.setInt(3, producto.getTipo_producto_id().getId());
+            stmt.setInt(4, producto.getId_variedad().getId());
+            stmt.setInt(5,producto.getTiempoProduccion());
+            stmt.setInt(6,producto.getProducciontarea());
             stmt.setInt(7,producto.getId());
 
             stmt.executeUpdate();

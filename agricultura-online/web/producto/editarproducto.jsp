@@ -21,6 +21,7 @@
   
     List<TipoProducto> tproducto = ServicioTipoProducto.getInstancia().getListadoTipoProducto();
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
+
 %>
 <div class="col-lg-6">
     <form action="/agricultura-online/ProductoControl"  method="post">        
@@ -33,10 +34,7 @@
             <label>Imagen</label>
             <input name="img" class="form-control" value="<%=producto.getImg()%>">               
         </div> 
-        <div class="form-group">
-            <label>periodo</label>
-            <input name="periodo" class="form-control" value="<%=producto.getPeriodo()%>">               
-        </div>
+       
         
           <div class="form-group">
             <label>Tipo Producto</label>
@@ -62,8 +60,13 @@
         
         <div class="form-group">
             <label>tiempo prodccion</label>
-            <input name="tproduccion" class="form-control" value="<%=producto.getTiempoProduccion()%>">               
-        </div>        
+            <input name="periodo" class="form-control" value="<%=producto.getTiempoProduccion()%>">               
+        </div> 
+        
+        <div class="form-group">
+            <label>prodccion por tarea</label>
+            <input name="producciontarea" class="form-control" value="<%=producto.getProducciontarea()%>">               
+        </div>
        <div class="form-group input-group">
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Actualizar</button>                   

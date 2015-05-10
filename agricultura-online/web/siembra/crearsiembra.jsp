@@ -37,7 +37,7 @@
            
             <div class="col-md-5">
                 <div class="input-group">
-                    <input type="text" id="dp-3" name="fsiembra" class="form-control datepicker"  value="2015-06-06-" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
+                    <input type="text" id="dp-3" name="fsiembra" class="form-control datepicker"  value="2015-06-06" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                 </div>
             </div>            
@@ -66,6 +66,25 @@
                 </c:forEach>                
             </select>
         </div>
+        <label>Fecha cosecha</label>
+        <div class="form-group">
+           
+            <div class="col-md-5">
+                <div class="input-group">
+                    <input type="text" id="dp-3" name="fcosecha" class="form-control datepicker"  value="2015-06-06" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+            </div>            
+        </div><br>
+         <div class="form-group">
+            <label>Tarea Sembrada</label>
+            <input name="tsembrada" class="form-control">               
+        </div> 
+         <div class="form-group">
+            <label>Cantida Produccion</label>
+            <input name="cproduccion" class="form-control">               
+        </div> 
+        
         <div class="form-group input-group">
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Crear</button>                   

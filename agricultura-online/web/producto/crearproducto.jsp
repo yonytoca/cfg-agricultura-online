@@ -27,11 +27,7 @@
         <div class="form-group">
             <label>Imagen</label>
             <input name="img" class="form-control">               
-        </div> 
-        <div class="form-group">
-            <label>periodo</label>
-            <input name="periodo" class="form-control">               
-        </div>
+        </div>         
         
           <div class="form-group">
             <label>Tipo Producto</label>
@@ -51,10 +47,14 @@
                 </c:forEach>                
             </select>
         </div>
-        <div class="form-group">
-            <label>tiempo de produccion</label>
-            <input name="tproduccion" class="form-control" value="">               
+       <div class="form-group">
+            <label>tiempo produccion/Dias</label>
+            <input name="periodo" class="form-control">               
         </div>
+        <div class="form-group">
+            <label>produccion por Tarea</label>
+            <input name="producciontarea" class="form-control">               
+        </div> 
         
        <div class="form-group input-group">
         <span class="input-group-btn">
@@ -63,5 +63,6 @@
     </div>
      
 </form>
+    
 </div>
 <jsp:include page="../teplate/footer.jsp"/>

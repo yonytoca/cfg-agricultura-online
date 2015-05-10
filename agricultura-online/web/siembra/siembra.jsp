@@ -39,6 +39,9 @@
                 <th>Cantidad</th>
                 <th>Socio</th>
                 <th>Zona</th>
+                <th>Fecha Cosecha</th>
+                <th>Tarea Sembrada</th>
+                <th>Cantidad Produccion</th>
                 <th>modificar</th>
                 <th>Desabilitar</th>
             </tr>
@@ -52,6 +55,9 @@
             <td>${siembras.getCantidad_producto()}</td>
             <td>${siembras.getId_socio().getNombre()}</td>
             <td>${siembras.getId_zona().getNombre()}</td>
+            <td>${siembras.getFecha_cosecha()}</td>
+            <td>${siembras.getTarea_sembrada()}</td>
+            <td>${siembras.getProduccion()}</td>
             <td><a href="editarsiembra.jsp?id=${siembras.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
             <td><a href="eliminar.jsp?id=${siembra.getId()}"><i class="glyphicon glyphicon-remove-circle"></i></a></td>
         </tr>

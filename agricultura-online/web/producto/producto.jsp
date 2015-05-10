@@ -33,10 +33,11 @@
                 <tr><th>Codigo</th>
                     <th>Nombre</th>  
                     <th>Imagen</th>
-                    <th>Periodo</th>
                     <th>Tipo Producto</th>
                     <th>Variedad</th>
-                    <th>Tiempo producion</th>
+                    <th>Tiempo producion/días</th>
+                    <th>cantidad por tarea</th>
+                    <th>Editar</th>
                 </tr>    
             </thead>
             <tbody>
@@ -45,10 +46,10 @@
                         <td>${producto.getId()}</td>
                         <td>${producto.getNombre()}</td>
                         <td>${producto.getImg()}</td>
-                        <td>${producto.getPeriodo()}</td>
                         <td>${producto.getTipo_producto_id().getNombre()}</td>
                         <td>${producto.getId_variedad().getNombre()}</td>
                         <td>${producto.getTiempoProduccion()}</td>
+                        <td>${producto.getProducciontarea()}</td>
                         <td><a href="editarproducto.jsp?id=${producto.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
                     </tr>
                 </c:forEach>                         

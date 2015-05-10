@@ -41,10 +41,10 @@ public class ProductoControl extends HttpServlet {
         String idproducto = request.getParameter("idproducto");
         String nombre = request.getParameter("nombre");
         String img = request.getParameter("img");
-        String periodo = request.getParameter("periodo");
         String tproducto = request.getParameter("tproducto");
         String variedad = request.getParameter("variedad");        
-        int tproduccion = Integer.parseInt(request.getParameter("tproduccion"));
+        int tproduccion = Integer.parseInt(request.getParameter("periodo"));
+        int producciontarea = Integer.parseInt(request.getParameter("producciontarea"));
 
         TipoProducto tipoproduc = ServicioTipoProducto.getInstancia().getTipoProductoPorId(Integer.valueOf(tproducto));
         Variedad varied = ServicioVariedad.getInstancia().getVariedadPorId(Integer.valueOf(variedad));
@@ -54,10 +54,10 @@ public class ProductoControl extends HttpServlet {
             producto.setId(Integer.parseInt(idproducto));
             producto.setNombre(nombre);
             producto.setImg(img);
-            producto.setPeriodo(periodo);
             producto.setTipo_producto_id(tipoproduc);
             producto.setId_variedad(varied);
             producto.setTiempoProduccion(tproduccion);
+            producto.setProducciontarea(producciontarea);
             
 
             boolean isActualizado = ServicioProducto.getInstancia().editarProducto(producto);
@@ -74,10 +74,10 @@ public class ProductoControl extends HttpServlet {
            Producto producto = new Producto();
             producto.setNombre(nombre);
             producto.setImg(img);
-            producto.setPeriodo(periodo);
             producto.setTipo_producto_id(tipoproduc);
             producto.setId_variedad(varied);
             producto.setTiempoProduccion(tproduccion);
+            producto.setProducciontarea(producciontarea);
             
             boolean isCreado = ServicioProducto.getInstancia().crearProducto(producto);
 
