@@ -3,6 +3,7 @@
     Created on : 20/04/2015, 03:50:46 PM
     Author     : VíctorAndrés
 --%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.Usuario"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>        
@@ -20,6 +21,18 @@
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
+        <% Usuario currentUser =  (Usuario) session.getAttribute("currentSessionUser");%>        
+                               
+                         
+                        
+                            <% if (session.getAttribute("currentSessionUser").equals(null)){%>
+                            <a href="login.jsp"> </a>
+                            <%}
+                                else{%>
+                            <a href="logaut.jsp"> </a>
+                            <%}
+                            %>        
+                           
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
 
@@ -32,7 +45,8 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    <li class="xn-title">Navigation</li>
+                    
+                    <li class="xn-title"></span><%= currentUser.getUsuario() + " " + currentUser.getTipo_usuario_id().getId() %><li><a href="logaut.jsp"><i class="glyphicon glyphicon-lock"></i> Salir</a></li></li>
                     <li>
                     <li class="xn-openable">
 
