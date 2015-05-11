@@ -3,6 +3,8 @@
     Created on : 03-may-2015, 23:28:22
     Author     : victor
 --%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioProducto"%>
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Producto"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -21,7 +23,6 @@
   
     List<TipoProducto> tproducto = ServicioTipoProducto.getInstancia().getListadoTipoProducto();
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
-
 %>
 <div class="col-lg-6">
     <form action="/agricultura-online/ProductoControl"  method="post">        
@@ -72,7 +73,9 @@
             <button type="submit" class="btn btn-primary">Actualizar</button>                   
         </span>
     </div>
-     
+    
+
+
 </form>
 </div>
 <jsp:include page="../teplate/footer.jsp"/>

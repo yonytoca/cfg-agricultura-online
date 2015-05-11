@@ -16,7 +16,8 @@ private String fecha_siembra;
 private int cantidad_producto;
 private Socio id_socio;
 private Zona id_zona;
-
+private int tareasembrada;
+private int produccion;
     /**
      * @return the id
      */
@@ -103,6 +104,34 @@ private Zona id_zona;
 
     public void setId_socio(int soci) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the tareasembrada
+     */
+    public int getTareasembrada() {
+        return tareasembrada;
+    }
+
+    /**
+     * @param tareasembrada the tareasembrada to set
+     */
+    public void setTareasembrada(int tareasembrada) {
+        this.tareasembrada = tareasembrada;
+    }
+
+    /**
+     * @return the produccion
+     */
+    public int getProduccion() {
+        return produccion;
+    }
+
+    /**
+     * @param produccion the produccion to set
+     */
+    public void setProduccion(int produccion) {
+        this.produccion = produccion;
     }
 
 }

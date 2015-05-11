@@ -3,6 +3,8 @@
     Created on : 25/04/2015, 04:30:29 PM
     Author     : VíctorAndrés
 --%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Zona"%>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioZona"%>
@@ -20,10 +22,14 @@
     List<Producto> producto = ServicioProducto.getInstancia().getListadoProducto();
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
-
+ Date dNow = new Date();
+  SimpleDateFormat ft = 
+  new SimpleDateFormat ("yyyy/dd/MM");
+  String currentDate = ft.format(dNow);
 %>
 <div class="col-lg-6">
-    <form action="/agricultura-online/SiembraControl"  method="post">        
+    <form action="/agricultura-online/SiembraControl"  method="post"> 
+        
         <div class="form-group">
             <label>Producto</label>
             <select class="form-control" name="producto">
@@ -33,16 +39,17 @@
             </select>
         </div>
          <label>Fecha Siembra</label>
-        <div class="form-group">
-           
+        <div class="form-group">           
             <div class="col-md-5">
                 <div class="input-group">
-                    <input type="text" id="dp-3" name="fsiembra" class="form-control datepicker"  value="2015-06-06" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    <input type="text" id="dp-3" name="fsiembra" value="<%=currentDate%>"/>
+                    
                 </div>
             </div>            
-        </div><br>
+        </div><br><br>
         
+ 
+
         <div class="form-group">
             <label>Cantida Producto</label>
             <input name="cproducto" class="form-control">               
@@ -66,16 +73,7 @@
                 </c:forEach>                
             </select>
         </div>
-        <label>Fecha cosecha</label>
-        <div class="form-group">
-           
-            <div class="col-md-5">
-                <div class="input-group">
-                    <input type="text" id="dp-3" name="fcosecha" class="form-control datepicker"  value="2015-06-06" data-date="06-06-2014" data-date-format="yyyy-dd-mm" data-date-viewmode="years"/>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                </div>
-            </div>            
-        </div><br>
+        
          <div class="form-group">
             <label>Tarea Sembrada</label>
             <input name="tsembrada" class="form-control">               

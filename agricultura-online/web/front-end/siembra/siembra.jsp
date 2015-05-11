@@ -8,7 +8,7 @@
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Siembra"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../teplate/header.jsp"/>
+<jsp:include page="../template/header.jsp"/>
 <!DOCTYPE html>
 
 
@@ -19,7 +19,7 @@
 
 
 <center>
-    <h2 class="sub-header">Siembras</h2>
+    <h2 class="sub-header">Siembras socioS</h2>
 </center>
 
 <div class="panel panel-default">
@@ -66,4 +66,4 @@
 </div>
 <!-- FIN DATATABLE -->
 <a href="crearsiembra.jsp"> Crear Siembra</a>
-<jsp:include page="../teplate/footer.jsp"/>
+<jsp:include page="../template/footer.jsp"/>

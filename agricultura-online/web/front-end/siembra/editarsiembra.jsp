@@ -15,7 +15,7 @@
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:include page="../teplate/header.jsp"/>
+<jsp:include page="../template/header.jsp"/>
 <%
     int id = Integer.parseInt(request.getParameter("id"));
     Siembra siembra = ServicioSiembra.getInstancia().getSiembraPorId(id);
@@ -90,4 +90,4 @@
 
     </form>
 </div>
-<jsp:include page="../teplate/footer.jsp"/>
+<jsp:include page="../template/footer.jsp"/>
