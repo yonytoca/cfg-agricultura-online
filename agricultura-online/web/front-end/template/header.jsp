@@ -25,10 +25,12 @@
                                
                          
                         
-                            <% if (session.getAttribute("currentSessionUser").equals(null)){%>
+                            <% if (session.getAttribute("currentSessionUser").equals(null)){%>                            
+                            <% response.sendRedirect("login.jsp"); %>
                             <a href="login.jsp"> </a>
                             <%}
                                 else{%>
+                             <% response.sendRedirect("login.jsp"); %>    
                             <a href="logaut.jsp"> </a>
                             <%}
                             %>     
@@ -44,7 +46,7 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    <li class="xn-title"></span><%= currentUser.getUsuario() + " " + currentUser.getTipo_usuario_id().getId() %><li><a href="logaut.jsp"><i class="glyphicon glyphicon-lock"></i> Salir</a></li></li>
+                    <li class="xn-title"></span><%= currentUser.getUsuario() %><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-lock"></i> Salir</a></li></li>
                     <li>
                     
                     </li> 

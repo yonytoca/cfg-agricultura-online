@@ -49,11 +49,12 @@
                         <td>${producto.getTipo_producto_id().getNombre()}</td>
                         <td>${producto.getId_variedad().getNombre()}</td>
                         <td>${producto.getTiempoProduccion()}</td>
-                        <td>${producto.getProducciontarea()}</td>
+                        <td>${producto.getProducciontarea()}</td>                        
                         <td><a href="editarproducto.jsp?id=${producto.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
                     </tr>
                 </c:forEach>                         
-            </tbody>         
+
+            </tbody>                                                    
         </table>
     </div>
 </div>
