@@ -24,12 +24,12 @@
         <div class="mb-middle">
             <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
             <div class="mb-content">
-                <p>Are you sure you want to log out?</p>                    
-                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                <p>Esta Seguro que desea salir del sistema?</p>                    
+                <p>Presione NO si quiere seguir trabajando. Presione SI para cerrar la sección.</p>
             </div>
             <div class="mb-footer">
                 <div class="pull-right">
-                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                    <a href="/agricultura-online/index.jsp" class="btn btn-success btn-lg">Yes</a>
                     <button class="btn btn-default btn-lg mb-control-close">No</button>
                 </div>
             </div>
@@ -37,24 +37,7 @@
     </div>
 </div>
 <!-- MESSAGE BOX-->
-<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
-    <div class="mb-container">
-        <div class="mb-middle">
-            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
-            <div class="mb-content">
-                <p>Are you sure you want to log out?</p>                    
-                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
-            </div>
-            <div class="mb-footer">
-                <div class="pull-right">
-                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
-                    <button class="btn btn-default btn-lg mb-control-close">No</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END MESSAGE BOX-->
+
 
 <!-- START PRELOADS -->
 <audio id="audio-alert" src="/agricultura-online/audio/alert.mp3" preload="auto"></audio>
@@ -78,12 +61,15 @@
 <script type="text/javascript" src="/agricultura-online/js/plugins/bootstrap/bootstrap-file-input.js"></script>
 <script type="text/javascript" src="/agricultura-online/js/plugins/bootstrap/bootstrap-select.js"></script>
 <script type="text/javascript" src="/agricultura-online/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+        <script type="text/javascript" src="/agricultura-online/js/plugins/morris/raphael-min.js"></script>
+        <script type="text/javascript" src="/agricultura-online/js/plugins/morris/morris.min.js"></script>
 <!-- END PAGE PLUGINS -->         
 
 <!-- START TEMPLATE -->
 <script type="text/javascript" src="/agricultura-online/js/settings.js"></script>
 <script type="text/javascript" src="/agricultura-online/js/plugins.js"></script>        
-<script type="text/javascript" src="/agricultura-online/js/actions.js"></script>        
+<script type="text/javascript" src="/agricultura-online/js/actions.js"></script> 
+<script type="text/javascript" src="/agricultura-online/js/demo_charts_morris.js"></script>
 <!-- END TEMPLATE -->
 <!-- END SCRIPTS -->         
 </body>

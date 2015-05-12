@@ -9,10 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>saliendo del sistema</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+      
 
         <%session.invalidate();%>
         <div id="wrapper">
@@ -21,7 +21,7 @@
                     <ul class="right">
                         <li>
                             Usted cerr&oacute; session. Favor pulsar
-                            <% response.sendRedirect("front-end/index.jsp");%>
+                            <% response.sendRedirect("/agricultura-online/front-end/index.jsp");%>
                             para acceder nuevamente.
                         </li>
                     </ul>

@@ -21,18 +21,17 @@
         <!-- EOF CSS INCLUDE -->
     </head>
     <body>
-        <% Usuario currentUser =  (Usuario) session.getAttribute("currentSessionUser");%>        
-                               
-                         
-                        
-                            <% if (session.getAttribute("currentSessionUser").equals(null)){%>
-                            <a href="login.jsp"> </a>
-                            <%}
-                                else{%>
-                            <a href="logaut.jsp"> </a>
-                            <%}
-                            %>        
-                           
+        <% Usuario currentUser = (Usuario) session.getAttribute("currentSessionUser");%>        
+
+
+
+        <% if (session.getAttribute("currentSessionUser").equals(null)) {%>
+        <a href="login.jsp"> </a>
+        <%} else {%>
+        <a href="logaut.jsp"> </a>
+        <%}
+        %>        
+
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
 
@@ -45,8 +44,8 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    
-                    <li class="xn-title"></span><%= currentUser.getUsuario() + " " + currentUser.getTipo_usuario_id().getId() %><li><a href="logaut.jsp"><i class="glyphicon glyphicon-lock"></i> Salir</a></li></li>
+
+                   
                     <li>
                     <li class="xn-openable">
 
@@ -121,14 +120,34 @@
                     <li class="xn-icon-button">
                         <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
                     </li>
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="logaut.jsp" class="mb-control" data-box="#mb-signout"><span class="fa fa-power-off"></span></a>                        
+                    </li> 
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class=""></span></a>
+                                               
+                    </li>
+                    <!-- END MESSAGES -->
+                    <!-- Mostrar Usuario -->
+                     <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-user-md " ><%= currentUser.getUsuario()%></span></a>
+                         <ul>
+                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-cog"></span>Zona</a></li>
+                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-list"></span>Lista Zona</a></li>
+                        </ul>
+                    </li> 
+                    <!-- Mostrar Usuariofin -->
                     <!-- END TOGGLE NAVIGATION -->                    
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="#">Link</a></li>                    
-                    <li class="active">Active</li>
+                    <li><a href="#"></a></li>                    
+                    <li class="active"></li>
                 </ul>
                 <!-- END BREADCRUMB -->                
 
@@ -144,6 +163,6 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Sistema de Gestion y Control de los Productos Agrícolas</h3>
+
                                 </div>
                                 <div class="panel-body">

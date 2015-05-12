@@ -46,7 +46,7 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    <li class="xn-title"></span><%= currentUser.getUsuario() %><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-lock"></i> Salir</a></li></li>
+                    <li class="xn-title"><i class="glyphicon glyphicon-user  "></i></span><%= currentUser.getUsuario() %><i class="glyphicon glyphicon-u"></i><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-off"></i> Salir</a></li></li>
                     <li>
                     
                     </li> 
@@ -79,6 +79,26 @@
                     <li class="xn-icon-button">
                         <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
                     </li>
+                    <!-- SIGN OUT -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="logaut.jsp" class="mb-control" data-box="#mb-signout"><span class="fa fa-power-off"></span></a>                        
+                    </li> 
+                    <!-- END SIGN OUT -->
+                    <!-- MESSAGES -->
+                    <li class="xn-icon-button pull-right">
+                        <a href="#"><span class=""></span></a>
+                                               
+                    </li>
+                    <!-- END MESSAGES -->
+                    <!-- Mostrar Usuario -->
+                     <li class="xn-icon-button pull-right">
+                        <a href="#"><span class="fa fa-user-md " ><%= currentUser.getUsuario()%></span></a>
+                         <ul>
+                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-cog"></span>Zona</a></li>
+                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-list"></span>Lista Zona</a></li>
+                        </ul>
+                    </li> 
+                    <!-- Mostrar Usuariofin -->
                     <!-- END TOGGLE NAVIGATION -->                    
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     

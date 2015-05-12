@@ -33,6 +33,26 @@ public class ServicioSiembraDetalle {
 
         List<Siembra> listasiembra = new ArrayList<>();
 
+        try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("SELECT id, id_producto,  SUM(cantidad_producto) as total from siembra group by id_producto")) {
+            try (ResultSet rs = stmt.executeQuery()) {
+
+                while (rs.next()) {
+                    Siembra siembra = new Siembra();
+                    siembra.setId(rs.getInt("id"));
+                    siembra.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));
+                    siembra.setCantidad_producto(rs.getInt("total"));
+                    listasiembra.add(siembra);
+                }
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listasiembra;
+    }
+     public List<Siembra> getListadoSiembradetallezona() {
+
+        List<Siembra> listasiembra = new ArrayList<>();
+
         try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("SELECT id, id_producto,  SUM(cantidad_producto) as total from siembra where id_zona=2 group by id_producto")) {
             try (ResultSet rs = stmt.executeQuery()) {
 
@@ -49,4 +69,5 @@ public class ServicioSiembraDetalle {
         }
         return listasiembra;
     }
+      
 }

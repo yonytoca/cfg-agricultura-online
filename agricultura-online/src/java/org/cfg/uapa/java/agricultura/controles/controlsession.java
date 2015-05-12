@@ -35,7 +35,7 @@ public class controlsession extends HttpServlet {
       if(sc.equals("2")){
           response.sendRedirect("front-end/index1.jsp");               
       }else{
-      response.sendRedirect("index.jsp");
+      response.sendRedirect("index2.jsp");
       }
     }
 
