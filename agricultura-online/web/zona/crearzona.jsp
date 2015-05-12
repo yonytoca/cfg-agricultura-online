@@ -16,8 +16,20 @@
     List<SubZona> subzona = ServicioSubZona.getInstancia().getListadoSubZona();
 
 %>
+
+<script type="text/javascript">
+function validarForm(zona) {
+  if(zona.nombre.value.length==0) { //comprueba que no esté vacío
+    zona.nombre.focus();   
+    alert('No has escrito tu nombre'); 
+    return false; //devolvemos el foco
+  }
+  return true;
+}
+</script>
+
 <div class="col-lg-6">
-    <form action="/agricultura-online/ZonaControl"  method="post">        
+    <form name="zona" action="/agricultura-online/ZonaControl"  method="post" onsubmit="return validarForm(this);">        
         <div class="form-group">
             <label>Nombre de la zona</label>
             <input name="nombre" class="form-control">               

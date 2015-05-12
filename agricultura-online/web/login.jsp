@@ -1,105 +1,88 @@
 <%-- 
     Document   : login
-    Created on : 20/04/2015, 04:49:56 PM
-    Author     : VíctorAndrés
+    Created on : 12-may-2015, 20:59:17
+    Author     : victor
 --%>
 
 <!DOCTYPE html>
-<html lang="en">
-
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- MetisMenu CSS -->
-        <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="dist/css/sb-admin-2.css" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
+<html lang="en" class="body-full-height">
+    <head>        
+        <!-- META SECTION -->
+        <title>SIGECOPA</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+        <!-- EOF CSS INCLUDE -->                                     
     </head>
-
     <body>
-    <center>
-
-        <div id="login">
-            <% if (session.getAttribute("loginFailed") != null) {%>
-
-            <h1>
-                <%=session.getAttribute("loginFailed")%>
-            </h1>
-
-            <%
-                }
-            %>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <div class="login-panel panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Por Favor iniciar Aqui</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form role="form" action="/agricultura-online/UsuarioControl" method="post">
-                                    <fieldset>
-                                      
-                                        <div class="form-group">
-                                              
-                                              <input class="form-control" placeholder="Usuario" name="usuario" type="text" autofocus>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" placeholder="Password" name="clave" type="password" value="">
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input name="remember" type="checkbox" value="Remember Me">Recuerdame
-                                            </label>
-                                        </div>
-                                        <!-- Change this to a button or input when using this as a form -->
-                                        <div class="login_actions">
-                                            <button type="submit" class="btn btn-orange" tabindex="3">Acceder</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
+        
+        <div class="login-container lightmode">
+        
+            <div class="login-box animated fadeInDown">
+                <div class="login-logo"></div>
+                <div class="login-body">
+                    <div class="login-title"><strong>Entrar</strong> A tu Cuenta</div>
+                    <form class="form-horizontal" action="../agricultura-online/UsuarioControl" method="post" >
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" name="usuario" class="form-control" placeholder="usuario"/>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" name="clave" class="form-control" placeholder="Password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-link btn-block">Olvidaste tu contraseña?</a>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-info btn-block">Entrar</button>
+                        </div>
+                    </div>
+                    <div class="login-or">OR</div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <button class="btn btn-info btn-block btn-twitter"><span class="fa fa-twitter"></span> Twitter</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-info btn-block btn-facebook"><span class="fa fa-facebook"></span> Facebook</button>
+                        </div>
+                        <div class="col-md-4">                            
+                            <button class="btn btn-info btn-block btn-google"><span class="fa fa-google-plus"></span> Google</button>
+                        </div>
+                    </div>
+                    <div class="login-subtitle">
+                        Gracias por Preferirnos
+                    </div>
+                    </form>
+                </div>
+                <div class="login-footer">
+                    <div class="pull-left">
+                        &copy; 2015 SIGECOPA
+                    </div>
+                    <div class="pull-right">
+                        <a href="#">Quienes Somos</a> |
+                        <a href="#">Privacidad</a> |
+                        <a href="#">Contactanos</a>
                     </div>
                 </div>
             </div>
-
-            <!-- jQuery -->
-            <script src="bower_components/jquery/dist/jquery.min.js"></script>
-
-            <!-- Bootstrap Core JavaScript -->
-            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-            <!-- Metis Menu Plugin JavaScript -->
-            <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-            <!-- Custom Theme JavaScript -->
-            <script src="dist/js/sb-admin-2.js"></script>
-    </center>
-
+            
+        </div>
+        
     </body>
-
 </html>
+
+
+
+
+
+

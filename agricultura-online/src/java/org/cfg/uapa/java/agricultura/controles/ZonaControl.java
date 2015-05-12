@@ -61,7 +61,7 @@ public class ZonaControl extends HttpServlet {
         
         if (isCreado) {
             
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("zona/zona.jsp");
             
         } else {
             

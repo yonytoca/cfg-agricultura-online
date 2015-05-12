@@ -106,13 +106,13 @@
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="#">Link</a></li>                    
-                    <li class="active">Active</li>
+                    <li><a href="#"></a></li>                    
+                    <li class="active"></li>
                 </ul>
                 <!-- END BREADCRUMB -->                
 
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span>Sistema de Gestion y Control de los Productos Agrícolas</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> SISTEMA DE GESTION Y CONTROL DE LOS PRODUCTOS AGRICOLAS</h2>
                 </div>                   
 
                 <!-- PAGE CONTENT WRAPPER -->
@@ -123,6 +123,6 @@
 
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Sistema de Gestion y Control de los Productos Agrícolas</h3>
+                                    <h3 class="panel-title"></h3>
                                 </div>
                                 <div class="panel-body">

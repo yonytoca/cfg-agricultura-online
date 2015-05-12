@@ -70,37 +70,8 @@
 
     </div>
 </div>
-<h2>Total de reportes por mes</h2>
-<!--=== Widget Chart ===-->
-<div class="row">
-    <div class="col-md-12">
-        <div class="widget box">
-            <div class="widget-chart"> <!-- Possible colors: widget-chart-blue, widget-chart-blueLight (standard), widget-chart-green, widget-chart-red, widget-chart-yellow, widget-chart-orange, widget-chart-purple, widget-chart-gray -->
-                <div id="pormes" class="chart chart-medium"></div>
-            </div>
-            <div class="widget-content">
-                <ul class="stats"> <!-- .no-dividers -->
-                    <li>
-                        <strong><%=.getTotal()%></strong>
-                        <small>Total de reportes activos</small>
-                    </li>
-                    <li class="light">
-                        <strong><%=inactivo.getTotal()%></strong>
-                        <small>Total de reportes inactivos</small>
-                    </li>
-                    <li>
-                        <strong><%=eninvestigacion.getTotal()%></strong>
-                        <small>Total de reportes en investigacion</small>
-                    </li>
-                    <li class="light">
-                        <strong><%=descartado.getTotal()%></strong>
-                        <small>Total de reportes descartados</small>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
+          
 
 <!-- START LINE CHART -->
 <div class="panel panel-default">

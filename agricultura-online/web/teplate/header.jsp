@@ -53,7 +53,6 @@
 
                         <ul>
                             <li><a href="/agricultura-online/usuario/crearusuario.jsp"><span class="fa fa-cog"></span>Usuario</a></li>
-                            <li><a href="/agricultura-online/usuario/creartipousuario.jsp"><span class="fa fa-cog"></span>Tipo Usuario </a></li>
                             <li><a href="/agricultura-online/socio/crearSocio.jsp"><span class="fa fa-cog"></span>Socio </a></li>
                             <!-- Sub-menu lista -->
                             <li class="xn-openable">
@@ -62,7 +61,6 @@
 
                                 <ul>
                                     <li><a href="/agricultura-online/usuario/usuario.jsp"><span class="fa fa-list"></span> Lista Usuario</a></li>
-                                    <li><a href="/agricultura-online/usuario/tipousuario.jsp"><span class="fa fa-list"></span> Lista Tipo Usuario</a></li>
                                     <li><a href="/agricultura-online/socio/socio.jsp"><span class="fa fa-list"></span> Lista Socio</a></li>
                                 </ul>
                             </li>
@@ -152,7 +150,7 @@
                 <!-- END BREADCRUMB -->                
 
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span>Sistema de Gestion y Control de los Productos Agrícolas</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span>SISTEMA DE GESTION Y CONTROL DE LOS PRODUCTOS AGRICOLAS</h2>
                 </div>                   
 
                 <!-- PAGE CONTENT WRAPPER -->
