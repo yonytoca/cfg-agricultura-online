@@ -47,7 +47,7 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    <li class="xn-title"><i class="glyphicon glyphicon-user  "></i></span><%= currentUser.getUsuario()%><i class="glyphicon glyphicon-u"></i><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-off"></i> Salir</a></li></li>
+                    
                     <li>
 
                     </li> 
@@ -95,8 +95,8 @@
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-user-md " ><%= currentUser.getUsuario()%></span></a>
                         <ul>
-                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-cog"></span>Zona</a></li>
-                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-list"></span>Lista Zona</a></li>
+                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-user"></span>Mi cuenta</a></li>
+                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-cog"></span>Configuración</a></li>
                         </ul>
                     </li> 
                     <!-- Mostrar Usuariofin -->

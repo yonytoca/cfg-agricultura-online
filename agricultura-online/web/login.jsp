@@ -21,12 +21,21 @@
         <!-- EOF CSS INCLUDE -->                                     
     </head>
     <body>
-        
+       
         <div class="login-container lightmode">
         
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
                 <div class="login-body">
+                      <% if(session.getAttribute("loginFailed") !=null) { %>
+             
+            <h1>
+                <%=session.getAttribute("loginFailed")%>
+            </h1>
+             
+            <% 
+        }
+        %>
                     <div class="login-title"><strong>Entrar</strong> A tu Cuenta</div>
                     <form class="form-horizontal" action="../agricultura-online/UsuarioControl" method="post" >
                     <div class="form-group">

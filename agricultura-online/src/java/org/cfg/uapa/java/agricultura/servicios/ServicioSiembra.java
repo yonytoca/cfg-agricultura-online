@@ -89,6 +89,36 @@ public class ServicioSiembra {
 
         return siembr;
     }
+ public Siembra getSiembradetallePorId(int id) {
+
+        String sql = "SELECT id, id_producto,id_zona,  SUM(cantidad_producto) as total from siembra where id_zona=? group by id_producto";
+        Siembra siembr = null;
+
+        try (Connection con = Coneccion.getInstancia().getConeccion()) {
+
+            try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+                pstmt.setInt(1, id);
+
+                try (ResultSet rs = pstmt.executeQuery()) {
+
+                    rs.next();
+                    siembr = new Siembra();
+                    siembr.setId(rs.getInt("id"));
+                    siembr.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));
+                    siembr.setFecha_siembra(rs.getString("fecha_siembra"));
+                    siembr.setCantidad_producto(rs.getInt("cantidad_producto"));
+                    siembr.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
+                    siembr.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
+                    siembr.setTareasembrada(rs.getInt("tarea_sembrada"));
+   
+                }
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        return siembr;
+    }
 
     public boolean crearSiembra(Siembra siembra) {
 
