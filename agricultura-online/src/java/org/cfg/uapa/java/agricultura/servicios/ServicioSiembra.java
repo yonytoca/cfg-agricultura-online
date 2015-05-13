@@ -47,7 +47,6 @@ public class ServicioSiembra {
                     siembra.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
                     siembra.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
                     siembra.setTareasembrada(rs.getInt("tarea_sembrada"));
-                    siembra.setProduccion(rs.getInt("produccion"));
                     listasiembra.add(siembra);
                 }
             }
@@ -81,8 +80,7 @@ public class ServicioSiembra {
                     siembr.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
                     siembr.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
                     siembr.setTareasembrada(rs.getInt("tarea_sembrada"));
-                    siembr.setProduccion(rs.getInt("produccion"));
-
+   
                 }
             }
         } catch (SQLException e) {
@@ -96,7 +94,7 @@ public class ServicioSiembra {
 
         boolean estado = false;
         PreparedStatement stmt = null;
-        String sql = "insert into siembra(id_producto,fecha_siembra,cantidad_producto,id_socio, id_zona,tarea_sembrada,produccion) values(?,?,?,?,?,?,?)";
+        String sql = "insert into siembra(id_producto,fecha_siembra,cantidad_producto,id_socio, id_zona,tarea_sembrada) values(?,?,?,?,?,?)";
       
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -109,7 +107,6 @@ public class ServicioSiembra {
             stmt.setInt(4, siembra.getId_socio().getId());
             stmt.setInt(5, siembra.getId_zona().getId());
             stmt.setInt(6, siembra.getTareasembrada());
-            stmt.setInt(7, siembra.getProduccion());
             stmt.executeUpdate();
 
             estado = true;
@@ -135,7 +132,7 @@ public class ServicioSiembra {
 
         boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update siembra set id_producto=?,fecha_siembra=?,cantidad_producto=?,id_socio=?,id_zona=?, tarea_sembrada=?,produccion=? where id=?";
+        String sql = "update siembra set id_producto=?,fecha_siembra=?,cantidad_producto=?,id_socio=?,id_zona=?, tarea_sembrada=? where id=?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -147,7 +144,6 @@ public class ServicioSiembra {
             stmt.setInt(4, siembra.getId_socio().getId());
             stmt.setInt(5, siembra.getId_zona().getId());
             stmt.setInt(6, siembra.getTareasembrada());
-            stmt.setInt(7, siembra.getProduccion());
             stmt.setInt(8, siembra.getId());
 
             stmt.executeUpdate();

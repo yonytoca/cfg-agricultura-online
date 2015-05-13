@@ -38,10 +38,7 @@
         <label> Dirección</label>
         <input name="direccion" type="text" class="form-control" value="<%=socio.getDireccion()%>" required="">                                            
     </div>    
-    <div class="form-group input-group">
-        <label> Imagen</label>
-        <input name="imagen" type="text" class="form-control" value="<%=socio.getImg()%>" required="">
-    </div>
+
     <div class="form-group input-group">
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Actualizar</button>                   

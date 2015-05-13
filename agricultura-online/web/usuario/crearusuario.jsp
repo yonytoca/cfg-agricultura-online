@@ -27,7 +27,7 @@
         </div> 
 
         <div class="form-group">
-            <label>Tipo Usuario </label>
+            <label>Tipo usuario </label>
             <select class="form-control" name="tusuario">
                 <c:forEach items="<%=usuario%>" var="usuario">
                     <option value="${usuario.getId()}">${usuario.getNombre()}</option>

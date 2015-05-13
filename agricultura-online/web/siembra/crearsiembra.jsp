@@ -22,14 +22,40 @@
     List<Producto> producto = ServicioProducto.getInstancia().getListadoProducto();
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
- Date dNow = new Date();
-  SimpleDateFormat ft = 
-  new SimpleDateFormat ("yyyy/dd/MM");
-  String currentDate = ft.format(dNow);
+    Date dNow = new Date();
+    SimpleDateFormat ft
+            = new SimpleDateFormat("yyyy/dd/MM");
+    String currentDate = ft.format(dNow);
 %>
+<script>
+    function validar(e) {
+        tecla = (document.all) ? e.keyCode : e.which;
+        if ((tecla < 48 || tecla > 57) && (tecla > 31) && (tecla != 127))
+            return false;
+    }
+
+    function validateForm() {
+        var x = document.forms["my"]["cproducto"].value;
+        if (x == null || x == "") {
+            alert("Aun tiene campos en blanco");            
+            return false;
+        }
+        var x1 = document.forms["my"]["tsembrada"].value; 
+        if (x1 == null || x1 == "") {
+            alert("Aun tiene campos en blanco1");
+            return false;
+        }
+    }
+
+
+
+</script>
+
+
+
 <div class="col-lg-6">
-    <form action="/agricultura-online/SiembraControl"  method="post"> 
-        
+    <form name="my" action="/agricultura-online/SiembraControl"  method="post" onsubmit="return validateForm()"> 
+
         <div class="form-group">
             <label>Producto</label>
             <select class="form-control" name="producto">
@@ -38,21 +64,21 @@
                 </c:forEach>                
             </select>
         </div>
-         <label>Fecha Siembra</label>
+        <label>Fecha Siembra</label>
         <div class="form-group">           
             <div class="col-md-5">
                 <div class="input-group">
                     <input type="text" id="dp-3" name="fsiembra" value="<%=currentDate%>"/>
-                    
+
                 </div>
             </div>            
         </div><br><br>
-        
- 
+
+
 
         <div class="form-group">
             <label>Cantida Producto</label>
-            <input name="cproducto" class="form-control">               
+            <input name="cproducto" onkeypress="return validar(event)" class="form-control">               
         </div> 
 
         <div class="form-group">
@@ -73,21 +99,17 @@
                 </c:forEach>                
             </select>
         </div>
-        
-         <div class="form-group">
+
+        <div class="form-group">
             <label>Tarea Sembrada</label>
-            <input name="tsembrada" class="form-control">               
-        </div> 
-         <div class="form-group">
-            <label>Cantida Produccion</label>
-            <input name="cproduccion" class="form-control">               
+            <input name="tsembrada" onkeypress="return validar(event)" class="form-control">               
         </div> 
         
         <div class="form-group input-group">
-        <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary">Crear</button>                   
-        </span>
-    </div>
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary">Crear</button>                   
+            </span>
+        </div>
     </form>
 </div>
 <jsp:include page="../teplate/footer.jsp"/>

@@ -152,7 +152,7 @@ public class ServicioUsuario {
         
      boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update usuario set usuario = ?,clave = ?,tipo_usuario_id=? where id = ?";                 
+        String sql = "update usuario set usuario = ?,clave = md5(?),tipo_usuario_id=? where id = ?";                 
 
         Connection con = Coneccion.getInstancia().getConeccion();
         try (PreparedStatement stmt = con.prepareStatement(sql)) {

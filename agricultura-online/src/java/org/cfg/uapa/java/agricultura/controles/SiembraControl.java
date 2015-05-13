@@ -46,7 +46,6 @@ public class SiembraControl extends HttpServlet {
         String soci = request.getParameter("socio");
         String zon = request.getParameter("zona");
         int tsembrada = Integer.parseInt(request.getParameter("tsembrada"));
-        int produccion = Integer.parseInt(request.getParameter("cproduccion"));
         
         Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(produc));
         Socio socio = ServicioSocio.getInstancia().getSocioPorId(Integer.valueOf(soci));
@@ -61,7 +60,6 @@ public class SiembraControl extends HttpServlet {
             siembra.setId_socio(socio);
             siembra.setId_zona(zona);
             siembra.setTareasembrada(tsembrada);
-            siembra.setProduccion(produccion);
             
             boolean isActualizado = ServicioSiembra.getInstancia().editarsiembra(siembra);
             
@@ -79,8 +77,7 @@ public class SiembraControl extends HttpServlet {
         siembra.setId_socio(socio);
         siembra.setId_zona(zona);  
         siembra.setTareasembrada(tsembrada);
-        siembra.setProduccion(produccion);
-
+   
             boolean isCreado = ServicioSiembra.getInstancia().crearSiembra(siembra);
 
             if (isCreado) {

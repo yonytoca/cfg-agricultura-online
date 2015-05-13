@@ -19,21 +19,22 @@
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="/agricultura-online/css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->
+
     </head>
     <body>
-         <% Usuario currentUser =  (Usuario) session.getAttribute("currentSessionUser");%>        
-                               
-                         
-                        
-                            <% if (session.getAttribute("currentSessionUser").equals(null)){%>                            
-                            <% response.sendRedirect("login.jsp"); %>
-                            <a href="login.jsp"> </a>
-                            <%}
-                                else{%>
-                             <% response.sendRedirect("login.jsp"); %>    
-                            <a href="logaut.jsp"> </a>
-                            <%}
-                            %>     
+        
+        <% Usuario currentUser = (Usuario) session.getAttribute("currentSessionUser");%>        
+
+
+
+        <% if (session.getAttribute("currentSessionUser").equals(null)) {%>                            
+        <% response.sendRedirect("login.jsp"); %>
+        <a href="login.jsp"> </a>
+        <%} else {%>
+        <% response.sendRedirect("login.jsp"); %>    
+        <a href="logaut.jsp"> </a>
+        <%}
+        %>     
         <!-- START PAGE CONTAINER -->
         <div class="page-container">
 
@@ -46,9 +47,9 @@
                         <a href="#" class="x-navigation-control"></a>
                     </li>                               
                     <!-- inicio del menu -->
-                    <li class="xn-title"><i class="glyphicon glyphicon-user  "></i></span><%= currentUser.getUsuario() %><i class="glyphicon glyphicon-u"></i><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-off"></i> Salir</a></li></li>
+                    <li class="xn-title"><i class="glyphicon glyphicon-user  "></i></span><%= currentUser.getUsuario()%><i class="glyphicon glyphicon-u"></i><li><a href="/agricultura-online/logaut.jsp"><i class="glyphicon glyphicon-off"></i> Salir</a></li></li>
                     <li>
-                    
+
                     </li> 
                     <li>
                     <li class="xn-openable">
@@ -56,15 +57,15 @@
                         <a href="#"><span class="fa fa-bars"></span> <span class="xn-text">Siembra</span></a>
 
                         <ul>
-                            
+
                             <li><a href="/agricultura-online/front-end/siembra/crearsiembra.jsp"><span class="fa fa-cog"></span>Registrar Siembra</a></li>
                             <li><a href="/agricultura-online/front-end/siembra/detallesiembra.jsp"><span class="fa fa-list"></span>Lista Siembra</a></li>
                             <!-- Sub-menu lista -->
-                           
+
                         </ul>                        
                     </li>
-                    
-                  
+
+
                 </ul>
                 <!-- END X-NAVIGATION -->
             </div>
@@ -87,13 +88,13 @@
                     <!-- MESSAGES -->
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class=""></span></a>
-                                               
+
                     </li>
                     <!-- END MESSAGES -->
                     <!-- Mostrar Usuario -->
-                     <li class="xn-icon-button pull-right">
+                    <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-user-md " ><%= currentUser.getUsuario()%></span></a>
-                         <ul>
+                        <ul>
                             <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-cog"></span>Zona</a></li>
                             <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-list"></span>Lista Zona</a></li>
                         </ul>

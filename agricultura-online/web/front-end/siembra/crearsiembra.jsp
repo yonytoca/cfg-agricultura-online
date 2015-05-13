@@ -78,10 +78,6 @@
             <label>Tarea Sembrada</label>
             <input name="tsembrada" class="form-control">               
         </div> 
-         <div class="form-group">
-            <label>Cantida Produccion</label>
-            <input name="cproduccion" class="form-control">               
-        </div> 
         
         <div class="form-group input-group">
         <span class="input-group-btn">

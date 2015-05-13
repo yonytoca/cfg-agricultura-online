@@ -35,10 +35,9 @@
                 <tr><th>Codigo</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Telefono</th>
+                    <th>Teléfono</th>
                     <th>Dirección</th>
                     <th>Usuario</th>
-                    <th>Imagen</th>
                     <th>Editar</th>
                 </tr>    
             </thead>
@@ -50,8 +49,7 @@
                         <td>${socio.getApellido()}</td>
                         <td>${socio.getTelefono()}</td>
                         <td>${socio.getDireccion()}</td>
-                        <td>${socio.getId_usuario().getUsuario()}</td>
-                        <td>${socio.getImg()}</td>
+                        <td>${socio.getId_usuario().getUsuario()}</td>                        
                         <td><a href="updatesocio.jsp?id=${socio.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
                     </tr>
                 </c:forEach>                         

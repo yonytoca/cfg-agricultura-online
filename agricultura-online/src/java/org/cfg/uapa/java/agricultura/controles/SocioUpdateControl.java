@@ -41,7 +41,7 @@ public class SocioUpdateControl extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");       
-        String imagen = request.getParameter("imagen");       
+//        String imagen = request.getParameter("imagen");       
         int id = Integer.valueOf(request.getParameter("id"));
         
         //int id = Integer.valueOf(request.getParameter("id"));    
@@ -53,7 +53,7 @@ public class SocioUpdateControl extends HttpServlet {
         socio.setApellido(apellido);
         socio.setTelefono(telefono);
         socio.setDireccion(direccion);
-        socio.setImg(imagen);
+  //      socio.setImg(imagen);
         socio.setId(id);
         
         boolean isCreado = ServicioSocio.getInstancia().UpdateSocio(socio);

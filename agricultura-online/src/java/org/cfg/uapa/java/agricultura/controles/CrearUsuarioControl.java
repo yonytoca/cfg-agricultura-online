@@ -40,11 +40,11 @@ public class CrearUsuarioControl extends HttpServlet {
         String user = request.getParameter("usuario");
         String clave = request.getParameter("clave");
         String tuser = request.getParameter("tusuario");
-        
-                
+
+                 
         TipoUsuario tipou = ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(Integer.valueOf(tuser));
 
-        if (null != id) { // crear usuario              
+        if (null != id) { // Editar usuario              
             
             Usuario usuario = new Usuario();
             usuario.setId(Integer.parseInt(id));

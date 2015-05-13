@@ -78,10 +78,7 @@
             <label>Tarea Sembrada</label>
             <input name="tsembrada" class="form-control" value="<%=siembra.getTareasembrada()%>">               
         </div> 
-         <div class="form-group">
-            <label>Cantida Produccion</label>
-            <input name="cproduccion" class="form-control" value="<%=siembra.getProduccion()%>">               
-        </div> 
+        
         <div class="form-group input-group">
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Actualizar</button>                   

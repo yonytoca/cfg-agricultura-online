@@ -33,7 +33,7 @@
                 <tr><th>Codigo</th>
                     <th>Nombre</th>
                     <th>Tipo Usuario</th>
-                    <th>Editar</th>
+                    
                     
                                         
                 </tr>    
@@ -44,7 +44,7 @@
                         <td>${usuario.getId()}</td>
                         <td>${usuario.getUsuario()}</td>
                         <td>${usuario.getTipo_usuario_id().getNombre()}</td>
-                        <td><a href="editarusuario.jsp?id=${usuario.getId()}"><i class="glyphicon glyphicon-edit"></i></a></td>
+                       
                     </tr>
                 </c:forEach>                         
             </tbody>

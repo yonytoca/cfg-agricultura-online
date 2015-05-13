@@ -16,10 +16,10 @@
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <%
-    List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
+    List<Usuario> tusuario = ServicioUsuario.getInstancia().getListadoUsuario();    
 %>
 <div>
-    <a href="../usuario/crearusuario.jsp">Crear Usuario</a>
+  
 </div>
 
 <form role="form" action="/agricultura-online/SocioControl">
@@ -40,18 +40,14 @@
         <input name="direccion" type="text" class="form-control" placeholder="Dirección">                                            
     </div>
     <div class="form-group">
-        <label>Tipo Usuario</label>
+        <label> Usuario</label>
         <select class="form-control" name="usuario">
             <c:forEach items="<%=tusuario%>" var="tusuario">
-                <option value="${tusuario.getId()}">${tusuario.getNombre()}</option>
+                <option value="${tusuario.getId()}">${tusuario.getUsuario()}</option>
             </c:forEach>                
         </select>
     </div>
-    <div class="form-group input-group">
-        <label> Imagen</label>
-        <input name="imagen" type="text" class="form-control" placeholder="Imagen">
-
-    </div>
+  
     <div class="form-group input-group">
         <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Crear</button>                   

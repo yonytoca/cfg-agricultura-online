@@ -45,7 +45,7 @@ public List<Socio> getListadoSocio()  {
                 socios.setDireccion(rs.getString("direccion"));
                 socios.setId_usuario(ServicioUsuario.getInstancia().getUsuarioPorId(rs.getInt("id_usuario")));               
                 socios.setClave(rs.getString("clave"));
-                socios.setImg(rs.getString("img"));
+             //   socios.setImg(rs.getString("img"));
                 listasocio.add(socios);                           
             
               }       
@@ -80,7 +80,7 @@ public Socio getSocioPorId(int id){
            socios.setApellido(rs.getString("apellido"));
            socios.setTelefono(rs.getString("telefono"));
            socios.setDireccion(rs.getString("direccion"));
-           socios.setImg(rs.getString("img"));         
+           //socios.setImg(rs.getString("img"));         
             
          }catch (SQLException e) {
                 Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
@@ -92,7 +92,7 @@ public Socio getSocioPorId(int id){
 
         boolean estado = false;
         PreparedStatement stmt = null ;
-        String sql = "insert into socio(nombre,apellido,telefono,direccion,id_usuario,clave,img) values(?,?,?,?,?,?,?)";
+        String sql = "insert into socio(nombre,apellido,telefono,direccion,id_usuario,clave) values(?,?,?,?,?,?)";
         
          Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -105,7 +105,7 @@ public Socio getSocioPorId(int id){
              stmt.setString(4, socio.getDireccion());   
              stmt.setInt(5,socio.getId_usuario().getId());                        
              stmt.setString(6, socio.getClave());
-             stmt.setString(7,socio.getImg());                 
+             //stmt.setString(7,socio.getImg());                 
             stmt.executeUpdate();
             
             estado = true;
@@ -123,7 +123,7 @@ public Socio getSocioPorId(int id){
         
      boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion = ?,img = ? where id = ?"; 
+        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion = ? where id = ?"; 
                 
 
         Connection con = Coneccion.getInstancia().getConeccion();
@@ -135,8 +135,8 @@ public Socio getSocioPorId(int id){
             stmt.setString(2, socio.getApellido());
             stmt.setString(3, socio.getTelefono());
             stmt.setString(4, socio.getDireccion());
-            stmt.setString(5, socio.getImg());
-            stmt.setInt(6, socio.getId());
+//            stmt.setString(5, socio.getImg());
+            stmt.setInt(5, socio.getId());
 
             stmt.executeUpdate();
 

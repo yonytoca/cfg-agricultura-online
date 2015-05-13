@@ -44,7 +44,7 @@ public class SocioControl extends HttpServlet {
         String direccion = request.getParameter("direccion");
         String usuarios = request.getParameter("usuario");
         String clave = request.getParameter("clave");       
-        String imagen = request.getParameter("imagen");       
+  //      String imagen = request.getParameter("imagen");       
         
     
         Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
@@ -57,7 +57,7 @@ public class SocioControl extends HttpServlet {
         socio.setDireccion(direccion);
         socio.setId_usuario(usuario);                
         socio.setClave(clave);
-        socio.setImg(imagen);
+    //    socio.setImg(imagen);
     
         
         boolean isCreado = ServicioSocio.getInstancia().crearSocio(socio);
