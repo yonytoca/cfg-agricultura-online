@@ -16,30 +16,35 @@
 
     List<Siembra> siembras = ServicioSiembraDetalle.getInstancia().getListadoSiembradetalle();
     List<Siembra> siembraz = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona();
+    Siembra constanza = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(1, 1);
+    Siembra tireo = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(2, 2);
+    Siembra rio = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(3, 3);
 %>
 
-
+<input type="text" name="idsiembra" value="<%=constanza.getCantidad_producto()%>" required="" />
+<input type="text" name="idsiembra" value="<%=tireo.getCantidad_producto()%>" required="" />
+<input type="text" name="idsiembra" value="<%=rio.getCantidad_producto()%>" required="" />
 <script type="text/javascript">
     "use strict";
 
     $(document).ready(function () {
         var tipos = [];
-        tipos[0] = "producto";
-        tipos[1] = "cantidad";
-        tipos[2] = "De 7,000 a 15,000";       
+        tipos[0] = "constanza";
+        tipos[1] = "tireo";
+        tipos[2] = "rio";
         var total = [];
-        total[0] =${siembras.getId_producto().getId()};
-        total[1] =${siembras.getId_producto().getNombre()};
-        total[2] =${siembraz.getCantidad_producto()};
-        
+        total[0] =${constanza.getCantidad()};
+        total[1] =${tireo.getCantidad()};
+        total[2] =${rio.getCantidad()};
+
         var d_pie = [];
-        var series = 5;
+        var series = 3;
         for (var i = 0; i < series; i++) {
             d_pie[i] = {label: tipos[i], data: Math.floor(total[i] * 100) + 1};
 
         }
 
-        $.plot("#siembras", d_pie, $.extend(true, {}, Plugins.getFlotDefaults(), {
+        $.plot("#morris-line-example", d_pie, $.extend(true, {}, Plugins.getFlotDefaults(), {
             series: {
                 pie: {
                     show: true,
@@ -64,14 +69,9 @@
 
     });
 </script>
-<div class="page-header">
-    <div class="page-title">
-        <h3>Estadisticas</h3>
 
-    </div>
-</div>
 
-          
+
 
 <!-- START LINE CHART -->
 <div class="panel panel-default">
@@ -80,6 +80,49 @@
     </div>
     <div class="panel-body">
         <div id="morris-line-example" style="height: 300px;"></div>
+    </div>
+</div>
+<!-- END LINE CHART -->
+<div class="page-header">
+    <div class="page-title">
+        <h3>Estadisticas</h3>
+
+    </div>
+</div>
+
+
+
+<!-- START LINE CHART -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="widget box">
+            <div class="widget-header">
+                <h4><i class="icon-reorder"></i> Reportes por tipo de violencia</h4>
+                <div class="toolbar no-padding">
+                    <div class="btn-group">
+                        <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content">
+                <div id="chart_pie" class="chart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="widget box">
+            <div class="widget-header">
+                <h4><i class="icon-reorder"></i> Reportes por cantidad de ingresos</h4>
+                <div class="toolbar no-padding">
+                    <div class="btn-group">
+                        <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-content">
+                <div id="chart_pie" class="chart"></div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- END LINE CHART -->

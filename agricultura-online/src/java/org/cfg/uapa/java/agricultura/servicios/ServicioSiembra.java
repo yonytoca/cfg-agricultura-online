@@ -67,7 +67,7 @@ public class ServicioSiembra {
         try (Connection con = Coneccion.getInstancia().getConeccion()) {
 
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-                pstmt.setInt(1, id);
+                pstmt.setInt(6, id);
 
                 try (ResultSet rs = pstmt.executeQuery()) {
 
