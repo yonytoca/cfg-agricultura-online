@@ -31,8 +31,7 @@
         <table class="table datatable">
             <thead>
                 <tr><th>Codigo</th>
-                    <th>Nombre</th>  
-                    <th>Imagen</th>
+                    <th>Nombre</th>                      
                     <th>Tipo Producto</th>
                     <th>Variedad</th>
                     <th>Tiempo producion/días</th>
@@ -44,8 +43,7 @@
                 <c:forEach items="<%=producto%>" var="producto">
                     <tr>
                         <td>${producto.getId()}</td>
-                        <td>${producto.getNombre()}</td>
-                        <td>${producto.getImg()}</td>
+                        <td>${producto.getNombre()}</td>                        
                         <td>${producto.getTipo_producto_id().getNombre()}</td>
                         <td>${producto.getId_variedad().getNombre()}</td>
                         <td>${producto.getTiempoProduccion()}</td>

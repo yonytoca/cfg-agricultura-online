@@ -39,8 +39,7 @@ public class ProductoControl extends HttpServlet {
             throws ServletException, IOException {
 
         String idproducto = request.getParameter("idproducto");
-        String nombre = request.getParameter("nombre");
-        String img = request.getParameter("img");
+        String nombre = request.getParameter("nombre");        
         String tproducto = request.getParameter("tproducto");
         String variedad = request.getParameter("variedad");        
         int tproduccion = Integer.parseInt(request.getParameter("periodo"));
@@ -53,7 +52,6 @@ public class ProductoControl extends HttpServlet {
             Producto producto = new Producto();
             producto.setId(Integer.parseInt(idproducto));
             producto.setNombre(nombre);
-            producto.setImg(img);
             producto.setTipo_producto_id(tipoproduc);
             producto.setId_variedad(varied);
             producto.setTiempoProduccion(tproduccion);
@@ -73,7 +71,6 @@ public class ProductoControl extends HttpServlet {
         } else {
            Producto producto = new Producto();
             producto.setNombre(nombre);
-            producto.setImg(img);
             producto.setTipo_producto_id(tipoproduc);
             producto.setId_variedad(varied);
             producto.setTiempoProduccion(tproduccion);

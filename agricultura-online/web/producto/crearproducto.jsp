@@ -24,10 +24,6 @@
             <label>Nombre</label>
             <input name="nombre" class="form-control">               
         </div>
-        <div class="form-group">
-            <label>Imagen</label>
-            <input name="img" class="form-control">               
-        </div>         
         
           <div class="form-group">
             <label>Tipo Producto</label>

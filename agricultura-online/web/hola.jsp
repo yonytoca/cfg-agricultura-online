@@ -37,6 +37,7 @@ document.b.submit();
     <div class="form-group input-group">
         
         <input name="seccion" type="hidden" value="<%= currentUser.getTipo_usuario_id().getId() %>" class="form-control" placeholder="Nombre">
+
     </div   
 
 </form>

@@ -31,11 +31,6 @@
             <input name="idproducto" type="hidden" class="form-control" value="<%=producto.getId()%>">   
             <input name="nombre" class="form-control" value="<%=producto.getNombre()%>">               
         </div>
-        <div class="form-group">
-            <label>Imagen</label>
-            <input name="img" class="form-control" value="<%=producto.getImg()%>">               
-        </div> 
-       
         
           <div class="form-group">
             <label>Tipo Producto</label>

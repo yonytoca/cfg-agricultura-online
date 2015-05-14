@@ -3,6 +3,7 @@
     Created on : 25/04/2015, 04:30:29 PM
     Author     : VíctorAndrés
 --%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.Usuario"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -64,6 +65,12 @@
                 </c:forEach>                
             </select>
         </div>
+        <label>
+             <% Usuario currentUser =  (Usuario) session.getAttribute("currentSessionUser");%>        
+            
+                   
+            <%= currentUser.getUsuario() %>
+        </label>
         <label>Fecha Siembra</label>
         <div class="form-group">           
             <div class="col-md-5">
