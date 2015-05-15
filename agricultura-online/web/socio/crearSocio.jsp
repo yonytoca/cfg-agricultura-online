@@ -16,7 +16,7 @@
 <jsp:include page="../teplate/header.jsp"/>
 <!DOCTYPE html>
 <%
-    List<Usuario> tusuario = ServicioUsuario.getInstancia().getListadoUsuario();    
+    List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
 %>
 <div>
   
@@ -39,11 +39,19 @@
         <label> Dirección</label>
         <input name="direccion" type="text" class="form-control" placeholder="Dirección">                                            
     </div>
+        <div class="form-group input-group">
+        <label> Usuario </label>
+        <input name="usuario" type="text" class="form-control" placeholder="Usuario">                                            
+    </div>
+        <div class="form-group input-group">
+        <label> Clave </label>
+        <input name="clave" type="password" class="form-control" placeholder="clave">                                            
+    </div>
     <div class="form-group">
-        <label> Usuario</label>
-        <select class="form-control" name="usuario">
+        <label> Tipo Usuario</label>
+        <select class="form-control" name="tusuario">
             <c:forEach items="<%=tusuario%>" var="tusuario">
-                <option value="${tusuario.getId()}">${tusuario.getUsuario()}</option>
+                <option value="${tusuario.getId()}">${tusuario.getNombre()}</option>
             </c:forEach>                
         </select>
     </div>

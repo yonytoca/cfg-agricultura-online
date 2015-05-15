@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.cfg.uapa.java.agricultura.entidades.Producto;
 import org.cfg.uapa.java.agricultura.entidades.Socio;
+import org.cfg.uapa.java.agricultura.entidades.TipoUsuario;
 import org.cfg.uapa.java.agricultura.entidades.Usuario;
 import org.cfg.uapa.java.agricultura.servicios.ServicioProducto;
 import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
+import org.cfg.uapa.java.agricultura.servicios.ServicioTipoUsuario;
 import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
 
 /**
@@ -43,20 +45,21 @@ public class SocioControl extends HttpServlet {
         String telefono = request.getParameter("telefono");
         String direccion = request.getParameter("direccion");
         String usuarios = request.getParameter("usuario");
-        String clave = request.getParameter("clave");       
-  //      String imagen = request.getParameter("imagen");       
+        String clave = request.getParameter("clave");
+        String tipousu = request.getParameter("tusuario");
         
     
-        Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
-        
+        //Usuario usuario = ServicioUsuario.getInstancia().getUsuarioPorId(Integer.valueOf(usuarios));        
+        TipoUsuario tusuario = ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(Integer.valueOf(tipousu));
         
         Socio socio = new Socio();
         socio.setNombre(nombre);
         socio.setApellido(apellido);
         socio.setTelefono(telefono);
         socio.setDireccion(direccion);
-        socio.setId_usuario(usuario);                
+        socio.setUsuario(usuarios);                
         socio.setClave(clave);
+        socio.setTipousuario(tusuario);
     //    socio.setImg(imagen);
     
         

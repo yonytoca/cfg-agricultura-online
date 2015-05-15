@@ -15,8 +15,9 @@ public class Socio {
     private String apellido;
     private String telefono;
     private String direccion;
-    private Usuario id_usuario; //de tipo usuario
+    private String usuario; //de tipo usuario
     private String clave;
+    private TipoUsuario tipousuario;
     private String img;
 
     /**
@@ -90,20 +91,6 @@ public class Socio {
     }
 
     /**
-     * @return the id_usuario
-     */
-    public Usuario getId_usuario() {
-        return id_usuario;
-    }
-
-    /**
-     * @param id_usuario the id_usuario to set
-     */
-    public void setId_usuario(Usuario id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    /**
      * @return the clave
      */
     public String getClave() {
@@ -133,6 +120,34 @@ public class Socio {
 
     public void getId(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the tipousuario
+     */
+    public TipoUsuario getTipousuario() {
+        return tipousuario;
+    }
+
+    /**
+     * @param tipousuario the tipousuario to set
+     */
+    public void setTipousuario(TipoUsuario tipousuario) {
+        this.tipousuario = tipousuario;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public String getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
    
