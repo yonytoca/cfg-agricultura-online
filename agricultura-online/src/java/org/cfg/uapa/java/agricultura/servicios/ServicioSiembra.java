@@ -56,6 +56,30 @@ public class ServicioSiembra {
         return listasiembra;
     }
    
+    public List<Siembra> getListadoSiembraporuser() {
+
+        List<Siembra> listasiembra = new ArrayList<>();
+
+        try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("select * from siembra")) {
+            try (ResultSet rs = stmt.executeQuery()) {
+
+                while (rs.next()) {
+                    Siembra siembra = new Siembra();
+                    siembra.setId(rs.getInt("id"));
+                    siembra.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));
+                    siembra.setFecha_siembra(rs.getString("fecha_siembra"));
+                    siembra.setCantidad_producto(rs.getInt("cantidad_producto"));
+                    siembra.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
+                    siembra.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
+                    siembra.setTareasembrada(rs.getInt("tarea_sembrada"));
+                    listasiembra.add(siembra);
+                }
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(ServicioSiembra.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listasiembra;
+    }
     
     
     
