@@ -22,10 +22,10 @@
     List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();       
 %>
 
-<form role="form" action="/agricultura-online/SocioUpdateControl">
+<form role="form" action="/agricultura-online/SocioControl">
     <div class="form-group input-group">
         <label>Nombre </label>
-        <input type="hidden" name="id" value="<%=socio.getId()%>" required="" />
+        <input type="hidden" name="idsocio" value="<%=socio.getId()%>" required="" />
         <input name="nombre" type="text" class="form-control" value="<%=socio.getNombre()%>" required="" >
     </div>
     <div class="form-group input-group">
@@ -42,12 +42,9 @@
     </div> 
             <div class="form-group input-group">
         <label> Usuario </label>
-        <input name="usuario" type="text" class="form-control" placeholder="Usuario">                                            
+        <input name="usuario" type="text" class="form-control" value="<%=socio.getUsuario()%>" placeholder="">                                            
     </div>
-        <div class="form-group input-group">
-        <label> Clave </label>
-        <input name="clave" type="text" class="form-control" placeholder="clave">                                            
-    </div>
+        
     <div class="form-group">
         <label> Tipo Usuario</label>
         <select class="form-control" name="tusuario">

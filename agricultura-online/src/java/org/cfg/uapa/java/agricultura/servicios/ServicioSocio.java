@@ -80,6 +80,8 @@ public class ServicioSocio {
             socios.setApellido(rs.getString("apellido"));
             socios.setTelefono(rs.getString("telefono"));
             socios.setDireccion(rs.getString("direccion"));
+            socios.setUsuario(rs.getString("usuario"));
+            socios.setTipousuario(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
            //socios.setImg(rs.getString("img"));         
 
         } catch (SQLException e) {
@@ -124,7 +126,7 @@ public class ServicioSocio {
 
         boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion, usuario=?, clave=md5(?), tipo_usuario_id=? where id = ?";
+        String sql = "update socio set nombre = ?,apellido = ?,telefono = ?,direccion=?, usuario=?, tipo_usuario_id=? where id = ?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -135,10 +137,9 @@ public class ServicioSocio {
             stmt.setString(2, socio.getApellido());
             stmt.setString(3, socio.getTelefono());
             stmt.setString(4, socio.getDireccion());
-            stmt.setString(5, socio.getUsuario());
-            stmt.setString(6, socio.getClave());
-            stmt.setInt(7, socio.getTipousuario().getId());
-            stmt.setInt(8, socio.getId());
+            stmt.setString(5, socio.getUsuario()); 
+            stmt.setInt(6, socio.getTipousuario().getId());
+            stmt.setInt(7, socio.getId());
 
             stmt.executeUpdate();
 
