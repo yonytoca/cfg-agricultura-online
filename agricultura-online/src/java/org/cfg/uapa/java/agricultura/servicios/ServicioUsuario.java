@@ -74,6 +74,8 @@ public class ServicioUsuario {
                     usuario1 = new Usuario();                                   
                     usuario1.setUsuario(rs.getString("usuario"));
                     usuario1.setClave(rs.getString("clave"));
+                    usuario1.setNombre(rs.getString("nombre"));
+                    usuario1.setApellido(rs.getString("apellido"));
                     usuario1.setTipo_usuario_id(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
                     usuario1.setId(rs.getInt("id"));
                     

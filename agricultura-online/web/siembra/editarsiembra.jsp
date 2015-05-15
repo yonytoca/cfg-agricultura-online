@@ -66,9 +66,9 @@
 
 
         <div class="form-group">
-            <label>Variedad</label>
+            <label>Zona</label>
             <select class="form-control" name="zona">
-                <option value="<%=siembra.getId_zona().getId()%>"><%=siembra.getId_zona().getNombre()%></option>
+              
                 <c:forEach items="<%=zona%>" var="zona">
                     <option value="${zona.getId()}">${zona.getNombre()}</option>
                 </c:forEach>                

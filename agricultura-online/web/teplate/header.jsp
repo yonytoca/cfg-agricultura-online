@@ -131,7 +131,7 @@
                     <!-- END MESSAGES -->
                     <!-- Mostrar Usuario -->
                      <li class="xn-icon-button pull-right">
-                        <a href="#"><span class="fa fa-user-md " ><%= currentUser.getUsuario()%></span></a>
+                        <a href="#"><span class="fa fa-user-md " ><%= currentUser.getNombre() + " " + currentUser.getApellido() %></span></a>
                          <ul>
                             <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-users"></span>Mi cuenta</a></li>
                             <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-cog"></span>Configuración</a></li>

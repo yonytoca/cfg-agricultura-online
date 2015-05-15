@@ -67,7 +67,7 @@ public class ServicioSiembra {
         try (Connection con = Coneccion.getInstancia().getConeccion()) {
 
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-                pstmt.setInt(6, id);
+                pstmt.setInt(1, id);
 
                 try (ResultSet rs = pstmt.executeQuery()) {
 
@@ -174,7 +174,7 @@ public class ServicioSiembra {
             stmt.setInt(4, siembra.getId_socio().getId());
             stmt.setInt(5, siembra.getId_zona().getId());
             stmt.setInt(6, siembra.getTareasembrada());
-            stmt.setInt(8, siembra.getId());
+            stmt.setInt(7, siembra.getId());
 
             stmt.executeUpdate();
             estado = true;

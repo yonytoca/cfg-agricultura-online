@@ -25,7 +25,7 @@
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
     Date dNow = new Date();
     SimpleDateFormat ft
-            = new SimpleDateFormat("yyyy/dd/MM");
+            = new SimpleDateFormat("yyyy/MM/dd");
     String currentDate = ft.format(dNow);
 %>
 <script>
@@ -66,13 +66,7 @@
                 </c:forEach>                
             </select>
         </div>
-        <label>
-             <% Usuario currentUser =  (Usuario) session.getAttribute("currentSessionUser");%>        
-            
-                   
-            <%= currentUser.getUsuario() %>
-            <input name="seccion" type="text" value="<%= currentUser.getId() %>" class="form-control" placeholder="Nombre">
-        </label>
+     
         <label>Fecha Siembra</label>
         <div class="form-group">           
             <div class="col-md-5">
