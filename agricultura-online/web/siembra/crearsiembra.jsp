@@ -55,6 +55,7 @@
 
 
 <div class="col-lg-6">
+    
     <form name="my" action="/agricultura-online/SiembraControl"  method="post" onsubmit="return validateForm()"> 
 
         <div class="form-group">
@@ -70,6 +71,7 @@
             
                    
             <%= currentUser.getUsuario() %>
+            <input name="seccion" type="text" value="<%= currentUser.getId() %>" class="form-control" placeholder="Nombre">
         </label>
         <label>Fecha Siembra</label>
         <div class="form-group">           

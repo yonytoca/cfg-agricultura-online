@@ -61,7 +61,7 @@ public class ServicioUsuario {
         Connection con = Coneccion.getInstancia().getConeccion();
         Usuario usuario1 = null;
 
-        try (PreparedStatement pstmt = con.prepareStatement("select * from usuario where usuario = ? and clave= MD5(?)")) {
+        try (PreparedStatement pstmt = con.prepareStatement("select * from socio where usuario = ? and clave= MD5(?)")) {
 
             pstmt.setString(1, usuario);
             pstmt.setString(2, clave);
@@ -75,6 +75,7 @@ public class ServicioUsuario {
                     usuario1.setUsuario(rs.getString("usuario"));
                     usuario1.setClave(rs.getString("clave"));
                     usuario1.setTipo_usuario_id(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
+                    usuario1.setId(rs.getInt("id"));
                     
             }
 
