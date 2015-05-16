@@ -39,7 +39,8 @@ public class CrearUsuarioControl extends HttpServlet {
             throws ServletException, IOException {
 
         String id = request.getParameter("id");              
-        String clave = request.getParameter("clave");
+        String clave = request.getParameter("clave");        
+        String usuario = request.getParameter("usuario");
         String sc = request.getParameter("seccion");
     
 
@@ -47,26 +48,21 @@ public class CrearUsuarioControl extends HttpServlet {
         if (null != id) { // Editar usuario              
             
             Socio socio = new Socio();       
+            socio.setId(Integer.parseInt(id));
             socio.setClave(clave);
+            socio.setUsuario(usuario);
+            
             
             boolean isActualizado = ServicioSocio.getInstancia().EditarClaveSocio(socio);
 
-                if (isActualizado) {
-
-                response.sendRedirect("front-end/index1.jsp");
-
-            } else {
-
-                response.sendRedirect("index2.jsp");
-            }
                 
-         //   if (isActualizado && sc.equals("2")) {                
+
+            if (isActualizado && sc.equals("2")) {                
                
-           //     response.sendRedirect("front-end/index1.jsp");               
-        //    }else{
-        //    response.sendRedirect("index2.jsp");
-        //    }
-               
+           response.sendRedirect("front-end/index1.jsp");               
+            }else{
+            response.sendRedirect("index2.jsp");
+            }                  
             
         }        
     }

@@ -61,6 +61,11 @@
             <label><%=socio.getUsuario()%></label>
         </div>
         <div class="form-group">
+            <label> Usuario </label>
+            <input name="usuario" type="text" value="<%=socio.getUsuario()%>" class="form-control">               
+        </div>
+       
+        <div class="form-group">
             <label>Clave nueva</label>
             <input name="clave1" type="password" value="" onkeydown="checkEmail" class="form-control">               
         </div> 

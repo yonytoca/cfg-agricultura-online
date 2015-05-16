@@ -43,6 +43,7 @@ public class ServicioUsuario {
                     user.setId(rs.getInt("id"));
                     user.setUsuario(rs.getString("usuario"));
                     user.setTipo_usuario_id(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
+                    user.setClave(rs.getString("clave"));
                                        
                     Listausuario.add(user);
                  }

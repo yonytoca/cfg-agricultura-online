@@ -46,8 +46,7 @@
 
 <%
     int id = Integer.parseInt(request.getParameter("id"));
-    Socio socio = ServicioSocio.getInstancia().getSocioPorId(id);
-   
+    Socio socio = ServicioSocio.getInstancia().getSocioPorId(id);   
 %>
 
 
@@ -55,11 +54,15 @@
     <form action="/agricultura-online/CrearUsuarioControl"   method="post"  onsubmit="return checkEmail(this);">        
         <div class="form-group">
             
-            <input name="id" type="hidden" value="<%=socio.getId()%>" class="form-control">               
+            <input name="id" type="text" value="<%=socio.getId()%>" class="form-control">               
             <input name="seccion" type="text" value="<%=socio.getTipousuario().getId()%>" class="form-control">               
             <label><%=socio.getUsuario()%></label>
         </div>
         <div class="form-group">
+            <label> Usuario </label>
+            <input name="usuario" type="text" value="<%=socio.getUsuario()%>" class="form-control">               
+        </div>
+            <div class="form-group">
             <label>Clave nueva</label>
             <input name="clave1" type="password" value="" onkeydown="checkEmail" class="form-control">               
         </div> 

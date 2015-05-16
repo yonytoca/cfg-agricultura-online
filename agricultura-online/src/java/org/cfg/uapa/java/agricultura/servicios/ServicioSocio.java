@@ -82,6 +82,7 @@ public class ServicioSocio {
             socios.setDireccion(rs.getString("direccion"));
             socios.setUsuario(rs.getString("usuario"));
             socios.setTipousuario(ServicioTipoUsuario.getInstancia().getTipoUsuarioPorId(rs.getInt("tipo_usuario_id")));
+            socios.setClave(rs.getString("clave"));
            //socios.setImg(rs.getString("img"));         
 
         } catch (SQLException e) {
@@ -157,7 +158,7 @@ public class ServicioSocio {
 
         boolean estado;
         //PreparedStatement stmt = null ;
-        String sql = "update socio set clave = MD5(?) where id = ?";
+        String sql = "update socio set clave=MD5(?), usuario=? where id = ?";
 
         Connection con = Coneccion.getInstancia().getConeccion();
 
@@ -165,7 +166,8 @@ public class ServicioSocio {
 
             //stmt = con.prepareStatement(sql);
             stmt.setString(1, socio.getClave());
-            stmt.setInt(2, socio.getId());
+            stmt.setString(2, socio.getUsuario());
+            stmt.setInt(3, socio.getId());
 
             stmt.executeUpdate();
             estado = true;
