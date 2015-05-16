@@ -1,17 +1,8 @@
 <%-- 
-    Document   : contacto
-    Created on : 14/05/2015, 10:30:43 PM
-    Author     : EDUARDO
+    Document   : nosotros
+    Created on : 16-may-2015, 11:11:37
+    Author     : victor
 --%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
-<%
-    Date dNow = new Date();
-    SimpleDateFormat ft
-            = new SimpleDateFormat("yyyy/MM/dd");
-    String currentDate = ft.format(dNow);
-%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +47,7 @@
                     <ul class="navigation">
                         <li>
                             <a href="/agricultura-online/front-end/nosotros.jsp">SIGECOPA</a>
-
+                           
                         </li>
                         <li>
                             <a href="/agricultura-online/front-end/contacto.jsp">CONTACTOS</a>
@@ -92,7 +83,7 @@
                         <div class="page-content-holder no-padding">
                             <!-- page title -->
                             <div class="page-title">                            
-                                <h1>Contacto</h1>
+                                <h1>Nosotros</h1>
                                 <!-- breadcrumbs -->
 
                                 <!-- ./breadcrumbs -->
@@ -100,80 +91,51 @@
                             <!-- ./page title -->
                         </div>
                         <!-- ./page content holder -->
-                        <div class="page-content-wrap">                    
-
-                            <div id="google-map" style="width: 100%; height: 300px;"></div>
-
-                        </div>
-                        <!-- ./page content wrapper -->
+                    </div>
+                    <!-- ./page content wrapper -->
 
 
 
-                        <!-- page content wrapper -->
-                        <div class="page-content-wrap">                    
+                    <!-- page content wrapper -->
+                    <div class="page-content-wrap">                    
 
-                            <div class="divider"><div class="box"><span class="fa fa-angle-down"></span></div></div>                    
+                        <div class="divider"><div class="box"><span class="fa fa-angle-down"></span></div></div>                    
 
-                            <!-- page content holder -->
-                            <div class="page-content-holder">
+                        <!-- page content holder -->
+                        <div class="page-content-holder">
 
-                                <div class="row">
-                                    <div class="col-md-7 this-animate" data-animate="fadeInLeft">
+                            <!-- page content wrapper -->
+                            <div class="page-content-wrap">                    
+                                <!-- page content holder -->
+                                <div class="page-content-holder">
 
-                                        <div class="text-column">
-                                            <h4>Contactanos </h4>
-                                            <div class="text-column-info">
-                                                Escribe un mensaje y estaremos muy pronto en contacto. Gacias por visìtarnos 
-                                            </div>
+                                    <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
+                                        <h2 class="heading-underline">SIGECOPA</h2>
+                                        <div class="block-heading-text">
+                                            Es una plataforma para suministrando información útil, confiable y accesible a los productores agrícolas, a la hora de sembrar, grantizando un mejor precio de venta.
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label> Nombre <span class="text-hightlight">*</span></label>
-                                                    <input name="nombre" type="text" class="form-control"/>
-                                                    <input type="hidden" id="dp-3" name="fecha" value="<%=currentDate%>"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label> Dirección <span class="text-hightlight">*</span></label>
-                                                    <input name="correo" type="text" class="form-control"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label> Asunto <span class="text-hightlight">*</span></label>
-                                                    <input name="asunto" type="text" class="form-control"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label> Mensage <span class="text-hightlight">*</span></label>
-                                                    <textarea name="mensaje" class="form-control" rows="8"></textarea>
-                                                </div>
-                                                <button class="btn btn-primary btn-lg pull-right">Enviar Mensaje</button>
-                                            </div>
-                                        </div>
-
                                     </div>
-                                    <div class="col-md-5 this-animate" data-animate="fadeInRight">
 
-                                        <div class="text-column text-column-centralized">
-                                            <div class="text-column-icon">
-                                                <span class="fa fa-home"></span>
-                                            </div>                                    
-                                            <h4>Nuestra Oficina</h4>
-                                            <div class="text-column-info">
-                                                <p><strong><span class="fa fa-map-marker"></span> Direccion: </strong>colonia kennedy, Constanza c/principal #15 </p>
-                                                <p><strong><span class="fa fa-phone"></span> telefonos: </strong> (809)-539-1355</p>
-                                                <p><strong><span class="fa fa-envelope"></span> E-mail: </strong> <a href="#">sigecopa@sigecopa.com.do</a></p>
-                                            </div>
-                                        </div>
-
-
-
-
-                                    </div>
                                 </div>
+                                <!-- ./page content holder -->
+                            </div>
+                            <div class="page-content-holder">                        
 
+                                <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
+                                    <h2 class="heading-underline">Meet Our Team</h2>
+                                    <div class="block-heading-text">
+                                        Cras ut neque metus. Morbi pharetra purus sed enim sagittis, vitae cursus tortor tempus. Vestibulum eu gravida quam, nec congue odio. Nullam id hendrerit sem.
+                                    </div>
+                                </div>                               
+                            </div>
+                             <div class="page-content-holder">                        
+
+                                <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
+                                    <h2 class="heading-underline">Meet Our Team</h2>
+                                    <div class="block-heading-text">
+                                        Cras ut neque metus. Morbi pharetra purus sed enim sagittis, vitae cursus tortor tempus. Vestibulum eu gravida quam, nec congue odio. Nullam id hendrerit sem.
+                                    </div>
+                                </div>                               
                             </div>
                             <!-- ./page content holder -->
                         </div>

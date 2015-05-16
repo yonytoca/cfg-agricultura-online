@@ -52,11 +52,8 @@
                     <!-- navigation -->
                     <ul class="navigation">
                         <li>
-                            <a href="#">SIGECOPA</a>
-                            <ul>
-                                <li><a href="index.jsp">Pantalla Principal</a></li>
-                                <li><a href="index-default.html">Default</a></li>
-                            </ul>
+                            <a href="/agricultura-online/front-end/nosotros.jsp">SIGECOPA</a>
+                           
                         </li>
                         <li>
                             <a href="/agricultura-online/front-end/contacto.jsp">CONTACTOS</a>
@@ -345,7 +342,7 @@
                         <div class="col-md-4">                                
                             <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInLeft">
                                 <div class="text-column-icon">
-                                    <span class="fa fa-"></span>
+                                    <span class="fa fa-arrow-circle-down"></span>
                                 </div>
                                 <h4>Fresa</h4>
                                 <div class="text-column-info">
@@ -359,7 +356,7 @@
                         <div class="col-md-4">                                
                             <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInUp">
                                 <div class="text-column-icon">
-                                    <span class="fa fa-expand"></span>
+                                    <span class="fa fa-arrow-circle-down"></span>
                                 </div>
                                 <h4>Ajo</h4>
                                 <div class="text-column-info">
@@ -371,7 +368,7 @@
                         <div class="col-md-4">                                
                             <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInRight">
                                 <div class="text-column-icon">
-                                    <span class="fa fa-clock-o"></span>
+                                    <span class="fa fa-arrow-circle-down"></span>
                                 </div>
                                 <h4>Zanahoria</h4>
                                 <div class="text-column-info">
