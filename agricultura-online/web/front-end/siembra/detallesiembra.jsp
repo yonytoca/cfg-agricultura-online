@@ -14,16 +14,14 @@
 
 <%
 
-    List<Siembra> siembras = ServicioSiembraDetalle.getInstancia().getListadoSiembradetalle();
+    List<Siembra> siembras = ServicioSiembraDetalle.getInstancia().getListadoprueba(1);
     List<Siembra> siembraz = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona();
     Siembra constanza = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(1, 1);
     Siembra tireo = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(2, 2);
     Siembra rio = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(3, 3);
 %>
 
-<input type="text" name="idsiembra" value="<%=constanza.getCantidad_producto()%>" required="" />
-<input type="text" name="idsiembra" value="<%=tireo.getCantidad_producto()%>" required="" />
-<input type="text" name="idsiembra" value="<%=rio.getCantidad_producto()%>" required="" />
+
 <script type="text/javascript">
     "use strict";
 
@@ -73,59 +71,7 @@
 
 
 
-<!-- START LINE CHART -->
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Line Chart</h3>                                
-    </div>
-    <div class="panel-body">
-        <div id="morris-line-example" style="height: 300px;"></div>
-    </div>
-</div>
-<!-- END LINE CHART -->
-<div class="page-header">
-    <div class="page-title">
-        <h3>Estadisticas</h3>
 
-    </div>
-</div>
-
-
-
-<!-- START LINE CHART -->
-<div class="row">
-    <div class="col-md-6">
-        <div class="widget box">
-            <div class="widget-header">
-                <h4><i class="icon-reorder"></i> Reportes por tipo de violencia</h4>
-                <div class="toolbar no-padding">
-                    <div class="btn-group">
-                        <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
-                    </div>
-                </div>
-            </div>
-            <div class="widget-content">
-                <div id="chart_pie" class="chart"></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="widget box">
-            <div class="widget-header">
-                <h4><i class="icon-reorder"></i> Reportes por cantidad de ingresos</h4>
-                <div class="toolbar no-padding">
-                    <div class="btn-group">
-                        <span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
-                    </div>
-                </div>
-            </div>
-            <div class="widget-content">
-                <div id="chart_pie" class="chart"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END LINE CHART -->
 
 <center>
     <h2 class="sub-header">Siembras</h2>
