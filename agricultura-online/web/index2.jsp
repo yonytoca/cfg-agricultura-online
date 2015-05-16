@@ -14,7 +14,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:include page="teplate/header.jsp"/>
-      <%
+     <%
     List<Contacto> contacto = ServicioContacto.getInstancia().getListadoContacto();    
 %>
 

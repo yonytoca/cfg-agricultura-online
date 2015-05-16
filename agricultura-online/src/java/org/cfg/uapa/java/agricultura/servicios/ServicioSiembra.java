@@ -72,6 +72,7 @@ public class ServicioSiembra {
                     siembra.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
                     siembra.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
                     siembra.setTareasembrada(rs.getInt("tarea_sembrada"));
+                    siembra.setTope(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("tope")));
                     listasiembra.add(siembra);
                 }
             }

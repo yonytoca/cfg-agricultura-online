@@ -18,6 +18,7 @@ private Socio id_socio;
 private Zona id_zona;
 private int tareasembrada;
 private int produccion;
+private Producto tope;
     /**
      * @return the id
      */
@@ -132,6 +133,20 @@ private int produccion;
      */
     public void setProduccion(int produccion) {
         this.produccion = produccion;
+    }
+
+    /**
+     * @return the tope
+     */
+    public Producto getTope() {
+        return tope;
+    }
+
+    /**
+     * @param tope the tope to set
+     */
+    public void setTope(Producto tope) {
+        this.tope = tope;
     }
 
 }
