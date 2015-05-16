@@ -101,6 +101,12 @@
                             <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-list"></span>Lista Zona</a></li>
                         </ul>
                     </li>
+                     <li class="xn-openable">
+
+                        <a href="/agricultura-online/front-end/siembra/detallesiembra.jsp"><span class="fa fa-bars"></span> <span class="xn-text">ESTADISTICA</span></a>
+
+                       
+                    </li>
                     </li>
                 </ul>
                 <!-- END X-NAVIGATION -->

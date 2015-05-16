@@ -104,6 +104,7 @@
                 </tr>
             </thead>
             <tbody
+                
                 <c:forEach items="<%=siembras%>" var="siembras">
                     <tr>
                         <td>${siembras.getId_producto().getId()}</td>  
