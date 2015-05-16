@@ -3,6 +3,8 @@
     Created on : 10-may-2015, 19:35:34
     Author     : victor
 --%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.Producto"%>
+<%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioProducto"%>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioSiembraDetalle"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioSiembra"%>
@@ -19,6 +21,7 @@
     List<Siembra> siembraz3 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona2();
     List<Siembra> siembraz4 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona3();
     List<Siembra> siembraz5 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona4();
+    List<Producto> siembra = ServicioProducto.getInstancia().getListadoProducto();
     
 
    

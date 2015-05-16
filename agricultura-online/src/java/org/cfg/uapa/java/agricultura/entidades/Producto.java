@@ -19,6 +19,7 @@ public class Producto {
     private Variedad id_variedad;
     private int tiempoProduccion;
     private int producciontarea;
+    private int tope;
 
     /**
      * @return the id
@@ -130,6 +131,20 @@ public class Producto {
      */
     public void setProducciontarea(int producciontarea) {
         this.producciontarea = producciontarea;
+    }
+
+    /**
+     * @return the tope
+     */
+    public int getTope() {
+        return tope;
+    }
+
+    /**
+     * @param tope the tope to set
+     */
+    public void setTope(int tope) {
+        this.tope = tope;
     }
 
    

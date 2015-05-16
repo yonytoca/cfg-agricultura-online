@@ -47,6 +47,7 @@ public class ServicioProducto {
                     producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
                     producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
                     producto.setProducciontarea(rs.getInt("produccion_tarea"));
+                    producto.setTope(rs.getInt("tope"));
                     listaproducto.add(producto);
                 }
             }
@@ -80,8 +81,9 @@ public class ServicioProducto {
             producto.setId_variedad(ServicioVariedad.getInstancia().getVariedadPorId(rs.getInt("id_variedad")));
             producto.setTiempoProduccion(rs.getInt("tiempo_produccion"));
             producto.setProducciontarea(rs.getInt("produccion_tarea"));
-
-        } catch (SQLException e) {
+            producto.setTope(rs.getInt("tope"));
+            
+            } catch (SQLException e) {
             Logger.getLogger(ServicioProducto.class.getName()).log(Level.SEVERE, null, e);
         } finally {
             try {
