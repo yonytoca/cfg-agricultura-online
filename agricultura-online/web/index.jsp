@@ -36,7 +36,7 @@
 
                     <!-- page logo -->
                     <div class="logo">
-                        <a href="index.html">SIGECOPA</a>
+                        <a href="/agricultura-online/index.jsp">SIGECOPA</a>
                     </div>
                     <!-- ./page logo -->
 
@@ -291,10 +291,7 @@
                 <!-- page content holder -->
                 <div class="page-content-holder padding-v-20">
 
-                    <div class="text-center">
-                        <a href="../html/index.html" class="btn btn-primary btn-xl"><span class="fa fa-eye"></span> Preview</a> <a href="http://themeforest.net/item/atlant-responsive-bootstrap-admin-template/9217590" class="btn btn-success btn-xl"><span class="fa fa-shopping-cart"></span> Purchase</a>
-                    </div>
-
+                   
                 </div>
                 <!-- ./page content holder -->
             </div>
@@ -348,7 +345,7 @@
                         <div class="col-md-4">                                
                             <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInLeft">
                                 <div class="text-column-icon">
-                                    <span class="fa fa-support"></span>
+                                    <span class="fa fa-"></span>
                                 </div>
                                 <h4>Fresa</h4>
                                 <div class="text-column-info">
@@ -405,9 +402,7 @@
                             <div class="col-md-9">
                                 <h3><strong>SIGECOPA</strong> &mdash; Sistema de Gestión y Control de los Productos Agrícolas </h3>
                             </div>
-                            <div class="col-md-3">
-                                <button class="btn btn-primary btn-block btn-lg">Preview Admin</button>
-                            </div>
+                            
                         </div>
                     </div>                        
 
@@ -421,9 +416,7 @@
                 <!-- page content holder -->
                 <div class="page-content-holder padding-v-20">
 
-                    <div class="text-center">
-                        <a href="../html/index.html" class="btn btn-primary btn-xl"><span class="fa fa-eye"></span> Preview</a> <a href="http://themeforest.net/item/atlant-responsive-bootstrap-admin-template/9217590" class="btn btn-success btn-xl"><span class="fa fa-shopping-cart"></span> Purchase</a>
-                    </div>
+                    
 
                 </div>
                 <!-- ./page content holder -->
@@ -511,9 +504,7 @@
                             <h3>Subscribe</h3>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Your email"/>
-                                <div class="input-group-btn">
-                                    <button class="btn btn-primary"><span class="fa fa-paper-plane"></span></button>
-                                </div>
+                               
                             </div>
 
                         </div>

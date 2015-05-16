@@ -122,9 +122,7 @@
                     </li> 
                     <!-- END SIGN OUT -->
                     <!-- MESSAGES -->
-                    <li class="xn-icon-button pull-right">
-                        <a href="#"><span class=""></span></a>
-                                               
+                                        
                     </li>
                     <!-- END MESSAGES -->
                     <!-- Mostrar Usuario -->
@@ -135,6 +133,10 @@
                             
                         </ul>
                     </li> 
+                     <li class="xn-icon-button pull-right">
+                        <a href="/agricultura-online/index2.jsp" class="mb-control" data-box="/agricultura-online/index2.jsp"><span class="fa fa-home"></span></a>                        
+                    </li> 
+                          
                     <!-- Mostrar Usuariofin -->
                     <!-- END TOGGLE NAVIGATION -->                    
                 </ul>

@@ -39,7 +39,7 @@
 
                     <!-- page logo -->
                     <div class="logo">
-                        <a href="index.html">SIGECOPA</a>
+                        <a href="/agricultura-online/index.jsp">SIGECOPA</a>
                     </div>
                     <!-- ./page logo -->
 
@@ -62,24 +62,9 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">CONTACTOS</a>
-                            <ul>
-                                <li><a href="about-us.html">Nosotros</a></li>
-                                <li><a href="contacts.html">Contacts</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="#">Portfolio</a>
-                            <ul>
-                                <li><a href="portfolio-with-title.html">Portfolio With Title</a></li>
-                                <li><a href="portfolio-2column.html">Portfolio 2 Column</a></li>
-                                <li><a href="portfolio-3column.html">Portfolio 3 Column</a></li>
-                                <li><a href="portfolio-4column.html">Portfolio 4 Column</a></li>
-                            </ul>
-                        </li>
+                            <a href="/agricultura-online/front-end/contacto.jsp">CONTACTOS</a>
+                           
+                        </li>                      
 
 
                         <form class="navbar-form navbar-right" role="form" action="/agricultura-online/UsuarioControl" method="post" >
@@ -100,7 +85,7 @@
 
             </div>
             <!-- ./page header -->
-            <form class="navbar-form navbar-right" role="form" action="/agricultura-online/ContactoControl" method="post" >
+            <form class="form " role="form" action="/agricultura-online/ContactoControl" method="post" >
             <!-- page content -->
             <div class="page-content">
 

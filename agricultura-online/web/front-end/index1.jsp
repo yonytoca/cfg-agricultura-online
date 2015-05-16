@@ -23,14 +23,10 @@
     List<Siembra> siembraz5 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona4();
     
 
-    Siembra constanza = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(1);
-    Siembra tireo = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(2);
-    Siembra rio = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(3);
+   
 %>
 
-<input type="text" name="idsiembra" value="<%=constanza.getCantidad_producto()%>" required="" />
-<input type="text" name="idsiembra" value="<%=tireo.getCantidad_producto()%>" required="" />
-<input type="text" name="idsiembra" value="<%=rio.getCantidad_producto()%>" required="" />
+
 <script type="text/javascript">
     "use strict";
 

@@ -99,6 +99,9 @@
                             
                         </ul>
                     </li> 
+                     <li class="xn-icon-button pull-right">
+                        <a href="/agricultura-online/front-end/index1.jsp" class="mb-control" data-box="/agricultura-online/front-end/index1.jsp"><span class="fa fa-home"></span></a>                        
+                    </li> 
                     <!-- Mostrar Usuariofin -->
                     <!-- END TOGGLE NAVIGATION -->                    
                 </ul>
