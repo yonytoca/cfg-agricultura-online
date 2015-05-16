@@ -151,4 +151,29 @@ public class ServicioSocio {
         }
         return estado;
     }
+    
+     
+    public boolean EditarClaveSocio(Socio socio) {
+
+        boolean estado;
+        //PreparedStatement stmt = null ;
+        String sql = "update socio set clave = MD5(?) where id = ?";
+
+        Connection con = Coneccion.getInstancia().getConeccion();
+
+        try (PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            //stmt = con.prepareStatement(sql);
+            stmt.setString(1, socio.getClave());
+            stmt.setInt(2, socio.getId());
+
+            stmt.executeUpdate();
+            estado = true;
+
+        } catch (SQLException e) {
+            estado = false;
+            Logger.getLogger(ServicioSocio.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return estado;
+    }
 }

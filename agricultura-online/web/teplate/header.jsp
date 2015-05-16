@@ -51,17 +51,15 @@
 
                         <a href="#"><span class="fa fa-bars"></span> <span class="xn-text">Usuario</span></a>
 
-                        <ul>
-                            <li><a href="/agricultura-online/usuario/crearusuario.jsp"><span class="fa fa-cog"></span>Usuario</a></li>
-                            <li><a href="/agricultura-online/socio/crearSocio.jsp"><span class="fa fa-cog"></span>Socio </a></li>
+                        <ul>                           
+                            <li><a href="/agricultura-online/socio/crearSocio.jsp"><span class="fa fa-cog"></span>Usuario </a></li>
                             <!-- Sub-menu lista -->
                             <li class="xn-openable">
 
                                 <a href="#"><span class="fa fa-eye"></span> <span class="xn-text">Listado Usuario</span></a>
 
-                                <ul>
-                                    <li><a href="/agricultura-online/usuario/usuario.jsp"><span class="fa fa-list"></span> Lista Usuario</a></li>
-                                    <li><a href="/agricultura-online/socio/socio.jsp"><span class="fa fa-list"></span> Lista Socio</a></li>
+                                <ul>                                    
+                                    <li><a href="/agricultura-online/socio/socio.jsp"><span class="fa fa-list"></span> Lista Usuario</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -133,8 +131,8 @@
                      <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-user-md " ><%= currentUser.getNombre() + " " + currentUser.getApellido() %></span></a>
                          <ul>
-                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-users"></span>Mi cuenta</a></li>
-                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-cog"></span>Configuración</a></li>
+                            <li><a href="/agricultura-online/usuario/editarusuario.jsp?id=<%=currentUser.getId()%>"><span class="fa fa-users"></span>Cambiar contraseña</a></li>
+                            
                         </ul>
                     </li> 
                     <!-- Mostrar Usuariofin -->

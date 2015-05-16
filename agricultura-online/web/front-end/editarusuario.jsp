@@ -13,7 +13,7 @@
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../teplate/header.jsp"/>
+<jsp:include page="template/header.jsp"/>
 <!DOCTYPE html>
 
 <script type="text/javascript">
@@ -49,6 +49,7 @@
     Socio socio = ServicioSocio.getInstancia().getSocioPorId(id);
    
 %>
+
 
 
 <div class="col-lg-6">       
@@ -93,4 +94,4 @@ function checkEmail(theForm) {
 //-->
 </script>
 </div>
-<jsp:include page="../teplate/footer.jsp"/>        
+<jsp:include page="template/footer.jsp"/>        

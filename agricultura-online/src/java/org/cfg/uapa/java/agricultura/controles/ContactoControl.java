@@ -6,24 +6,21 @@
 package org.cfg.uapa.java.agricultura.controles;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.cfg.uapa.java.agricultura.entidades.Socio;
-import org.cfg.uapa.java.agricultura.entidades.TipoUsuario;
-import org.cfg.uapa.java.agricultura.entidades.Usuario;
-import org.cfg.uapa.java.agricultura.servicios.ServicioSocio;
-import org.cfg.uapa.java.agricultura.servicios.ServicioTipoUsuario;
-import org.cfg.uapa.java.agricultura.servicios.ServicioUsuario;
+import org.cfg.uapa.java.agricultura.entidades.Contacto;
+import org.cfg.uapa.java.agricultura.servicios.ServicioContacto;
 
 /**
  *
- * @author VíctorAndrés
+ * @author EDUARDO
  */
-@WebServlet(name = "CrearUsuarioControl", urlPatterns = {"/CrearUsuarioControl"})
-public class CrearUsuarioControl extends HttpServlet {
+@WebServlet(name = "ContactoControl", urlPatterns = {"/ContactoControl"})
+public class ContactoControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,43 +31,33 @@ public class CrearUsuarioControl extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String id = request.getParameter("id");              
-        String clave = request.getParameter("clave");
-        String sc = request.getParameter("seccion");
-    
-
-           
-        if (null != id) { // Editar usuario              
+               
+        String nombre = request.getParameter("nombre");
+        String correo = request.getParameter("correo");
+        String asunto = request.getParameter("asunto");
+        String mensaje = request.getParameter("mensaje");
+        String fecha = request.getParameter("fecha");
             
-            Socio socio = new Socio();       
-            socio.setClave(clave);
-            
-            boolean isActualizado = ServicioSocio.getInstancia().EditarClaveSocio(socio);
+            Contacto contacto = new Contacto();
+            contacto.setNombre(nombre);
+            contacto.setCorreo(correo);
+            contacto.setAsunto(asunto);
+            contacto.setMensaje(mensaje);
+            contacto.setFecha(fecha);
 
-                if (isActualizado) {
+            boolean isActualizado = ServicioContacto.getInstancia().CrearMensaje(contacto);
 
-                response.sendRedirect("front-end/index1.jsp");
-
+            if (isActualizado) {
+                response.sendRedirect("index.jsp");
             } else {
-
-                response.sendRedirect("index2.jsp");
+                response.sendRedirect("front-end/contacto.jsp");
             }
-                
-         //   if (isActualizado && sc.equals("2")) {                
-               
-           //     response.sendRedirect("front-end/index1.jsp");               
-        //    }else{
-        //    response.sendRedirect("index2.jsp");
-        //    }
-               
-            
-        }        
+   
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -95,8 +95,8 @@
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-user-md " ><%= currentUser.getNombre() + " " + currentUser.getApellido()%></span></a>
                         <ul>
-                            <li><a href="/agricultura-online/zona/crearzona.jsp"><span class="fa fa-user"></span>Mi cuenta</a></li>
-                            <li><a href="/agricultura-online/zona/zona.jsp"><span class="fa fa-cog"></span>Configuración</a></li>
+                            <li><a href="/agricultura-online/front-end/editarusuario.jsp?id=<%=currentUser.getId()%>"><span class="fa fa-user"></span>Cambiar contraseña</a></li>
+                            
                         </ul>
                     </li> 
                     <!-- Mostrar Usuariofin -->
