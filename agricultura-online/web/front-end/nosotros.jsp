@@ -79,6 +79,19 @@
 
                     <!-- page content wrapper -->
                     <div class="page-content-wrap bg-light">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- page content holder -->
                         <div class="page-content-holder no-padding">
                             <!-- page title -->
@@ -112,8 +125,8 @@
                                     <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
                                         <h2 class="heading-underline">SIGECOPA</h2>
                                         <div class="block-heading-text">
-                                            Es una plataforma para suministrando información útil, confiable y accesible a los productores agrícolas, a la hora de sembrar, grantizando un mejor precio de venta.
-                                        </div>
+                                       Sistema web que consiste en planificar, organizar y orientar a los productores agrícolas  sobre la siembra existente, logrando obtener información confiable y exacta a la hora de tomar la decisión antes de hacer su inversión. Proporciona estadísticas de siembra y  evitará la sobreproducción. 
+                                            </div>
                                     </div>
 
                                 </div>
@@ -121,22 +134,21 @@
                             </div>
                             <div class="page-content-holder">                        
 
-                                <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
-                                    <h2 class="heading-underline">Meet Our Team</h2>
+                                <div class="block-heading block-heading-centralized this-animate">
+                                    <h2 class="heading-underline">Misión</h2>
                                     <div class="block-heading-text">
-                                        Cras ut neque metus. Morbi pharetra purus sed enim sagittis, vitae cursus tortor tempus. Vestibulum eu gravida quam, nec congue odio. Nullam id hendrerit sem.
-                                    </div>
-                                </div>                               
-                            </div>
-                             <div class="page-content-holder">                        
+                                        Generar y difundir información agrícola confiable, oportuna, útil y accesible para una adecuada toma de decisiones de los productores.
 
-                                <div class="block-heading block-heading-centralized this-animate" data-animate="fadeInDown">
-                                    <h2 class="heading-underline">Meet Our Team</h2>
+                                    </div>
+                                     <h2 class="heading-underline">Visión</h2>
                                     <div class="block-heading-text">
-                                        Cras ut neque metus. Morbi pharetra purus sed enim sagittis, vitae cursus tortor tempus. Vestibulum eu gravida quam, nec congue odio. Nullam id hendrerit sem.
+                                       Ser la primera opción de los clientes actuales y futuros, satisfaciendo sus necesidades y requerimientos. Además ser reconocida en el ámbito nacional, por la calidad de sus servicios, atención, y mantenerse líder de competitividad en el mercado.
+
+
                                     </div>
                                 </div>                               
                             </div>
+                           
                             <!-- ./page content holder -->
                         </div>
 

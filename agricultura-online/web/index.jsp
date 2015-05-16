@@ -131,7 +131,7 @@
                                      data-elementdelay="0.1"
                                      data-endelementdelay="0.1"
                                      style="z-index: 4;">
-                                    <img src="front-end/assets/slider-layers/atlant_responsive.gif" alt="Atlant"/>
+                                    <img src="front-end/assets/slider-layers/atlant_responsive.png" alt="Atlant"/>
                                 </div>
 
                                 <div class="tp-caption black_thin_34 customin tp-resizeme rs-parallaxlevel-0"
