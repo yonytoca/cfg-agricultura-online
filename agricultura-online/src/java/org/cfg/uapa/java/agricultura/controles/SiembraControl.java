@@ -46,6 +46,7 @@ public class SiembraControl extends HttpServlet {
         String soci = request.getParameter("socio");
         String zon = request.getParameter("zona");
         int tsembrada = Integer.parseInt(request.getParameter("tsembrada"));
+        String sc = request.getParameter("seccion");
         
         Producto producto = ServicioProducto.getInstancia().getProductoPorId(Integer.valueOf(produc));
         Socio socio = ServicioSocio.getInstancia().getSocioPorId(Integer.valueOf(soci));
@@ -63,12 +64,13 @@ public class SiembraControl extends HttpServlet {
             
             boolean isActualizado = ServicioSiembra.getInstancia().editarsiembra(siembra);
             
-            if (isActualizado) {
-                response.sendRedirect("siembra/siembra.jsp");
-            } else {
-                response.sendRedirect("siembra/editarsiembra.jsp");
-            }
+            if (isActualizado && sc.equals("2")) {                
+               
+           response.sendRedirect("front-end/index1.jsp");               
             }else{
+            response.sendRedirect("siembra/siembra.jsp");
+            }
+        }else{
             
         Siembra siembra = new Siembra();
         siembra.setId_producto(producto);
@@ -80,12 +82,14 @@ public class SiembraControl extends HttpServlet {
    
             boolean isCreado = ServicioSiembra.getInstancia().crearSiembra(siembra);
 
-            if (isCreado) {
-                response.sendRedirect("siembra/siembra.jsp");
-            } else {
-                response.sendRedirect("siembra/crearsiembra.jsp");
-            }
-           
+            
+            if (isCreado && sc.equals("2")) {                
+               
+           response.sendRedirect("front-end/index1.jsp");               
+            }else{
+            response.sendRedirect("siembra/siembra.jsp");
+            }            
+    
         }
     }
 

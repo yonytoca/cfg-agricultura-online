@@ -3,23 +3,24 @@
     Created on : 25/04/2015, 06:47:41 PM
     Author     : VíctorAndrés
 --%>
+<%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioSembrar"%>
+<%@page import="org.cfg.uapa.java.agricultura.entidades.Sembrar"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="org.cfg.uapa.java.agricultura.servicios.ServicioSiembra"%>
 <%@page import="org.cfg.uapa.java.agricultura.entidades.Siembra"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:include page="../template/header.jsp"/>
+
 <!DOCTYPE html>
 
 
-<%
-    List<Siembra> siembras = ServicioSiembra.getInstancia().getListadoSiembra();
-
+<%    
+    List<Sembrar> siembras = ServicioSembrar.getInstancia().getListadoSembrar();
 %>
 
 
 <center>
-    <h2 class="sub-header">Siembras socioS</h2>
+    <h2 class="sub-header">Siembras socios</h2>
 </center>
 
 <div class="panel panel-default">

@@ -6,6 +6,9 @@
 
 <jsp:include page="../teplate/header.jsp"/>
 
+
+    <h2 class="sub-header">Agregar Variedad</h2>
+
 <div class="col-lg-6">
     <form action="/agricultura-online/VariedadControl" method="post">           
         <div class="form-group">

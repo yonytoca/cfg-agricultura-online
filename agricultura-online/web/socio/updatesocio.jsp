@@ -21,7 +21,9 @@
     Socio socio = ServicioSocio.getInstancia().getSocioPorId(id); 
     List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();       
 %>
-
+<center>
+    <h2 class="sub-header">Actualizar Datos De Usuario</h2>
+</center>
 <form role="form" action="/agricultura-online/SocioControl">
     <div class="form-group input-group">
         <label>Nombre </label>

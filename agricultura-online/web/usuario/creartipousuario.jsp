@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <jsp:include page="../teplate/header.jsp"/>
 
+    <h2 class="sub-header">Agregar Tipo Usuario</h2>
+
 <div class="col-lg-6">
     <form action="/agricultura-online/TipoUsuarioControl"  method="post">        
         <div class="form-group">

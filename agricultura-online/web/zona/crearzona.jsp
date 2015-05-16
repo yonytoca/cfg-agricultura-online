@@ -28,6 +28,9 @@ function validarForm(zona) {
 }
 </script>
 
+
+    <h2 class="sub-header">Agregar Zona</h2>
+
 <div class="col-lg-6">
     <form name="zona" action="/agricultura-online/ZonaControl"  method="post" onsubmit="return validarForm(this);">        
         <div class="form-group">

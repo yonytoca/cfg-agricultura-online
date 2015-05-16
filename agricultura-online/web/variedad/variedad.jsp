@@ -15,7 +15,7 @@
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
 %>
 <center>
-    <h2 class="sub-header">variedad</h2>
+    <h2 class="sub-header">Listado variedad</h2>
 </center>
 
 

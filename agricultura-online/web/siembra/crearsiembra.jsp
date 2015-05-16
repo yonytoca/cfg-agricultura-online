@@ -27,6 +27,7 @@
     SimpleDateFormat ft
             = new SimpleDateFormat("yyyy/MM/dd");
     String currentDate = ft.format(dNow);
+     Usuario currentUser = (Usuario) session.getAttribute("currentSessionUser");
 %>
 <script>
     function validar(e) {
@@ -52,6 +53,9 @@
 
 </script>
 
+
+
+    <h2 class="sub-header">Agregar Siembra</h2>
 
 
 <div class="col-lg-6">
@@ -105,7 +109,9 @@
 
         <div class="form-group">
             <label>Tarea Sembrada</label>
-            <input name="tsembrada" onkeypress="return validar(event)" class="form-control">               
+            <input name="tsembrada" onkeypress="return validar(event)" class="form-control">
+            
+            <input name="seccion" type="hidden" value="<%= currentUser.getTipo_usuario_id().getId()%>" class="form-control">
         </div> 
         
         <div class="form-group input-group">

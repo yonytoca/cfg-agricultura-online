@@ -35,8 +35,10 @@ public class ServicioSembrar {
 
         List<Sembrar> listasembrar = new ArrayList<>();
 
-        try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("select * from siembra")) {
+        try (PreparedStatement stmt = Coneccion.getInstancia().getConeccion().prepareStatement("SELECT id, id_producto,id_zona,  SUM(cantidad_producto) as total from siembra where id_socio=? ")) {
             try (ResultSet rs = stmt.executeQuery()) {
+               
+             //   stmt.setInt(1, id);
 
                 while (rs.next()) {
                     Sembrar sembrar = new Sembrar();
@@ -54,25 +56,28 @@ public class ServicioSembrar {
         return listasembrar;
     }
  
- 
-       public Sembrar getSembrarPorId(int id){
-        
-         String sql = "select * from siembradetalle where id=?";
-          Sembrar siembr = null;
-        
+     public Siembra getSiembradetallePorId(int id ) {
+
+        String sql = "SELECT id, id_producto,id_zona,  SUM(cantidad_producto) as total from siembra where id_socio=? group by id_producto";
+        Siembra siembr = null;
+
         try (Connection con = Coneccion.getInstancia().getConeccion()) {
 
             try (PreparedStatement pstmt = con.prepareStatement(sql)) {
                 pstmt.setInt(1, id);
-
+                
                 try (ResultSet rs = pstmt.executeQuery()) {
 
                     rs.next();
-                  siembr = new Sembrar();
-            siembr.setId(rs.getInt("id"));            
-            siembr.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
-            siembr.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
-            siembr.setCantidad_sembrada(rs.getInt("cantidad_sembrada"));
+                    siembr = new Siembra();
+                    siembr.setId(rs.getInt("id"));
+                    siembr.setId_producto(ServicioProducto.getInstancia().getProductoPorId(rs.getInt("id_producto")));
+                    siembr.setFecha_siembra(rs.getString("fecha_siembra"));
+                    siembr.setCantidad_producto(rs.getInt("cantidad_producto"));
+                    siembr.setId_socio(ServicioSocio.getInstancia().getSocioPorId(rs.getInt("id_socio")));
+                    siembr.setId_zona(ServicioZona.getInstancia().getZonaPorId(rs.getInt("id_zona")));
+                    siembr.setTareasembrada(rs.getInt("tarea_sembrada"));
+   
                 }
             }
         } catch (SQLException e) {

@@ -31,6 +31,7 @@ public class controlsession extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
       String sc = request.getParameter("seccion");
       if(sc.equals("2")){
           response.sendRedirect("front-end/index1.jsp");               

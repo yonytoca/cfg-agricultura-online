@@ -30,11 +30,16 @@
     Usuario currentUser = (Usuario) session.getAttribute("currentSessionUser");
 %>
 
+    <h2 class="sub-header">Registrar Siembra</h2>
+
+
+
 <div class="col-lg-6">
     <form action="/agricultura-online/SiembraControl"  method="post"> 
 
         <div class="form-group">
             <label>Producto</label>
+                        
             <select class="form-control" name="producto">
                 <c:forEach items="<%=producto%>" var="producto">
                     <option value="${producto.getId()}">${producto.getNombre()}</option>
@@ -62,6 +67,7 @@
         <label>
 
             <input name="socio" type="hidden" value="<%= currentUser.getId()%>" class="form-control" placeholder="">
+            <input name="seccion" type="hidden" value="<%= currentUser.getTipo_usuario_id().getId()%>" class="form-control">
         </label>       
 
 

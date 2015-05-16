@@ -15,6 +15,11 @@
 
 %>
 
+
+
+    <h2 class="sub-header">Actualizar Tipo de Usuario</h2>
+
+
 <div class="col-lg-6">
     <form action="/agricultura-online/TipoUsuarioControl"  method="post">        
         <div class="form-group">

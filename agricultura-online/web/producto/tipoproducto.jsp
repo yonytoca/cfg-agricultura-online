@@ -14,7 +14,7 @@
     List<TipoProducto> tiproducto = ServicioTipoProducto.getInstancia().getListadoTipoProducto();
 %>
 <center>
-    <h2 class="sub-header">Tipo Producto</h2>
+    <h2 class="sub-header">Agregar Tipo Producto</h2>
 </center>
 
 

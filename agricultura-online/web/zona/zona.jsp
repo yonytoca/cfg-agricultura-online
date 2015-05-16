@@ -15,7 +15,7 @@
 %>
 
 <center>
-    <h2 class="sub-header">Zonas</h2>
+    <h2 class="sub-header">Listado Zona</h2>
 </center>
    
     <div class="dataTable_wrapper">

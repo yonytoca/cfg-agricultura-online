@@ -19,7 +19,7 @@
 
 
 <center>
-    <h2 class="sub-header">Siembras</h2>
+    <h2 class="sub-header">Listado Siembra</h2>
 </center>
 
 <div class="panel panel-default">
@@ -41,7 +41,7 @@
                 <th>Zona</th>
                 <th>Tarea Sembrada</th>                
                 <th>modificar</th>
-                <th>Desabilitar</th>
+
             </tr>
         </thead>
         <tbody

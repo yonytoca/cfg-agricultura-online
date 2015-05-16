@@ -18,9 +18,8 @@
 <%
     List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
 %>
-<div>
-  
-</div>
+
+    <h2 class="sub-header">Agregar Usuario</h2>
 
 <form role="form" action="/agricultura-online/SocioControl">
     <div class="form-group input-group">

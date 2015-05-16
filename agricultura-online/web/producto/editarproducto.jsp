@@ -24,6 +24,7 @@
     List<TipoProducto> tproducto = ServicioTipoProducto.getInstancia().getListadoTipoProducto();
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
 %>
+    <h2 class="sub-header">Atualizar Prodcuto</h2>
 <div class="col-lg-6">
     <form action="/agricultura-online/ProductoControl"  method="post">        
         <div class="form-group">

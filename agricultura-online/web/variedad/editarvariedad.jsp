@@ -14,6 +14,9 @@
 
 %>
 
+    <h2 class="sub-header">Actualizar Valiedad</h2>
+
+
 <form class="form-horizontal" action="/agricultura-online/VariedadControl" method="post">
     <input type="hidden" name="idvariedad" value="<%=variedad.getId()%>"/>
 

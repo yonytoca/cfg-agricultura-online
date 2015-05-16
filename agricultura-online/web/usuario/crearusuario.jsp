@@ -15,6 +15,9 @@
     List<TipoUsuario> usuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();
 
 %>
+<center>
+    <h2 class="sub-header">Agregar Usuario</h2>
+</center>
 <div class="col-lg-6">
     <form action="/agricultura-online/CrearUsuarioControl"  method="post">        
         <div class="form-group">

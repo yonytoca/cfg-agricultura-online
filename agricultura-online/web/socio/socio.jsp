@@ -16,7 +16,7 @@
 %>
 
 <center>
-    <h2 class="sub-header">Socios</h2>
+    <h2 class="sub-header">Listado de Usuario</h2>
 </center>
 
 <!-- INICIO DATATABLE -->

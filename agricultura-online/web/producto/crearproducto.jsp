@@ -18,6 +18,10 @@
     List<Variedad> variedad = ServicioVariedad.getInstancia().getListadoVariedad();
 
 %>
+
+
+    <h2 class="sub-header">Agregar Prodcuto</h2>
+
 <div class="col-lg-6">
     <form action="/agricultura-online/ProductoControl"  method="post">        
         <div class="form-group">

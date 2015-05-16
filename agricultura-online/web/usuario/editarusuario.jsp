@@ -48,14 +48,16 @@
     int id = Integer.parseInt(request.getParameter("id"));
     Socio socio = ServicioSocio.getInstancia().getSocioPorId(id);   
 %>
-
+<center>
+    <h2 class="sub-header">Actualizar Datos De Usuario </h2>
+</center>
 
 <div class="col-lg-6">       
     <form action="/agricultura-online/CrearUsuarioControl"   method="post"  onsubmit="return checkEmail(this);">        
         <div class="form-group">
             
-            <input name="id" type="text" value="<%=socio.getId()%>" class="form-control">               
-            <input name="seccion" type="text" value="<%=socio.getTipousuario().getId()%>" class="form-control">               
+            <input name="id" type="hidden" value="<%=socio.getId()%>" class="form-control">               
+            <input name="seccion" type="hidden" value="<%=socio.getTipousuario().getId()%>" class="form-control">               
             <label><%=socio.getUsuario()%></label>
         </div>
         <div class="form-group">

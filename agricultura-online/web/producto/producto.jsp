@@ -15,7 +15,7 @@
     List<Producto> producto = ServicioProducto.getInstancia().getListadoProducto();
 %>
 <center>
-    <h2 class="sub-header">Producto</h2>
+    <h2 class="sub-header">Listado Producto</h2>
 </center>
 
 

@@ -52,13 +52,16 @@
 
 
 
+    <h2 class="sub-header">Actualizar Informacion</h2>
+
+
 <div class="col-lg-6">       
     <form action="/agricultura-online/CrearUsuarioControl"   method="post"  onsubmit="return checkEmail(this);">        
         <div class="form-group">
             
             <input name="id" type="hidden" value="<%=socio.getId()%>" class="form-control">               
-            <input name="seccion" type="text" value="<%=socio.getTipousuario().getId()%>" class="form-control">               
-            <label><%=socio.getUsuario()%></label>
+            <input name="seccion" type="hidden" value="<%=socio.getTipousuario().getId()%>" class="form-control">               
+            
         </div>
         <div class="form-group">
             <label> Usuario </label>

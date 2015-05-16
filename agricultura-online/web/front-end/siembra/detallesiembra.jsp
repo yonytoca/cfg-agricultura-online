@@ -11,14 +11,17 @@
 <jsp:include page="../template/header.jsp"/>
 <!DOCTYPE html>
 
-
 <%
 
-    List<Siembra> siembras = ServicioSiembraDetalle.getInstancia().getListadoprueba(1);
-    List<Siembra> siembraz = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona();
-    Siembra constanza = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(1, 1);
-    Siembra tireo = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(2, 2);
-    Siembra rio = ServicioSiembraDetalle.getInstancia().getSiembraDetallePorId(3, 3);
+    List<Siembra> siembras = ServicioSiembraDetalle.getInstancia().getListadoSiembradetalle();
+    List<Siembra> siembraz1 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona();
+    List<Siembra> siembraz2 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona1();
+    List<Siembra> siembraz3 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona2();
+    List<Siembra> siembraz4 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona3();
+    List<Siembra> siembraz5 = ServicioSiembraDetalle.getInstancia().getListadoSiembradetallezona4();
+    
+
+   
 %>
 
 
@@ -72,6 +75,13 @@
 
 
 
+<div class="page-header">
+    <div class="page-title">
+        <h3>Estadisticas</h3>
+
+    </div>
+</div>
+
 
 <center>
     <h2 class="sub-header">Siembras</h2>
@@ -100,6 +110,7 @@
                         <td>${siembras.getId_producto().getNombre()}</td>          
                         <td>${siembras.getCantidad_producto()}</td>
 
+
                     </tr>
                 </c:forEach>      
             </tbody> 
@@ -124,19 +135,60 @@
                 </tr>
             </thead>
             <tbody
-                <c:forEach items="<%=siembraz%>" var="siembraz">
+                <c:forEach items="<%=siembraz1%>" var="siembraz1">
                     <tr>
-                        <td>${siembraz.getId_producto().getId()}</td>  
-                        <td>${siembraz.getId_producto().getNombre()}</td>  
-                        <td>${siembraz.getCantidad_producto()}</td>
+                        <td>${siembraz1.getId_producto().getId()}</td>  
+                        <td>${siembraz1.getId_producto().getNombre()}</td>  
+                        <td>${siembraz1.getId_zona().getNombre()}</td>
+                        <td>${siembraz1.getCantidad_producto()}</td>
+
 
                     </tr>
-                </c:forEach>      
-            </tbody> 
-        </table>
-    </div>
+                </c:forEach>   
+                <c:forEach items="<%=siembraz2%>" var="siembraz2">
+                    <tr>
+                        <td>${siembraz2.getId_producto().getId()}</td>  
+                        <td>${siembraz2.getId_producto().getNombre()}</td>  
+                        <td>${siembraz2.getId_zona().getNombre()}</td>
+                        <td>${siembraz2.getCantidad_producto()}</td>
+
+
+                    </tr>
+                </c:forEach> 
+
+            
+            <c:forEach items="<%=siembraz3%>" var="siembraz3">
+                <tr>
+                    <td>${siembraz3.getId_producto().getId()}</td>  
+                    <td>${siembraz3.getId_producto().getNombre()}</td>  
+                    <td>${siembraz3.getId_zona().getNombre()}</td>
+                    <td>${siembraz3.getCantidad_producto()}</td>
+                </tr>
+            </c:forEach>
+
+          
+        <c:forEach items="<%=siembraz4%>" var="siembraz4">
+            <tr>
+                <td>${siembraz4.getId_producto().getId()}</td>  
+                <td>${siembraz4.getId_producto().getNombre()}</td>  
+                <td>${siembraz4.getId_zona().getNombre()}</td>
+                <td>${siembraz4.getCantidad_producto()}</td>
+            </tr>
+        </c:forEach>
+             <c:forEach items="<%=siembraz5%>" var="siembraz5">
+            <tr>
+                <td>${siembraz5.getId_producto().getId()}</td>  
+                <td>${siembraz5.getId_producto().getNombre()}</td>  
+                <td>${siembraz5.getId_zona().getNombre()}</td>
+                <td>${siembraz5.getCantidad_producto()}</td>
+            </tr>
+        </c:forEach>
+    </tbody> 
+</table>
+</div>
 </div>
 
 <!-- FIN DATATABLE -->
 <a href="crearsiembra.jsp"> Crear Siembra</a>
+
 <jsp:include page="../template/footer.jsp"/>

@@ -15,9 +15,9 @@
     List<TipoUsuario> tusuario = ServicioTipoUsuario.getInstancia().getListadoTipoUsuario();    
 %>
 
-<center>
+
     <h2 class="sub-header">Tipo de Usuario</h2>
-</center>
+
 
 <!-- INICIO DATATABLE -->
 <div class="panel panel-default">

@@ -16,6 +16,9 @@
 %>
 
 
+
+    <h2 class="sub-header">Actualizar Tipo Producto</h2>
+
 <form class="form-horizontal" action="/agricultura-online/TipoProductoControl" method="post">
     <input type="hidden" name="idTipoProducto" value="<%=tproducto.getId()%>"/>
 

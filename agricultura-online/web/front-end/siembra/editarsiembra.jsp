@@ -24,6 +24,10 @@
     List<Socio> socio = ServicioSocio.getInstancia().getListadoSocio();
     List<Zona> zona = ServicioZona.getInstancia().getListadoZona();
 %>
+
+
+    <h2 class="sub-header">Actualizar Siembra</h2>
+
 <div class="col-lg-6">
     <form action="/agricultura-online/SiembraControl"  method="post">        
         
