@@ -121,9 +121,9 @@
                                     <div class="col-md-7 this-animate" data-animate="fadeInLeft">
 
                                         <div class="text-column">
-                                            <h4>Contactanos </h4>
+                                            <h4>Contáctanos </h4>
                                             <div class="text-column-info">
-                                                Escribe un mensaje y estaremos muy pronto en contacto. Gacias por visìtarnos 
+                                                Escribe un mensaje y estaremos muy pronto en contacto. Gracias por visìtarnos 
                                             </div>
                                         </div>
                                         <div class="row">
@@ -146,7 +146,7 @@
                                                     <input name="asunto" type="text" class="form-control"/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label> Mensage <span class="text-hightlight">*</span></label>
+                                                    <label> Mensaje <span class="text-hightlight">*</span></label>
                                                     <textarea name="mensaje" class="form-control" rows="8"></textarea>
                                                 </div>
                                                 <button class="btn btn-primary btn-lg pull-right">Enviar Mensaje</button>
